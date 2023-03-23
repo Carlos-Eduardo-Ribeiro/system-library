@@ -1,4 +1,4 @@
-package repositories;
+package business.repositories;
 
 import java.util.List;
 
