@@ -1,5 +1,8 @@
-package business.enums;
+package business;
 
 public enum Status {
 
+    BLOCKED,
+    WARNED,
+    RELEASED;
 }
