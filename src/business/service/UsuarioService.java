@@ -2,29 +2,37 @@ package business.service;
 
 import java.time.LocalDate;
 
-import business.repositories.RepositorioDeObras;
-import business.repositories.RepositorioDeUsuarios;
 import java.util.List;
 import java.util.Random;
+import business.enums.Status;
 import business.entities.Autor;
-import business.entities.ObraImpressa;
 import business.entities.Pessoa;
 import business.entities.Usuario;
-import business.enums.Status;
 import business.entities.Emprestimo;
-
+import business.entities.ObraImpressa;
+import business.repositories.RepositorioDeObras;
+import business.repositories.RepositorioDeUsuarios;
+import business.repositories.RepositorioDeEmprestimos;
 
 	public class UsuarioService {
 
 	private RepositorioDeUsuarios repositorio;
 	private RepositorioDeObras obrasUser;
-	private Status status;
+	private RepositorioDeEmprestimos empDeUsuarios;
+	
 
 	public UsuarioService() {
+		
 	    this.repositorio = RepositorioDeUsuarios.getInstance(); 
 	    this.obrasUser = RepositorioDeObras.getInstance();
+	    this.empDeUsuarios = RepositorioDeEmprestimos.getInstance();
 	}
+	
+	private Status status;
+	
 		
+	//Usuário//-----------------------------------------------------------
+	
 	 public boolean adicionarUsuario(String nome, String cpf, LocalDate idade, String endereco, String login, String password, boolean isAdmin) {
 	    
 		if(repositorio.buscarPorNomes(cpf)!=null||repositorio.buscarPorNomes(nome)!=null)
@@ -61,64 +69,49 @@ import business.entities.Emprestimo;
 	    return sucesso;
 	    }
 	 
-	 public boolean adicionarAutor(String nome,String pseudonimo,String nacionalidade,String cpf, LocalDate idade, String endereco) {
-	    
-
-	    Autor autor= new Autor(nome,pseudonimo,nacionalidade,cpf,idade,endereco);
-	    
-	    autor.setNome(nome);
-	    autor.setPseudonimo(pseudonimo);
-	    autor.setNacionalidade(nacionalidade);
-	    autor.setCpf(cpf);
-	    autor.setIdade(idade);
-	    autor.setEndereco(endereco);
-	    
-	    boolean sucesso = repositorio.create(autor);
-	    
-	    return sucesso;
-	    }
-		
-		public boolean bUsuario(String Usuario) {
+		public boolean bUsuario(String idUsuario) {
 			
-			Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(Usuario);
+			Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(idUsuario);
     	    
 			if(user!=null) {
 				
-	        boolean sucesso = repositorio.updateStatus(Usuario,status.BLOCKED);
+	        boolean sucesso = ((RepositorioDeUsuarios) repositorio).updateStatus(idUsuario,status.BLOCKED);
 
 	        return sucesso;
 			}
 			return false;
 	    }
 		
-		 public boolean libUsuario(String Usuario) {
+		 public boolean libUsuario(String idUsuario) {
 	    	    
-			   Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(Usuario);
+			   Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(idUsuario);
 			    
 			    if(user!=null) {
-		        boolean sucesso = repositorio.updateStatus(Usuario,status.RELEASED);
+			    	
+		        boolean sucesso = ((RepositorioDeUsuarios) repositorio).updateStatus(idUsuario,status.RELEASED);
 
 		        return sucesso;
+		        
 			    }
 			    return false;
 		    }
         
         
-        public boolean advirUsuario(String Usuario) {
+         public boolean advirUsuario(String idUsuario) {
   	       
-            Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(Usuario);
+            Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(idUsuario);
     	    
 			if(user!=null) {
-	        boolean sucesso = repositorio.updateStatus(Usuario,status.WARNED);
+	        boolean sucesso = ((RepositorioDeUsuarios) repositorio).updateStatus(idUsuario,status.WARNED);
 
 	        return sucesso;
 			}
 			return false;
-	    }
+	     }
         
-        public boolean rUsuario(String Usuario) {
+        public boolean rUsuario(String id) {
             
- 	       boolean sucesso = repositorio.removerPorNome(Usuario);
+ 	       boolean sucesso = repositorio.removerPorNome(id);
  	        
  	        return sucesso;
  	    }
@@ -130,19 +123,111 @@ import business.entities.Emprestimo;
 	     return todasosUsuarios;
 		}   
         
-        //EMPRESTIMO//
+        
+           public boolean atualizarUEmdereco (String id,String novoEmdereco) {
+            
+         	if(repositorio.buscarPorNomes(id)==null) 
+         	{
+         	 return false;
+         	}
+         	else{
+         		
+            Usuario usuario=(Usuario) repositorio.buscarPorNomes(id);
+         	 
+         	usuario.setEndereco(novoEmdereco);
+        
+            repositorio.update(usuario);
+            
+            return true;
+         	}           
+         	}
+           
+           public boolean atualizarULoginESenha(String login, String password, String novoLogin, String novoPassword) {
+        	   
+        	   Pessoa pessoa = repositorio.buscarPorNomes(login);
+        	    
+        	    if (pessoa instanceof Usuario) {
+        	    	
+        	        Usuario usuario = (Usuario) pessoa;
+        	        
+        	        if (usuario.getPassword().equals(password)) {
+        	        	
+        	            usuario.setLogin(novoLogin);
+        	            usuario.setPassword(novoPassword);
+        	            repositorio.update(usuario);
+        	            
+        	            return true;
+        	        }
+        	    }
+        	    return false;
+        	}
+
+           
+           public boolean atualizarUAdimin (String id, boolean isAdmin) {
+               
+             if(repositorio.buscarPorNomes(id)==null) 
+           	{
+           	 return false;
+           	}
+             else {	
+            	 
+             Usuario usuario= (Usuario) repositorio.buscarPorNomes(id);
+               	               		                        	 
+             usuario.setAdmin(isAdmin);
+                           
+             repositorio.update(usuario);
+                  
+             return true;
+             }
+                  
+           }
+                  
+        
+      //Autor//---------------------------------------
+   	 
+   	 public boolean adicionarAutor(String nome,String pseudonimo,String nacionalidade,String cpf, LocalDate idade, String endereco) {
+   	    
+
+   	    Autor autor= new Autor(nome,pseudonimo,nacionalidade,cpf,idade,endereco);
+   	    
+   	    autor.setNome(nome);
+   	    autor.setPseudonimo(pseudonimo);
+   	    autor.setNacionalidade(nacionalidade);
+   	    autor.setCpf(cpf);
+   	    autor.setIdade(idade);
+   	    autor.setEndereco(endereco);
+   	    
+   	    boolean sucesso = repositorio.create(autor);
+   	    
+   	    return sucesso;
+   	    }
+   	 
+   	  public  List<Autor> listaAutores() {
+          	
+          	 List<Autor> autores = ((RepositorioDeUsuarios) repositorio).listaA();
+               
+               return autores;
+           }
+   	  public  List<ObraImpressa> bObraPorAutor (String obrasAutor) {
+          	
+           	 List<ObraImpressa> bOPA = ((RepositorioDeObras)obrasUser).buscarObrasDoAutor(obrasAutor);
+              
+                return bOPA;
+            }
+        
+        //EMPRESTIMO//-------------------------------------------
         
          public String emprestarL(String numeroDeCadastro, String itemEmprestado, String usuarioQueRealizou) {
-	    	      
-        	
+	    	             	
         	 
         	 Usuario checarU= (Usuario) repositorio.buscarPorNomes(usuarioQueRealizou);
-        	 ObraImpressa checarO =obrasUser.buscarPorNomes(itemEmprestado);             
+        	 ObraImpressa checarO = obrasUser.buscarPorNomes(itemEmprestado);            
              
-             if(checarU==null||checarO==null)
+        	 if(checarU==null||checarO==null)
              {
-              return "Usuario ou Obra não existe";
+              return "\nObra ou Usuario não emcontrado";
              }
+             
              else if(checarO.getQuantidade()>=1&&checarU.getStatus()==status.RELEASED||checarU.getStatus()==status.WARNED)
              {
             checarO.setdebiatarObra();        	        	        	
@@ -155,7 +240,7 @@ import business.entities.Emprestimo;
 	        emprestimo.setUsuarioQueRealizou(checarU);
 	        emprestimo.setItemEmprestadoo(itemEmprestado);
 	        	        	                    	        	     	        
-	        repositorio.createEmpretimo(emprestimo);  
+	        empDeUsuarios.create(emprestimo);  
 	        
 	        checarU.setEmprestimo(emprestimo);
 	        
@@ -166,13 +251,20 @@ import business.entities.Emprestimo;
               return "\n(O usuario não pode executar emprestimos)\nUsuário Status :"+checarU.getStatus();
              }
             }
-         public String devolverL(String nome,String Obra) {
+         
+         public String devolverL(String id,String Obra) {
  	    	
-         Usuario checarU= (Usuario) repositorio.buscarPorNomes(nome);         
-         ObraImpressa checarO =obrasUser.buscarPorNomes(Obra);        
+         Usuario checarU= (Usuario) repositorio.buscarPorNomes(id);         
+         ObraImpressa checarO =obrasUser.buscarPorNomes(Obra); 
+         
+         if(checarU==null||checarO==null)
+         {
+          return "\nObra ou Usuario não emcontrado";
+         }
+                           
          LocalDate agora = LocalDate.now();
          String a = checarO.getTitulo();
-         Emprestimo atualizar = repositorio.buscarPorEmpretimo(a);
+         Emprestimo atualizar = ((RepositorioDeEmprestimos) empDeUsuarios).buscarPorEmpretimo(a);        
          
          if(atualizar.getItemEmprestado()==checarO) {
         	 
@@ -181,9 +273,10 @@ import business.entities.Emprestimo;
        	 checarO.setCreditarObra();         
        	 
        	 checarU.atualizar(atualizar);
-       	 
        	
-       	 repositorio.devolverLivroR(atualizar);
+       	 ((RepositorioDeEmprestimos) empDeUsuarios).devolverLivroR(atualizar);
+       	 
+       	 ((RepositorioDeEmprestimos) empDeUsuarios).removerEmpretimoAtrasado(atualizar);
                  
          if(checarU.getStatus()==status.WARNED)
          {
@@ -191,68 +284,44 @@ import business.entities.Emprestimo;
          }
          return "\nObra devolvida com sucesso";
          
-       	 }
-        
-         return "\nObra ou Usuario não emcontrado";
-        
-         }
-         
-         public  Emprestimo buscUsuario(String usuario) {
-         	
-        	 Emprestimo usuarios = repositorio.buscarPorEmpretimo(usuario);
-             
-             return usuarios;
-         }
-         
-         public boolean atualizarU (String cpf,String endereco, String login, String password,String numeroDeCadastro, boolean isAdmin) {
-             
-         	if(repositorio.buscarPorNomes(cpf)==null) 
-         	{
-         	 return false;
-         	}
-         	
-            Usuario usuario= (Usuario) repositorio.buscarPorNomes(cpf);
-         	 
-         	usuario.setEndereco(endereco);
-         	usuario.setLogin(login);
-         	usuario.setPassword(password);
-         	usuario.setAdmin(isAdmin);
-              
-            repositorio.update(usuario);
-            
-            return true;
-            
-         	}
+       	 }          
+         return "";        
+         }         
          
          public  List<Emprestimo> lEmprestimos() {
          	
-           	 List<Emprestimo> emprestimos = repositorio.listaEmprestimos();
+           	 List<Emprestimo> emprestimos = empDeUsuarios.read();
                 
                 return emprestimos;
             }
+         
          public  List<Emprestimo> hEmprestimos() {
          	
-          	 List<Emprestimo> emprestimos = repositorio.lHEmprestimos();
+          	 List<Emprestimo> emprestimos = ((RepositorioDeEmprestimos) empDeUsuarios).lHEmprestimos();
                
                return emprestimos;
            }
-         public  List<Autor> listaAutores() {
-          	
-           	 List<Autor> autores = repositorio.listaA();
-                
-                return autores;
-            }
+         
+         public List<Emprestimo> epAtrasados() {	 
+        	 
+        	 List<Emprestimo> emprestimos =  ((RepositorioDeEmprestimos) empDeUsuarios).eAtrasados();
+ 	        
+        	 return emprestimos;
+ 	      }
+         
+         public List<Emprestimo> empDoUsuario(String nomeOuNdc) {
+         	
+        	 List<Emprestimo> emprestimos = empDeUsuarios.buscarPorEmpretimoDoUsuario(nomeOuNdc);
+             
+             return emprestimos;
+         }
+         
+         //Contador//----------------------------------------------------
          
          public void iniciarContador()
          {
-          repositorio.iniciarVerificacaoEntregasAtrasadas();
+         ((RepositorioDeEmprestimos) empDeUsuarios).iniciarVerificacaoEntregasAtrasadas();
        
          }
-         public  ObraImpressa bObraPorAutor (String obrasAutor) {
-         	
-           	 ObraImpressa bOPA = obrasUser.buscObraPorAutor(obrasAutor);
-              
-                return bOPA;
-            }
           
 }

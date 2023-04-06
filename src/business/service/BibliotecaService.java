@@ -7,14 +7,16 @@ import business.entities.Livro;
 import business.entities.ObraImpressa;
 import business.repositories.RepositorioDeObras;
 
+
 public class BibliotecaService {
 
 private RepositorioDeObras repositorio;
 
 public BibliotecaService() {
-    this.repositorio = RepositorioDeObras.getInstance(); 
+
+this.repositorio = RepositorioDeObras.getInstance(); 
 }
-	
+	   
 	public boolean adicionarLivro(String titulo, String autor,int quantidade, int numeroDePaginas, String idioma, LocalDate anoDePublicacao,
 			String editora, String generoLiterario) {
 	    
@@ -27,6 +29,7 @@ public BibliotecaService() {
         boolean sucesso =repositorio.create(livro);
         return sucesso;
     }
+    
 	
 	public boolean cadastrarArtigoCientifico(String autor,String titulo, int quantidade, int numeroDePaginas, String idioma,
 			LocalDate anoDePublicacao, String editora,String referenciaBibliografica,String resumo) {
@@ -78,26 +81,96 @@ public BibliotecaService() {
      return obraB;
 		
 	}
-
-    public boolean atualizarNR (String titulo, String novoTitulo, String novaEditora, int novaQuantidade, int novoNumeroDePaginas, String novoIdioma) {
+ 
+  public boolean atualizarTituloO (String titulo, String novoTitulo) {
+  
+	
+	if(repositorio.buscarPorNomes(titulo)==null||repositorio.buscarPorNomes(novoTitulo)!=null)
+	{
+	 return false;
+	}
+	else{
+	
+	ObraImpressa atualizarObra = repositorio.buscarPorNomes(titulo);
+	 
+	atualizarObra.setTitulo(novoTitulo);
+     
+     repositorio.update(atualizarObra);
+                
+     return true;}  	       
+    }	
+    
+       public boolean atualizarEditoraO (String titulo, String novaEditora) {
       
     	
-    	if(repositorio.buscarPorNomes(titulo)==null||repositorio.buscarPorNomes(novoTitulo)!=null)
+    	if(repositorio.buscarPorNomes(titulo)==null)
     	{
     	 return false;
     	}
     	else{
     	
-    	ObraImpressa atualizarObra = repositorio.buscarPorNomes(titulo);
-    	 
-    	atualizarObra.setTitulo(novoTitulo);
+    	ObraImpressa atualizarObra = repositorio.buscarPorNomes(titulo);    	 
+    	
     	atualizarObra.setEditora(novaEditora);
-    	atualizarObra.setQuantidade(novaQuantidade);
-    	atualizarObra.setNumeroDePaginas(novoNumeroDePaginas);
-        atualizarObra.setIdioma(novoIdioma);
          
          repositorio.update(atualizarObra);
                     
          return true;}  	       
         }	
-        }
+        
+        
+         public boolean atualizarNumeroDePaginasO (String titulo, int novoNumeroDePaginas) {
+            
+        	
+        	if(repositorio.buscarPorNomes(titulo)==null)
+        	{
+        	 return false;
+        	}
+        	else{
+        	
+        	ObraImpressa atualizarObra = repositorio.buscarPorNomes(titulo);
+        	 
+        	atualizarObra.setNumeroDePaginas(novoNumeroDePaginas);
+             
+             repositorio.update(atualizarObra);
+                        
+             return true;}  	       
+            }	
+            
+            
+            public boolean atualizarQuantidadeDisponivelO (String titulo, int novaQuantidade) {
+                
+            	
+            	if(repositorio.buscarPorNomes(titulo)==null)
+            	{
+            	 return false;
+            	}
+            	else{
+            	
+            	ObraImpressa atualizarObra = repositorio.buscarPorNomes(titulo);
+            	            	
+            	atualizarObra.setQuantidade(novaQuantidade);
+            	
+                 repositorio.update(atualizarObra);
+                            
+                 return true;}  	       
+                }
+            
+            public boolean atualizarIdiomaDaO (String titulo, String novoIdioma) {
+                
+            	
+            	if(repositorio.buscarPorNomes(titulo)==null)
+            	{
+            	 return false;
+            	}
+            	else{
+            	
+            	ObraImpressa atualizarObra = repositorio.buscarPorNomes(titulo);
+            	 
+                atualizarObra.setIdioma(novoIdioma);
+                 
+                 repositorio.update(atualizarObra);
+                            
+                 return true;}  	       
+                }
+}

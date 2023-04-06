@@ -2,12 +2,8 @@ package view;
 
 import java.time.LocalDate;
 import java.util.Scanner;
-
-import business.entities.Usuario;
-import business.repositories.RepositorioDeObras;
-import business.repositories.RepositorioDeUsuarios;
-import business.service.ControladorObra;
-import business.service.ControladorUsuario;
+import business.service.ObraService;
+import business.service.PessoaService;
 
 public class TesteMain {
 
@@ -15,8 +11,8 @@ public class TesteMain {
     public static void main(String[] args) {
 
 
-        ControladorObra obra = ControladorObra.getInstance();
-        ControladorUsuario usuario = ControladorUsuario.getInstance();
+        ObraService obra = ObraService.getInstance();
+        PessoaService usuario = PessoaService.getInstance();
         usuario.ativarContador();
         Scanner sc = new Scanner(System.in);
 
@@ -185,7 +181,7 @@ public class TesteMain {
                                 System.out.println("(Devolver Obra)\n");
                                 sc.nextLine();
 
-                                System.out.printf("Digite o nome usuário:");
+                                System.out.printf("Digite o id do usuário:");
                                 String valor161=sc.next();
 
                                 System.out.printf("Digite o nome da obra:");
@@ -218,7 +214,7 @@ public class TesteMain {
                                 System.out.println("(Excluir Usuário)\n");
                                 sc.nextLine();
 
-                                System.out.printf("Digite o nome do usuario:");
+                                System.out.printf("Digite o id do usuario:");
                                 String valor222 = sc.nextLine();
                                 System.out.println(usuario.removerUsuario(valor222));
 
@@ -228,7 +224,7 @@ public class TesteMain {
 
                     //-------------------------------------------------------------------------------------------//
                     case 3:
-                        System.out.println("Digite o comando:\n\n1.Buscar obra por nome\n2.Lista de obras\n3.Lista de usuarios\n4.Lista de emprestimos\n5.Lista de autores\n6.buscar obra por autor\n7.hitórico de emprestimos\n8.voltar");
+                        System.out.println("Digite o comando:\n\n1.Buscar obra por nome\n2.Lista de obras\n3.Lista de usuarios\n4.Lista de emprestimos\n5.Lista de autores\n6.buscar obra por autor\n7.hitórico de emprestimos\n8.emprestimos atrasados\n9.Buscar emprestimos do usuario\n10.voltar");
                         int a3= sc.nextInt();
                         switch (a3)
                         {
@@ -295,100 +291,195 @@ public class TesteMain {
                                 System.out.println(usuario.historicoDeEmprestimos());
 
                                 break;
+                                
+                            case 8:
+                                System.out.println("(Emprestimos atrasados)\n");
+                                sc.nextLine();
+
+                                System.out.println(usuario.emprestimosAtrazados());
+
+                                break;
+                                
+                            case 9:
+                                System.out.println("(Buscar Emprestimos Usuario)\n");
+                                sc.nextLine();
+                                
+                                System.out.printf("Digite o id do usuário:");
+                                String valor391=sc.nextLine();
+
+                                System.out.println(usuario.buscarEmprestimosDoUsuario(valor391));
+
+                                break;
                         }
                         break;
 
                     //-------------------------------------------------------------------------------------------//
                     case 4:
-                        System.out.println("Digite o comando:\n\n1.Atualizar Obra\n2.Atualizar status do usuário\n3.Utualizar usuário\n4.voltar\n");
+                        System.out.println("Digite o comando:\n\n1.Atualizar status do usuário\n2.Atualizar endereço do usuário\n3.Atualizar login e senha do usuário\n4.Atualizar status de admin do usuário\n5.Atualizar titulo da obra\n6.Atualizar editora da obra\n7.Atualizar número de paginas da obra\n8.Atualizar quantidade disponível da obra\n9.Atualizar idioma da obra\n10.voltar");
                         int a4= sc.nextInt();
                         switch (a4)
                         {
+                            
                             case 1:
-                                System.out.println("(Atualizar Obra)\n");
-                                sc.nextLine();
-
-                                System.out.printf("Digite o nome da obra:");
-                                String valor411=sc.nextLine();
-
-                                System.out.printf("Digite o novo nome da obra:");
-                                String valor412=sc.nextLine();
-
-                                System.out.printf("Digite a nova editora:");
-                                String valor413=sc.nextLine();
-
-                                System.out.printf("Digite a nova quantidade total:");
-                                int valor414=sc.nextInt();
-
-                                System.out.printf("Digite o novo número de páginas:");
-                                int valor415=sc.nextInt();
-                                sc.nextLine();
-
-                                System.out.printf("Digite o novo idioma:");
-                                String valor416=sc.nextLine();
-
-                                System.out.println(obra.atualizarObra(valor411, valor412, valor413, valor414,valor415, valor416));
-
-                                break;
-
-                            case 2:
                                 System.out.println("(Atualizar Status Do Usuário)\n");
                                 sc.nextLine();
 
-                                System.out.printf("Digite o nome do usuário:");
-                                String valor421=sc.nextLine();
+                                System.out.printf("Digite o id do usuário:");
+                                String valor411=sc.nextLine();
 
                                 System.out.printf("Digite o comando:\n1.Bloquear\n2.Adivertir\n3.Liberar\n");
-                                int valor422=sc.nextInt();
+                                int valor412=sc.nextInt();
 
-                                if(valor422==1)
+                                if(valor412==1)
                                 {
-                                    System.out.println(usuario.bloquearUsuario(valor421));
+                                    System.out.println(usuario.bloquearUsuario(valor411));
                                 }
-                                else if(valor422==2)
+                                else if(valor412==2)
                                 {
-                                    System.out.println(usuario.advertirUsuario(valor421));
+                                    System.out.println(usuario.advertirUsuario(valor411));
                                 }
-                                else if(valor422==3)
+                                else if(valor412==3)
                                 {
-                                    System.out.println(usuario.liberarUsuario(valor421));
+                                    System.out.println(usuario.liberarUsuario(valor411));
                                 }
                                 break;
 
-                            case 3:
-                                System.out.println("(Atualizar Usuário)\n");
+                            case 2:
+                            	
+                                System.out.println("(Atualizar Endereço Do Usuário)\n");
                                 sc.nextLine();
 
-                                System.out.printf("Digite seu cpf:");
-                                String valor431=sc.nextLine();
+                                System.out.printf("Digite seu id:");
+                                String valor421=sc.nextLine();
 
                                 System.out.printf("Digite seu novo endereço:");
-                                String valor432=sc.nextLine();
+                                String valor422=sc.nextLine();
+                                
+                                System.out.println(usuario.atualizarEmderecoDoUsuario(valor421, valor422));
+                                
+                                break;
+                                
+                            case 3: 
+                            	
+                            	System.out.println("(Atualizar Login e Senha )\n");
+                                sc.nextLine();                            	                          	
 
+                                System.out.printf("Digite seu atual login:");
+                                String valor431=sc.nextLine();
+                                
+                                System.out.printf("Digite sua atual senha:");
+                                String valor432=sc.nextLine();
+                                
                                 System.out.printf("Digite seu novo login:");
                                 String valor433=sc.nextLine();
 
-                                System.out.printf("Digite seu novo senha:");
+                                System.out.printf("Digite sua nova senha:");
                                 String valor434=sc.nextLine();
 
-                                System.out.printf("Digite seu numeroDeCadastro:");
-                                String valor435=sc.nextLine();
-
-                                System.out.printf("\nÉ um adiministrador:\n1.sim\n2.não\n");
-                                int valor436=sc.nextInt();
+                                System.out.println(usuario.atualizarLoginESenhaDoUsuario(valor431, valor432, valor433, valor434)); 
+                               
+                                break;
+                                
+                            case 4:
+                            	
+                            	System.out.println("(Atualizar Status de Admin)\n");
+                                sc.nextLine();                                                            
+                                
+                                System.out.printf("Digite seu id:");
+                                String valor441=sc.nextLine();
+                                
+                                System.out.printf("É um adiministrador:\n1.sim\n2.não\n");
+                                int valor442=sc.nextInt();
 
                                 boolean resultado= false;
-                                if(valor436==1)
+                                
+                                if(valor442==1)
                                 {
-                                    resultado= true;
+                                  resultado= true;
                                 }
-                                else if(valor436==2)
+                                else if(valor442==2)
                                 {
-                                    resultado= false;
+                                  resultado= false;
                                 }
-                                System.out.println(usuario.atualizarUsuario(valor431, valor432, valor433, valor434, valor435, resultado));
-
+                                
+                                System.out.println(usuario.atualizarStatusAdiminUsuario(valor441, resultado));                     
+                                
                                 break;
+                                
+                            case 5:
+                            	
+                            	System.out.println("(Atualizar Titulo Da Obra )\n");
+                                sc.nextLine();                            	                          	
+
+                                System.out.printf("Digite o titulo atual atual:");
+                                String valor451=sc.nextLine();
+                                
+                                System.out.printf("Digite o novo titulo:");
+                                String valor452=sc.nextLine();
+                                
+                                System.out.println(obra.atualizarTituloDaObra(valor451, valor452));
+                                
+                                break;
+                                
+                             case 6:
+                            	
+                            	System.out.println("(Atualizar Editora Da Obra)\n");
+                                sc.nextLine();                            	                          	
+
+                                System.out.printf("Digite o titulo da obra:");
+                                String valor461=sc.nextLine();
+                                
+                                System.out.printf("Digite a nova editora:");
+                                String valor462=sc.nextLine();
+                                
+                                System.out.println(obra.atualizarEditoraDaObra(valor461, valor462));
+                                
+                                break;
+                                
+                             case 7:
+                             	
+                             	System.out.println("(Atualizar Número De Paginas Da Obra)\n");
+                                 sc.nextLine();                            	                          	
+
+                                 System.out.printf("Digite o titulo da obra:");
+                                 String valor471=sc.nextLine();
+                                 
+                                 System.out.printf("Digite o nova número total de paginas:");
+                                 int valor472=sc.nextInt();
+                                 
+                                 System.out.println(obra.atualizarNumeroDePaginasDaObra(valor471, valor472));
+                                 
+                                 break;
+                                 
+                             case 8:
+                              	
+                              	System.out.println("(Atualizar Quantidade Disponível Da Obra)\n");
+                                  sc.nextLine();                            	                          	
+
+                                  System.out.printf("Digite o titulo da obra:");
+                                  String valor481=sc.nextLine();
+                                  
+                                  System.out.printf("Digite a nova quantidade total disponível:");
+                                  int valor482=sc.nextInt();
+                                  
+                                  System.out.println(obra.atualizarQuantidadeDisponivelDaObra(valor481, valor482));
+                                  
+                                  break;
+                                  
+                             case 9:
+                               	
+                               	System.out.println("(Atualizar Idioma Da Obra)\n");
+                                   sc.nextLine();                            	                          	
+
+                                   System.out.printf("Digite o titulo da obra:");
+                                   String valor491=sc.nextLine();
+                                   
+                                   System.out.printf("Digite o nova idioma da obra:");
+                                   String valor492=sc.nextLine();
+                                   
+                                   System.out.println(obra.atualizarIdiomaDaObra(valor491, valor492));
+                                   
+                                   break;
                         }
                         break;
                 }

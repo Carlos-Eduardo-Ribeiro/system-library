@@ -88,7 +88,7 @@ import business.enums.Status;
 		           "-quntidade disponivel: "+itemEmprestado.getQuantidade() +"\n\n"+
 		           "(usuarioQueRealizou)\n\n"+
 		           "-nome do usuario: "+usuarioQueRealizou.getNome() +"\n"+
-		           "-número de cadastro: "+usuarioQueRealizou.getNumeroDeCadastro()+"\n";
+		           "-número de cadastro: "+usuarioQueRealizou.getNumeroDeCadastro()+"\n\n";
 		           		      
 		}    
 	}

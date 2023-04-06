@@ -4,19 +4,19 @@ import java.time.LocalDate;
 import business.entities.ObraImpressa;
 import java.util.List;
 
-public class ControladorObra {
+public class ObraService {
 
     private BibliotecaService bService;
 
-    private static ControladorObra instance;
+    private static ObraService instance;
 
-    private ControladorObra() {
+    private ObraService() {
         this.bService = new BibliotecaService();
     }
 
-    public static ControladorObra getInstance() {
+    public static ObraService getInstance() {
         if (instance == null) {
-            instance = new ControladorObra();
+            instance = new ObraService();
         }
         return instance;
     }
@@ -60,10 +60,39 @@ public class ControladorObra {
         return obras;
     }
 
-    public boolean atualizarObra(String titulo, String novoTitulo, String novaEditora, int novaQuantidade, int novoNumeroDePaginas, String novoIdioma) {
+    public boolean atualizarTituloDaObra(String titulo, String novoTitulo) {
     	
-        boolean obra = bService.atualizarNR( titulo, novoTitulo, novaEditora, novaQuantidade, novoNumeroDePaginas, novoIdioma);
+       boolean obra = bService.atualizarTituloO(titulo, novoTitulo);
           
         return obra;
     }
+    
+    public boolean atualizarEditoraDaObra(String titulo, String novaEditora) {
+    	
+        boolean obra = bService.atualizarEditoraO(titulo,novaEditora);
+           
+         return obra;
+     }
+    
+    public boolean atualizarNumeroDePaginasDaObra(String titulo, int novoNumeroDePaginas) {
+    	
+        boolean obra = bService.atualizarNumeroDePaginasO(titulo,novoNumeroDePaginas);
+           
+         return obra;
+     }
+    
+    public boolean atualizarQuantidadeDisponivelDaObra(String titulo, int novaQuantidade) {
+    	
+        boolean obra = bService.atualizarQuantidadeDisponivelO(titulo,novaQuantidade);
+           
+         return obra;
+     }
+    
+    public boolean atualizarIdiomaDaObra(String titulo, String novoIdioma) {
+    	
+        boolean obra = bService.atualizarIdiomaDaO(titulo,novoIdioma);
+           
+         return obra;
+     }
+    
 }

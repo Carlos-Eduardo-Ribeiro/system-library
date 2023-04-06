@@ -21,6 +21,8 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
     public RepositorioDeObras() {
         this.obras = new ArrayList<>();
     }
+    
+    //Methods//-------------------------------------------------
 
     public boolean create(ObraImpressa obra) {
         boolean a =this.obras.add(obra);
@@ -48,12 +50,21 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
 
     public ObraImpressa buscarPorNomes(String titulo) {
         for (ObraImpressa obra : obras) {
-            if (obra.getTitulo().equals(titulo)) {
+            if (obra.getTitulo().equals(titulo)||obra.getAutor().equals(titulo)) {
                 return obra;
             }
         }
         return null;
     }
+    public List<ObraImpressa> buscarObrasDoAutor(String id) {
+	    List<ObraImpressa> obrasDoAutor = new ArrayList<>();
+	    for (ObraImpressa obra : obras) {
+	        if (obra.getAutor().equals(id)) {
+	        	obrasDoAutor.add(obra);
+	        }
+	    }
+	    return obrasDoAutor;
+	}
 
 
     public List<ObraImpressa> read() {
@@ -62,7 +73,7 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
     
     public ObraImpressa buscObraPorAutor(String obrasAutor) {
         for (ObraImpressa obra : obras) {
-            if (obra.getAutor().equals(obrasAutor)) {
+            if (obra.getAutor().equals(obrasAutor)||obra.getTitulo().equals(obrasAutor)) {
                 return obra;
             }
         }

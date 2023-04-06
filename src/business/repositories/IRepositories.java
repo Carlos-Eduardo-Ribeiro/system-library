@@ -7,7 +7,7 @@ public interface IRepositories<T> {
     boolean create(T obj);
     List<T> read();
     boolean update(T obj);
-    T buscarPorNomes(String titulo);
+    public T buscarPorNomes(String titulo);
     boolean removerPorNome(String titulo);
 
 }
