@@ -10,8 +10,8 @@ public class Autor extends Pessoa {
 	   
 	public Autor() {}
 
-	public Autor(String nome,String pseudonimo,String nacionalidade, String cpf, LocalDate idade, String endereco) {
-		super(nome,cpf, idade, endereco);
+	public Autor(String nome, LocalDate idade, String endereco, String pseudonimo,String nacionalidade) {
+		super(nome,null, idade, endereco);
 		this.pseudonimo=pseudonimo;
 		this.nacionalidade=nacionalidade;
 	}
@@ -37,8 +37,7 @@ public class Autor extends Pessoa {
 	    return "\n(Autor)\n\n" + 
 	           "-pseudonimo='" + pseudonimo + '\'' +"\n"+
 	           "-nacionalidade='" + nacionalidade + '\'' +"\n"+
-	           "-nome='" + getNome() + '\'' +"\n"+
-	           "-cpf='" + getCpf() + '\'' +"\n"+
+	           "-nome='" + getNome() + '\'' +"\n"+           
 	           "-idade=" + getIdade() +"\n"+
 	           "-Idade=" + calcularIdade()+" anos";	           
 	}

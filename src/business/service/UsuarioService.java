@@ -1,10 +1,11 @@
 package business.service;
 
-import java.time.LocalDate;
-
 import java.util.List;
 import java.util.Random;
+import java.time.LocalDate;
 import business.enums.Status;
+import business.exceptions.ElementoJaExisteException;
+import business.exceptions.ElementoNaoEncontradoException;
 import business.entities.Autor;
 import business.entities.Pessoa;
 import business.entities.Usuario;
@@ -33,11 +34,11 @@ import business.repositories.RepositorioDeEmprestimos;
 		
 	//Usuário//-----------------------------------------------------------
 	
-	 public boolean adicionarUsuario(String nome, String cpf, LocalDate idade, String endereco, String login, String password, boolean isAdmin) {
+	 public boolean adicionarUsuario(String nome, String cpf, LocalDate idade, String endereco, String login, String password, boolean isAdmin)throws ElementoJaExisteException {
 	    
-		if(repositorio.buscarPorNomes(cpf)!=null||repositorio.buscarPorNomes(nome)!=null)
+		if(repositorio.buscarPorNomes(cpf)!=null)
 		{
-		 return false;
+		 throw new ElementoJaExisteException(nome);
 		}
         Status atribuirStatusDeCadastro= status.RELEASED;        
         Usuario aqui;
@@ -69,20 +70,21 @@ import business.repositories.RepositorioDeEmprestimos;
 	    return sucesso;
 	    }
 	 
-		public boolean bUsuario(String idUsuario) {
+		public boolean bUsuario(String idUsuario) throws ElementoNaoEncontradoException {
 			
 			Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(idUsuario);
-    	    
+					    	    
 			if(user!=null) {
 				
 	        boolean sucesso = ((RepositorioDeUsuarios) repositorio).updateStatus(idUsuario,status.BLOCKED);
 
 	        return sucesso;
 			}
-			return false;
+			
+			throw new ElementoNaoEncontradoException(idUsuario);
 	    }
 		
-		 public boolean libUsuario(String idUsuario) {
+		 public boolean libUsuario(String idUsuario) throws ElementoNaoEncontradoException {
 	    	    
 			   Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(idUsuario);
 			    
@@ -93,11 +95,12 @@ import business.repositories.RepositorioDeEmprestimos;
 		        return sucesso;
 		        
 			    }
-			    return false;
+			    
+			    throw new ElementoNaoEncontradoException(idUsuario);
 		    }
         
         
-         public boolean advirUsuario(String idUsuario) {
+         public boolean advirUsuario(String idUsuario) throws ElementoNaoEncontradoException {
   	       
             Usuario user = (business.entities.Usuario) repositorio.buscarPorNomes(idUsuario);
     	    
@@ -106,15 +109,23 @@ import business.repositories.RepositorioDeEmprestimos;
 
 	        return sucesso;
 			}
-			return false;
+			
+			throw new ElementoNaoEncontradoException(idUsuario);
 	     }
         
-        public boolean rUsuario(String id) {
+        public boolean rUsuario(String idUsuario) throws ElementoNaoEncontradoException {
             
- 	       boolean sucesso = repositorio.removerPorNome(id);
+           Pessoa pessoa = repositorio.buscarPorNomes(idUsuario);
+        	
+           if(pessoa!=null) {
+        	
+ 	       boolean sucesso = repositorio.removerPorNome(idUsuario);
  	        
- 	        return sucesso;
- 	    }
+ 	       return sucesso;
+ 	     }
+          throw new ElementoNaoEncontradoException(idUsuario);  
+         }
+        
         public List<Pessoa> lUsuarios()
 		{
 			 
@@ -124,11 +135,11 @@ import business.repositories.RepositorioDeEmprestimos;
 		}   
         
         
-           public boolean atualizarUEmdereco (String id,String novoEmdereco) {
+           public boolean atualizarUEmdereco (String id,String novoEmdereco) throws ElementoNaoEncontradoException {
             
          	if(repositorio.buscarPorNomes(id)==null) 
          	{
-         	 return false;
+         	 throw new ElementoNaoEncontradoException(id);
          	}
          	else{
          		
@@ -139,10 +150,11 @@ import business.repositories.RepositorioDeEmprestimos;
             repositorio.update(usuario);
             
             return true;
+            
          	}           
          	}
            
-           public boolean atualizarULoginESenha(String login, String password, String novoLogin, String novoPassword) {
+           public boolean atualizarULoginESenha(String login, String password, String novoLogin, String novoPassword) throws ElementoNaoEncontradoException {
         	   
         	   Pessoa pessoa = repositorio.buscarPorNomes(login);
         	    
@@ -159,15 +171,15 @@ import business.repositories.RepositorioDeEmprestimos;
         	            return true;
         	        }
         	    }
-        	    return false;
+        	    throw new ElementoNaoEncontradoException(login);
         	}
 
            
-           public boolean atualizarUAdimin (String id, boolean isAdmin) {
+           public boolean atualizarUAdimin (String id, boolean isAdmin) throws ElementoNaoEncontradoException {
                
              if(repositorio.buscarPorNomes(id)==null) 
            	{
-           	 return false;
+           	 throw new ElementoNaoEncontradoException(id);
            	}
              else {	
             	 
@@ -181,25 +193,31 @@ import business.repositories.RepositorioDeEmprestimos;
              }
                   
            }
-                  
-        
+                         
       //Autor//---------------------------------------
    	 
-   	 public boolean adicionarAutor(String nome,String pseudonimo,String nacionalidade,String cpf, LocalDate idade, String endereco) {
+   	 public boolean adicionarAutor(String nome, LocalDate idade, String endereco, String pseudonimo,String nacionalidade) throws ElementoJaExisteException {
    	    
 
-   	    Autor autor= new Autor(nome,pseudonimo,nacionalidade,cpf,idade,endereco);
+   		if(repositorio.buscarPorNomes(nome)!=null)
+		{
+		 throw new ElementoJaExisteException(nome);
+		}
+   		else {
+  			   		
+   	    Autor autor= new Autor(nome, idade, endereco, pseudonimo, nacionalidade);
    	    
    	    autor.setNome(nome);
    	    autor.setPseudonimo(pseudonimo);
-   	    autor.setNacionalidade(nacionalidade);
-   	    autor.setCpf(cpf);
+   	    autor.setNacionalidade(nacionalidade);  	    
    	    autor.setIdade(idade);
    	    autor.setEndereco(endereco);
    	    
    	    boolean sucesso = repositorio.create(autor);
    	    
    	    return sucesso;
+   	    
+   		}
    	    }
    	 
    	  public  List<Autor> listaAutores() {
@@ -208,24 +226,31 @@ import business.repositories.RepositorioDeEmprestimos;
                
                return autores;
            }
-   	  public  List<ObraImpressa> bObraPorAutor (String obrasAutor) {
-          	
+   	  public  List<ObraImpressa> bObraPorAutor (String obrasAutor) throws ElementoNaoEncontradoException {
+   		  
+   		  if(obrasUser.buscObraPorAutor(obrasAutor)==null)
+   		  {
+   			 throw new ElementoNaoEncontradoException(obrasAutor);
+   		  }
+   		  else {
+   			 
            	 List<ObraImpressa> bOPA = ((RepositorioDeObras)obrasUser).buscarObrasDoAutor(obrasAutor);
               
                 return bOPA;
-            }
+           }
+   	      }
         
         //EMPRESTIMO//-------------------------------------------
         
-         public String emprestarL(String numeroDeCadastro, String itemEmprestado, String usuarioQueRealizou) {
+         public String emprestarL(String numeroDeCadastro, String itemEmprestado, String usuarioQueRealizou) throws ElementoNaoEncontradoException {
 	    	             	
         	 
-        	 Usuario checarU= (Usuario) repositorio.buscarPorNomes(usuarioQueRealizou);
+        	 Usuario checarU= (Usuario) repositorio.buscarPorNomes(numeroDeCadastro);
         	 ObraImpressa checarO = obrasUser.buscarPorNomes(itemEmprestado);            
              
         	 if(checarU==null||checarO==null)
              {
-              return "\nObra ou Usuario não emcontrado";
+              throw new  ElementoNaoEncontradoException(numeroDeCadastro);
              }
              
              else if(checarO.getQuantidade()>=1&&checarU.getStatus()==status.RELEASED||checarU.getStatus()==status.WARNED)
@@ -252,14 +277,14 @@ import business.repositories.RepositorioDeEmprestimos;
              }
             }
          
-         public String devolverL(String id,String Obra) {
+         public String devolverL(String id,String Obra) throws ElementoNaoEncontradoException {
  	    	
          Usuario checarU= (Usuario) repositorio.buscarPorNomes(id);         
          ObraImpressa checarO =obrasUser.buscarPorNomes(Obra); 
          
          if(checarU==null||checarO==null)
          {
-          return "\nObra ou Usuario não emcontrado";
+           throw new  ElementoNaoEncontradoException(id);
          }
                            
          LocalDate agora = LocalDate.now();
@@ -309,17 +334,25 @@ import business.repositories.RepositorioDeEmprestimos;
         	 return emprestimos;
  	      }
          
-         public List<Emprestimo> empDoUsuario(String nomeOuNdc) {
+         public List<Emprestimo> empDoUsuario(String nomeOuNdc) throws ElementoNaoEncontradoException {
          	
+        	 if(empDeUsuarios.buscarPorEmpretimoDoUsuario(nomeOuNdc)==null)
+        	 {
+        		throw new ElementoNaoEncontradoException(nomeOuNdc);
+        	 }
+        	 else {
+        		       	 
         	 List<Emprestimo> emprestimos = empDeUsuarios.buscarPorEmpretimoDoUsuario(nomeOuNdc);
              
              return emprestimos;
-         }
+          }
+	     }
          
          //Contador//----------------------------------------------------
          
          public void iniciarContador()
          {
+        	 
          ((RepositorioDeEmprestimos) empDeUsuarios).iniciarVerificacaoEntregasAtrasadas();
        
          }

@@ -5,6 +5,8 @@ import java.util.List;
 import business.entities.ArtigoCientifico;
 import business.entities.Livro;
 import business.entities.ObraImpressa;
+import business.exceptions.ElementoJaExisteException;
+import business.exceptions.ElementoNaoEncontradoException;
 import business.repositories.RepositorioDeObras;
 
 
@@ -18,10 +20,16 @@ this.repositorio = RepositorioDeObras.getInstance();
 }
 	   
 	public boolean adicionarLivro(String titulo, String autor,int quantidade, int numeroDePaginas, String idioma, LocalDate anoDePublicacao,
-			String editora, String generoLiterario) {
+			String editora, String generoLiterario) throws ElementoJaExisteException {
+		 
+		if(repositorio.buscarPorNomes(titulo)!=null)
+		{
+		 throw new ElementoJaExisteException(titulo);
+		}
+		else {
 	    
         Livro livro = new Livro(titulo,autor, quantidade, numeroDePaginas,idioma,anoDePublicacao,
-    			editora,generoLiterario);
+        editora,generoLiterario);
         
         livro.setTitulo(titulo);       
         livro.setAutor(autor);
@@ -29,11 +37,18 @@ this.repositorio = RepositorioDeObras.getInstance();
         boolean sucesso =repositorio.create(livro);
         return sucesso;
     }
+	}	
     
 	
 	public boolean cadastrarArtigoCientifico(String autor,String titulo, int quantidade, int numeroDePaginas, String idioma,
-			LocalDate anoDePublicacao, String editora,String referenciaBibliografica,String resumo) {
+			LocalDate anoDePublicacao, String editora,String referenciaBibliografica,String resumo) throws ElementoJaExisteException {
 
+		if(repositorio.buscarPorNomes(titulo)!=null)
+		{
+		 throw new ElementoJaExisteException(titulo);
+		}
+		else {
+		
 	     ArtigoCientifico artigo = new ArtigoCientifico(autor,titulo,quantidade,numeroDePaginas,idioma,anoDePublicacao,editora,referenciaBibliografica,resumo);
 	     
 	        artigo.setTitulo(titulo);
@@ -50,21 +65,27 @@ this.repositorio = RepositorioDeObras.getInstance();
 	     return sucesso;
 
 	}
-	public boolean remover(String titulo)
+	}
+	
+	public boolean remover(String titulo) throws ElementoNaoEncontradoException
 	{
 		ObraImpressa rObra = (ObraImpressa) repositorio.buscarPorNomes(titulo);
 		
 		if(rObra==null)
 		{
-		 return false;
+		 throw new ElementoNaoEncontradoException(titulo);
 		}
 		
+		else {
 			
+		
 		boolean sucesso = repositorio.removerPorNome(titulo);
 		
 		return sucesso;
 	
 	}
+	}
+	
 	public List<ObraImpressa> listaDeObras()
 	{
 		 
@@ -73,22 +94,31 @@ this.repositorio = RepositorioDeObras.getInstance();
      return todasAsObras;
 		
 	}
-	public ObraImpressa buscarO(String obra)
+	public ObraImpressa buscarO(String obra) throws ElementoNaoEncontradoException
 	{
+	
+	 if(repositorio.buscarPorNomes(obra)==null)
+	 {
+	   throw new ElementoNaoEncontradoException(obra);	 
+	 }
+	 
+	 else {
 		 
      ObraImpressa obraB = repositorio.buscarPorNomes(obra);
      
      return obraB;
 		
 	}
+	}
  
-  public boolean atualizarTituloO (String titulo, String novoTitulo) {
+  public boolean atualizarTituloO (String titulo, String novoTitulo) throws ElementoNaoEncontradoException {
   
 	
 	if(repositorio.buscarPorNomes(titulo)==null||repositorio.buscarPorNomes(novoTitulo)!=null)
 	{
-	 return false;
+	  throw new ElementoNaoEncontradoException(titulo);
 	}
+	
 	else{
 	
 	ObraImpressa atualizarObra = repositorio.buscarPorNomes(titulo);
@@ -100,12 +130,12 @@ this.repositorio = RepositorioDeObras.getInstance();
      return true;}  	       
     }	
     
-       public boolean atualizarEditoraO (String titulo, String novaEditora) {
+       public boolean atualizarEditoraO (String titulo, String novaEditora) throws ElementoNaoEncontradoException {
       
     	
     	if(repositorio.buscarPorNomes(titulo)==null)
     	{
-    	 return false;
+    	 throw new ElementoNaoEncontradoException(titulo);
     	}
     	else{
     	
@@ -119,12 +149,12 @@ this.repositorio = RepositorioDeObras.getInstance();
         }	
         
         
-         public boolean atualizarNumeroDePaginasO (String titulo, int novoNumeroDePaginas) {
+         public boolean atualizarNumeroDePaginasO (String titulo, int novoNumeroDePaginas) throws ElementoNaoEncontradoException {
             
         	
         	if(repositorio.buscarPorNomes(titulo)==null)
         	{
-        	 return false;
+        	 throw new ElementoNaoEncontradoException(titulo);
         	}
         	else{
         	
@@ -138,12 +168,12 @@ this.repositorio = RepositorioDeObras.getInstance();
             }	
             
             
-            public boolean atualizarQuantidadeDisponivelO (String titulo, int novaQuantidade) {
+            public boolean atualizarQuantidadeDisponivelO (String titulo, int novaQuantidade) throws ElementoNaoEncontradoException {
                 
             	
             	if(repositorio.buscarPorNomes(titulo)==null)
             	{
-            	 return false;
+            	 throw new ElementoNaoEncontradoException(titulo);
             	}
             	else{
             	
@@ -156,12 +186,12 @@ this.repositorio = RepositorioDeObras.getInstance();
                  return true;}  	       
                 }
             
-            public boolean atualizarIdiomaDaO (String titulo, String novoIdioma) {
+            public boolean atualizarIdiomaDaO (String titulo, String novoIdioma) throws ElementoNaoEncontradoException {
                 
             	
             	if(repositorio.buscarPorNomes(titulo)==null)
             	{
-            	 return false;
+            	  throw new ElementoNaoEncontradoException(titulo);
             	}
             	else{
             	

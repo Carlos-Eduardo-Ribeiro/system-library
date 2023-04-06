@@ -2,6 +2,9 @@ package view;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import business.exceptions.ElementoJaExisteException;
+import business.exceptions.ElementoNaoEncontradoException;
 import business.service.ObraService;
 import business.service.PessoaService;
 
@@ -29,9 +32,10 @@ public class TesteMain {
                         System.out.println("Digite o comando:\n\n1.Cadastrar Livro\n2.Cadastrar Artigo Cientifico\n3.Cadastrar Usuário\n4.Cadastrar Autor\n5.Realizar Emprestimo\n6.Devolver Obra\n7.voltar");
                         int a1= sc.nextInt();
                         switch (a1)
-                        {
-                            case 1:
-
+                        { 
+                       
+                            case 1:                       
+                            		 
                                 System.out.println("(Castrar Livro)\n");
                                 sc.nextLine();
 
@@ -58,12 +62,20 @@ public class TesteMain {
 
                                 System.out.printf("Digite o genero literario:");
                                 String valor117=sc.nextLine();
-
+                                     
+                                try {
+                                
                                 System.out.println(obra.cadastrarLivro(valor111, valor112, valor113, valor114, valor115, data, valor116,valor117));
-
+                                  
+                                }catch (ElementoJaExisteException e) {
+									
+                                 System.out.println(e.getMessage());
+                                 
+								}
                                 break;
-
+                                                       
                             case 2:
+                            	
                                 System.out.println("(Castrar Atigo Ciêntifico)\n");
                                 sc.nextLine();
 
@@ -93,11 +105,19 @@ public class TesteMain {
 
                                 System.out.printf("Resuma o atigo em algumas palavras:");
                                 String valor128=sc.nextLine();
-
+                         
+                                try {
+                                
                                 System.out.println(obra.cadastrarArtigoCientifico(valor126, valor121, valor122, valor123, valor124, data2, valor125,valor127,valor128));
+                                
+                                }catch (ElementoJaExisteException e) {
+									
+                                    System.out.println(e.getMessage());
+   								}
                                 break;
 
                             case 3:
+                            	
                                 System.out.println("(Cadastrar usuário)\n");
                                 sc.nextLine();
 
@@ -131,10 +151,21 @@ public class TesteMain {
                                 {
                                     resultado= false;
                                 }
+                               
+                                try {
+                                	                             
                                 System.out.println(usuario.cadastrarUsuario(valor131, valor132, data3, valor133, valor134, valor135, resultado));
-
+                                 
+                                }catch (ElementoJaExisteException e) {
+									
+                                    System.out.println(e.getMessage());
+                                    
+   								}
+                                
                                 break;
+                                
                             case 4:
+                            	
                                 System.out.println("(Cadastrar autor)\n");
                                 sc.nextLine();
 
@@ -146,21 +177,27 @@ public class TesteMain {
 
                                 System.out.printf("Digite a nacionalidade do autor:");
                                 String valor143=sc.nextLine();
-
-                                System.out.printf("Digite o cpf:");
-                                String valor144=sc.nextLine();
-
+                               
                                 System.out.printf("Digite sua data de nascimento (YYYY-MM-DD): ");
                                 LocalDate data4 = LocalDate.parse(sc.nextLine());
 
                                 System.out.printf("Digite o enderço:");
                                 String valor145=sc.nextLine();
 
-                                System.out.println(usuario.cadastrarAutor(valor141, valor142, valor143,valor144,data4,valor145));
+                                try {
+                                	
+                                	System.out.println(usuario.cadastrarAutor(valor141, data4, valor145, valor142, valor143));
 
+                                }catch (ElementoJaExisteException e) {
+							
+                                 System.out.println(e.getMessage());
+                                 
+							    }
+                                
                                 break;
 
                             case 5:
+                            	
                                 System.out.println("(Realizar emprestimo)\n");
                                 sc.nextLine();
 
@@ -173,8 +210,15 @@ public class TesteMain {
                                 System.out.printf("Digite o nome do usuario Que Realizou:");
                                 String valor153=sc.nextLine();
 
+                                try {
+                                
                                 System.out.println(usuario.emprestrarObra(valor151, valor152, valor153));
 
+                                }catch (ElementoNaoEncontradoException e) {
+									
+                                  System.out.println(e.getMessage());
+   								}
+                                
                                 break;
 
                             case 6:
@@ -187,8 +231,16 @@ public class TesteMain {
                                 System.out.printf("Digite o nome da obra:");
                                 String valor162=sc.next();
 
+                                try {
+                                
                                 System.out.println(usuario.devolverLivro(valor161,valor162));
 
+                                }catch (ElementoNaoEncontradoException e) {
+									
+                                    System.out.println(e.getMessage());
+                                    
+     							}
+                                
                                 break;
                         }
                         break;
@@ -206,8 +258,17 @@ public class TesteMain {
 
                                 System.out.printf("Digite o nome da Obra:");
                                 String valor211 = sc.nextLine();
+                                
+                                try {
+                                
                                 System.out.println(obra.excluirObra(valor211));
 
+                                }catch (ElementoNaoEncontradoException e) {
+									
+                                    System.out.println(e.getMessage());
+     							
+                                }
+                                
                                 break;
 
                             case 2:
@@ -216,8 +277,16 @@ public class TesteMain {
 
                                 System.out.printf("Digite o id do usuario:");
                                 String valor222 = sc.nextLine();
+                                
+                                try {
+                                
                                 System.out.println(usuario.removerUsuario(valor222));
-
+ 
+                                }catch (ElementoNaoEncontradoException e) {
+									
+                                    System.out.println(e.getMessage());
+                                    
+     							}
                                 break;
                         }
                         break;
@@ -235,8 +304,16 @@ public class TesteMain {
                                 System.out.printf("Digite o nome da obra:");
                                 String valor311 = sc.nextLine();
 
+                                try { 
+                                
                                 System.out.println(obra.buscarObra(valor311));
 
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                	System.out.println(e.getMessage());
+                                	
+								}
+                                
                                 break;
 
                             case 2:
@@ -280,8 +357,16 @@ public class TesteMain {
 
                                 System.out.println("Obras do autor: "+valor361+"\n");
 
+                                try {
+                                
                                 System.out.println(usuario.buscarObraPorAutor(valor361));
 
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                	System.out.println(e.getMessage());
+                                	
+								}
+                                
                                 break;
 
                             case 7:
@@ -307,8 +392,16 @@ public class TesteMain {
                                 System.out.printf("Digite o id do usuário:");
                                 String valor391=sc.nextLine();
 
+                                try { 
+                                
                                 System.out.println(usuario.buscarEmprestimosDoUsuario(valor391));
+ 
+                                }catch (ElementoNaoEncontradoException e) {
 
+                                	System.out.println(e.getMessage());
+                                	
+								}
+                                
                                 break;
                         }
                         break;
@@ -332,16 +425,41 @@ public class TesteMain {
 
                                 if(valor412==1)
                                 {
+                                	try {
+                                	
                                     System.out.println(usuario.bloquearUsuario(valor411));
+                                    
+                                	}catch (ElementoNaoEncontradoException e) {
+
+                                    	System.out.println(e.getMessage());
+                                    	
+    								}
                                 }
                                 else if(valor412==2)
                                 {
+                                	try {
+                                	
                                     System.out.println(usuario.advertirUsuario(valor411));
+                                    
+                                	}catch (ElementoNaoEncontradoException e) {
+
+                                    	System.out.println(e.getMessage());
+                                    	
+    								}
                                 }
                                 else if(valor412==3)
                                 {
+                                	try {
+                                	
                                     System.out.println(usuario.liberarUsuario(valor411));
+                                    
+                                	}catch (ElementoNaoEncontradoException e) {
+
+                                    	System.out.println(e.getMessage());
+                                    	
+    								}
                                 }
+                                
                                 break;
 
                             case 2:
@@ -355,7 +473,15 @@ public class TesteMain {
                                 System.out.printf("Digite seu novo endereço:");
                                 String valor422=sc.nextLine();
                                 
+                                try {
+                                
                                 System.out.println(usuario.atualizarEmderecoDoUsuario(valor421, valor422));
+                                
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                	System.out.println(e.getMessage());
+                                	
+								}
                                 
                                 break;
                                 
@@ -376,8 +502,16 @@ public class TesteMain {
                                 System.out.printf("Digite sua nova senha:");
                                 String valor434=sc.nextLine();
 
+                                try {
+                                
                                 System.out.println(usuario.atualizarLoginESenhaDoUsuario(valor431, valor432, valor433, valor434)); 
                                
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                	System.out.println(e.getMessage());
+                                	
+								}
+                                
                                 break;
                                 
                             case 4:
@@ -402,7 +536,15 @@ public class TesteMain {
                                   resultado= false;
                                 }
                                 
+                                try {
+                                
                                 System.out.println(usuario.atualizarStatusAdiminUsuario(valor441, resultado));                     
+                                
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                	System.out.println(e.getMessage());
+                                	
+								}
                                 
                                 break;
                                 
@@ -417,7 +559,15 @@ public class TesteMain {
                                 System.out.printf("Digite o novo titulo:");
                                 String valor452=sc.nextLine();
                                 
+                                try { 
+                                
                                 System.out.println(obra.atualizarTituloDaObra(valor451, valor452));
+                                
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                	System.out.println(e.getMessage());
+                                	
+								}
                                 
                                 break;
                                 
@@ -432,7 +582,15 @@ public class TesteMain {
                                 System.out.printf("Digite a nova editora:");
                                 String valor462=sc.nextLine();
                                 
+                                try {
+                                
                                 System.out.println(obra.atualizarEditoraDaObra(valor461, valor462));
+                                
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                	System.out.println(e.getMessage());
+                                	
+								}
                                 
                                 break;
                                 
@@ -447,7 +605,15 @@ public class TesteMain {
                                  System.out.printf("Digite o nova número total de paginas:");
                                  int valor472=sc.nextInt();
                                  
+                                 try {
+                                 
                                  System.out.println(obra.atualizarNumeroDePaginasDaObra(valor471, valor472));
+                                 
+                                 }catch (ElementoNaoEncontradoException e) {
+
+                                 	System.out.println(e.getMessage());
+                                 	
+ 								}
                                  
                                  break;
                                  
@@ -462,7 +628,15 @@ public class TesteMain {
                                   System.out.printf("Digite a nova quantidade total disponível:");
                                   int valor482=sc.nextInt();
                                   
+                                  try {
+                                  
                                   System.out.println(obra.atualizarQuantidadeDisponivelDaObra(valor481, valor482));
+                                  
+                                  }catch (ElementoNaoEncontradoException e) {
+
+                                  	System.out.println(e.getMessage());
+                                  	
+  								}
                                   
                                   break;
                                   
@@ -477,7 +651,15 @@ public class TesteMain {
                                    System.out.printf("Digite o nova idioma da obra:");
                                    String valor492=sc.nextLine();
                                    
+                                   try {
+                                   
                                    System.out.println(obra.atualizarIdiomaDaObra(valor491, valor492));
+                                   
+                                   }catch (ElementoNaoEncontradoException e) {
+
+                                   	System.out.println(e.getMessage());
+                                   	
+   								   }
                                    
                                    break;
                         }

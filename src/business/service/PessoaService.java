@@ -6,6 +6,8 @@ import business.entities.Autor;
 import business.entities.Emprestimo;
 import business.entities.ObraImpressa;
 import business.entities.Pessoa;
+import business.exceptions.ElementoJaExisteException;
+import business.exceptions.ElementoNaoEncontradoException;
 
 	public class PessoaService {
 
@@ -26,14 +28,14 @@ import business.entities.Pessoa;
 
 	    //Usuário//
 	    
-	    public boolean cadastrarUsuario(String nome, String cpf, LocalDate idade, String endereco, String login, String password, boolean isAdmin) {
+	    public boolean cadastrarUsuario(String nome, String cpf, LocalDate idade, String endereco, String login, String password, boolean isAdmin)throws ElementoJaExisteException {
 	    
 
 	    boolean sucesso =uService.adicionarUsuario(nome,cpf,idade,endereco,login,password,isAdmin);
 
 	    return sucesso;
 	    }
-	    public boolean bloquearUsuario(String Usuario) {
+	    public boolean bloquearUsuario(String Usuario) throws ElementoNaoEncontradoException {
     	    
 		    
 	        boolean sucesso = uService.bUsuario(Usuario);
@@ -41,7 +43,7 @@ import business.entities.Pessoa;
 	        return sucesso;
 	        
 	    }
-	    public boolean liberarUsuario(String Usuario) {
+	    public boolean liberarUsuario(String Usuario) throws ElementoNaoEncontradoException {
     	    
 		    
 	        boolean sucesso = uService.libUsuario(Usuario);
@@ -49,14 +51,14 @@ import business.entities.Pessoa;
 	        return sucesso;
 	    }
 	    
-	    public boolean advertirUsuario(String Usuario) {
+	    public boolean advertirUsuario(String Usuario) throws ElementoNaoEncontradoException {
 	      
 	        boolean sucesso = uService.advirUsuario(Usuario);
 
 	        return sucesso;
 	    }
 
-	    public boolean removerUsuario(String id) {
+	    public boolean removerUsuario(String id) throws ElementoNaoEncontradoException {
 	            
 	       boolean sucesso = uService.rUsuario(id);
 	        
@@ -69,7 +71,7 @@ import business.entities.Pessoa;
             return usuarios;
         }
 
-        public boolean atualizarEmderecoDoUsuario (String id,String novoEmdereco) {
+        public boolean atualizarEmderecoDoUsuario (String id,String novoEmdereco) throws ElementoNaoEncontradoException {
          
       	
         boolean sucesso = uService.atualizarUEmdereco(id, novoEmdereco);
@@ -77,33 +79,28 @@ import business.entities.Pessoa;
         return sucesso;
          
       	}
-        public boolean atualizarLoginESenhaDoUsuario (String login, String password,String novoLogin, String novoPassword) {
-            
-        	
+        public boolean atualizarLoginESenhaDoUsuario (String login, String password,String novoLogin, String novoPassword) throws ElementoNaoEncontradoException {
+                    	
         boolean sucesso = uService.atualizarULoginESenha(login, password, novoLogin, novoPassword);
         
         return sucesso;
         
         }
         
-        public boolean atualizarStatusAdiminUsuario (String cpf, boolean isAdmin) {
-            
-          
+        public boolean atualizarStatusAdiminUsuario (String cpf, boolean isAdmin) throws ElementoNaoEncontradoException {                     
             	
-         boolean sucesso= uService.atualizarUAdimin(cpf, isAdmin);
-            	               		                        	 
+         boolean sucesso= uService.atualizarUAdimin(cpf, isAdmin);           	               		                        	 
                
          return sucesso;
                
         }
-
-   
+  
 	    //Autor//
 	    
-	    public boolean cadastrarAutor(String nome,String pseudonimo,String nacionalidade,String cpf, LocalDate idade, String endereco) {
+	    public boolean cadastrarAutor(String nome, LocalDate idade, String endereco, String pseudonimo,String nacionalidade) throws ElementoJaExisteException {
 	    
 
-	    boolean sucesso =uService.adicionarAutor(nome,pseudonimo,nacionalidade,cpf,idade,endereco);
+	    boolean sucesso =uService.adicionarAutor(nome, idade, endereco, pseudonimo, nacionalidade);
 
 	    return sucesso;
 	    }
@@ -116,7 +113,7 @@ import business.entities.Pessoa;
 	        }
 	                                         
 	        
-	    public List<ObraImpressa> buscarObraPorAutor(String obrasAutor) {
+	    public List<ObraImpressa> buscarObraPorAutor(String obrasAutor) throws ElementoNaoEncontradoException {
 	        	
          	 List<ObraImpressa> bOPA = uService.bObraPorAutor(obrasAutor);
 	            
@@ -125,7 +122,7 @@ import business.entities.Pessoa;
 
 	    //Empréstimo//
 	    
-	    public String emprestrarObra(String numeroDeCadastro,String itemEmprestado, String usuarioQueRealizou) {
+	    public String emprestrarObra(String numeroDeCadastro,String itemEmprestado, String usuarioQueRealizou) throws ElementoNaoEncontradoException {
 	    	
 	   
 	        String obra = uService.emprestarL(numeroDeCadastro,itemEmprestado,usuarioQueRealizou);
@@ -133,7 +130,7 @@ import business.entities.Pessoa;
 	        return obra;
 	    }
 	    
-        public String devolverLivro(String Usuario,String Obra) {
+        public String devolverLivro(String Usuario,String Obra) throws ElementoNaoEncontradoException {
 	    	
 	        String obra = uService.devolverL(Usuario,Obra);
 	          
@@ -161,7 +158,7 @@ import business.entities.Pessoa;
               
               return emprestimos;
           }
-        public  List<Emprestimo> buscarEmprestimosDoUsuario(String nomeOuNdc) {
+        public  List<Emprestimo> buscarEmprestimosDoUsuario(String nomeOuNdc) throws ElementoNaoEncontradoException {
         	
         	 List<Emprestimo> emprestimos = uService.empDoUsuario(nomeOuNdc);
              
