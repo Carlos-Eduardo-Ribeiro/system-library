@@ -116,11 +116,6 @@ public class PessoaService {
 		this.uService.iniciarContador();
 	}
 
-	public Usuario loginDoUsuario(String login, String Senha) throws ElementoNaoEncontradoException {
-		Usuario usuario = this.uService.loginUsuario(login, Senha);
-		return usuario;
-	}
-
 	public UsuarioService getuService() {
 		return this.uService;
 	}

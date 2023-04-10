@@ -272,4 +272,12 @@ public class UsuarioService {
 
 		throw new ElementoNaoEncontradoException(login);
 	}
+
+	public Usuario getUsuarioAtivo() {
+		return usuarioAtivo;
+	}
+
+	public void setUsuarioAtivo(Usuario usuarioAtivo) {
+		this.usuarioAtivo = usuarioAtivo;
+	}
 }

@@ -26,7 +26,6 @@ public class ControladorTelaDeLogin {
     void TesteDeLogin(ActionEvent event) {
         try {
             Usuario a = PessoaService.getInstance().getuService().loginUsuario(this.login.getText(), this.password.getText());
-            System.out.println("Conta E");
             if (a.isAdmin()) {
                 limparCampos();
                 MainAplication.mudarTela("telaDoAdministrador");

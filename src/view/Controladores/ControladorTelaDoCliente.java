@@ -1,8 +1,21 @@
 package view.Controladores;
 
+import business.entities.Emprestimo;
+import business.entities.Pessoa;
+import business.exceptions.ElementoNaoEncontradoException;
+import business.service.PessoaService;
+import business.service.UsuarioService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import view.MainAplication;
+
+import java.util.List;
 
 public class ControladorTelaDoCliente {
 
@@ -12,8 +25,26 @@ public class ControladorTelaDoCliente {
     }
 
     @FXML
-    void TelaDoHistoricoDeEmprestimo(ActionEvent event) {
-        MainAplication.mudarTela("telaDoHistoricoDeEmprestimoUsuario");
+    void TelaDoHistoricoDeEmprestimo(ActionEvent event) throws ElementoNaoEncontradoException {
+
+        List<Emprestimo> listaDeEmprestimo = PessoaService.getInstance().buscarEmprestimosDoUsuario(PessoaService.getInstance().getuService().getUsuarioAtivo().getNumeroDeCadastro());
+
+        ObservableList<Emprestimo> items = FXCollections.observableArrayList(listaDeEmprestimo);
+
+        // Cria o ListView e configura com a lista de itens
+        ListView<Emprestimo> listView = new ListView<Emprestimo>(items);
+
+        // Cria o layout e adiciona o ListView
+        VBox root = new VBox();
+        root.getChildren().add(listView);
+
+        // Cria a cena e adiciona o layout
+        Scene scene = new Scene(root, 200, 200);
+
+        // Cria a janela e define a cena
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
