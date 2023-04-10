@@ -1,8 +1,7 @@
 package business.entities;
 import java.time.LocalDate;
-import business.enums.Status;
 
-	public class Emprestimo {
+public class Emprestimo {
 		
 	    private LocalDate dataDeEmprestimo;
 	    private LocalDate dataDeEntrega;

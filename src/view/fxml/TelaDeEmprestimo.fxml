@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeEmprestimo">
+   <children>
+      <TextField fx:id="nDeCadastro" layoutX="272.0" layoutY="167.0" />
+      <TextField fx:id="itemEmprestado" layoutX="272.0" layoutY="207.0" />
+      <Button layoutX="260.0" layoutY="300.0" mnemonicParsing="false" onAction="#addEmprestimo" text="Button" />
+      <Label layoutX="151.0" layoutY="171.0" text="Número de Cadastro:" />
+      <Label layoutX="151.0" layoutY="211.0" text="Item Emprestado:" />
+      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+   </children>
+</AnchorPane>

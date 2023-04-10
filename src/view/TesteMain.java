@@ -23,7 +23,7 @@ public class TesteMain {
         do {
             try {
 
-                System.out.printf("\nDigite o comando:\n\n1.CADASTRAR\n2.EXECLUIR\n3.PROCURAR\n4.UPDATE\n");
+                System.out.printf("\nDigite o comando:\n\n1.CADASTRAR\n2.EXCLUIR\n3.PROCURAR\n4.UPDATE\n");
                 int v = sc.nextInt();
                 sc.nextLine();
                 switch (v) {
@@ -32,10 +32,10 @@ public class TesteMain {
                         System.out.println("Digite o comando:\n\n1.Cadastrar Livro\n2.Cadastrar Artigo Cientifico\n3.Cadastrar Usuário\n4.Cadastrar Autor\n5.Realizar Emprestimo\n6.Devolver Obra\n7.voltar");
                         int a1= sc.nextInt();
                         switch (a1)
-                        { 
-                       
-                            case 1:                       
-                            		 
+                        {
+
+                            case 1:
+
                                 System.out.println("(Castrar Livro)\n");
                                 sc.nextLine();
 
@@ -62,21 +62,21 @@ public class TesteMain {
 
                                 System.out.printf("Digite o genero literario:");
                                 String valor117=sc.nextLine();
-                                     
+
                                 try {
-                                
-                                System.out.println(obra.cadastrarLivro(valor111, valor112, valor113, valor114, valor115, data, valor116,valor117));
-                                  
+
+                                    System.out.println(obra.cadastrarLivro(valor111, valor112, valor113, valor114, valor115, data, valor116,valor117));
+
                                 }catch (ElementoJaExisteException e) {
-									
-                                 System.out.println(e.getMessage());
-                                 
-								}
+
+                                    System.out.println(e.getMessage());
+
+                                }
                                 break;
-                                                       
+
                             case 2:
-                            	
-                                System.out.println("(Castrar Atigo Ciêntifico)\n");
+
+                                System.out.println("(Cadastrar Atigo Ciêntifico)\n");
                                 sc.nextLine();
 
                                 System.out.printf("Digite o nome do autor:");
@@ -105,19 +105,19 @@ public class TesteMain {
 
                                 System.out.printf("Resuma o atigo em algumas palavras:");
                                 String valor128=sc.nextLine();
-                         
+
                                 try {
-                                
-                                System.out.println(obra.cadastrarArtigoCientifico(valor126, valor121, valor122, valor123, valor124, data2, valor125,valor127,valor128));
-                                
+
+                                    System.out.println(obra.cadastrarArtigoCientifico(valor126, valor121, valor122, valor123, valor124, data2, valor125,valor127,valor128));
+
                                 }catch (ElementoJaExisteException e) {
-									
+
                                     System.out.println(e.getMessage());
-   								}
+                                }
                                 break;
 
                             case 3:
-                            	
+
                                 System.out.println("(Cadastrar usuário)\n");
                                 sc.nextLine();
 
@@ -151,21 +151,21 @@ public class TesteMain {
                                 {
                                     resultado= false;
                                 }
-                               
+
                                 try {
-                                	                             
-                                System.out.println(usuario.cadastrarUsuario(valor131, valor132, data3, valor133, valor134, valor135, resultado));
-                                 
+
+                                    System.out.println(usuario.cadastrarUsuario(valor131, valor132, data3, valor133, valor134, valor135, resultado));
+
                                 }catch (ElementoJaExisteException e) {
-									
+
                                     System.out.println(e.getMessage());
-                                    
-   								}
-                                
+
+                                }
+
                                 break;
-                                
+
                             case 4:
-                            	
+
                                 System.out.println("(Cadastrar autor)\n");
                                 sc.nextLine();
 
@@ -177,7 +177,7 @@ public class TesteMain {
 
                                 System.out.printf("Digite a nacionalidade do autor:");
                                 String valor143=sc.nextLine();
-                               
+
                                 System.out.printf("Digite sua data de nascimento (YYYY-MM-DD): ");
                                 LocalDate data4 = LocalDate.parse(sc.nextLine());
 
@@ -185,20 +185,20 @@ public class TesteMain {
                                 String valor145=sc.nextLine();
 
                                 try {
-                                	
-                                	System.out.println(usuario.cadastrarAutor(valor141, data4, valor145, valor142, valor143));
+
+                                    System.out.println(usuario.cadastrarAutor(valor141, data4, valor145, valor142, valor143));
 
                                 }catch (ElementoJaExisteException e) {
-							
-                                 System.out.println(e.getMessage());
-                                 
-							    }
-                                
+
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
 
                             case 5:
-                            	
-                                System.out.println("(Realizar emprestimo)\n");
+
+                                System.out.println("(Realizar empréstimo)\n");
                                 sc.nextLine();
 
                                 System.out.printf("Digite o número de cadastro:");
@@ -207,18 +207,15 @@ public class TesteMain {
                                 System.out.printf("Digite o nome do itemEmprestado:");
                                 String valor152=sc.nextLine();
 
-                                System.out.printf("Digite o nome do usuario Que Realizou:");
-                                String valor153=sc.nextLine();
-
                                 try {
-                                
-                                System.out.println(usuario.emprestrarObra(valor151, valor152, valor153));
+
+                                    System.out.println(usuario.emprestrarObra(valor151, valor152));
 
                                 }catch (ElementoNaoEncontradoException e) {
-									
-                                  System.out.println(e.getMessage());
-   								}
-                                
+
+                                    System.out.println(e.getMessage());
+                                }
+
                                 break;
 
                             case 6:
@@ -232,15 +229,15 @@ public class TesteMain {
                                 String valor162=sc.next();
 
                                 try {
-                                
-                                System.out.println(usuario.devolverLivro(valor161,valor162));
+
+                                    System.out.println(usuario.devolverLivro(valor161,valor162));
 
                                 }catch (ElementoNaoEncontradoException e) {
-									
+
                                     System.out.println(e.getMessage());
-                                    
-     							}
-                                
+
+                                }
+
                                 break;
                         }
                         break;
@@ -258,17 +255,17 @@ public class TesteMain {
 
                                 System.out.printf("Digite o nome da Obra:");
                                 String valor211 = sc.nextLine();
-                                
+
                                 try {
-                                
-                                System.out.println(obra.excluirObra(valor211));
+
+                                    System.out.println(obra.excluirObra(valor211));
 
                                 }catch (ElementoNaoEncontradoException e) {
-									
+
                                     System.out.println(e.getMessage());
-     							
+
                                 }
-                                
+
                                 break;
 
                             case 2:
@@ -277,16 +274,16 @@ public class TesteMain {
 
                                 System.out.printf("Digite o id do usuario:");
                                 String valor222 = sc.nextLine();
-                                
+
                                 try {
-                                
-                                System.out.println(usuario.removerUsuario(valor222));
- 
+
+                                    System.out.println(usuario.removerUsuario(valor222));
+
                                 }catch (ElementoNaoEncontradoException e) {
-									
+
                                     System.out.println(e.getMessage());
-                                    
-     							}
+
+                                }
                                 break;
                         }
                         break;
@@ -304,16 +301,16 @@ public class TesteMain {
                                 System.out.printf("Digite o nome da obra:");
                                 String valor311 = sc.nextLine();
 
-                                try { 
-                                
-                                System.out.println(obra.buscarObra(valor311));
+                                try {
+
+                                    System.out.println(obra.buscarObra(valor311));
 
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
 
                             case 2:
@@ -358,15 +355,15 @@ public class TesteMain {
                                 System.out.println("Obras do autor: "+valor361+"\n");
 
                                 try {
-                                
-                                System.out.println(usuario.buscarObraPorAutor(valor361));
+
+                                    System.out.println(usuario.buscarObraPorAutor(valor361));
 
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
 
                             case 7:
@@ -376,7 +373,7 @@ public class TesteMain {
                                 System.out.println(usuario.historicoDeEmprestimos());
 
                                 break;
-                                
+
                             case 8:
                                 System.out.println("(Emprestimos atrasados)\n");
                                 sc.nextLine();
@@ -384,24 +381,24 @@ public class TesteMain {
                                 System.out.println(usuario.emprestimosAtrazados());
 
                                 break;
-                                
+
                             case 9:
                                 System.out.println("(Buscar Emprestimos Usuario)\n");
                                 sc.nextLine();
-                                
+
                                 System.out.printf("Digite o id do usuário:");
                                 String valor391=sc.nextLine();
 
-                                try { 
-                                
-                                System.out.println(usuario.buscarEmprestimosDoUsuario(valor391));
- 
+                                try {
+
+                                    System.out.println(usuario.buscarEmprestimosDoUsuario(valor391));
+
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
                         }
                         break;
@@ -412,7 +409,7 @@ public class TesteMain {
                         int a4= sc.nextInt();
                         switch (a4)
                         {
-                            
+
                             case 1:
                                 System.out.println("(Atualizar Status Do Usuário)\n");
                                 sc.nextLine();
@@ -425,45 +422,45 @@ public class TesteMain {
 
                                 if(valor412==1)
                                 {
-                                	try {
-                                	
-                                    System.out.println(usuario.bloquearUsuario(valor411));
-                                    
-                                	}catch (ElementoNaoEncontradoException e) {
+                                    try {
 
-                                    	System.out.println(e.getMessage());
-                                    	
-    								}
+                                        System.out.println(usuario.bloquearUsuario(valor411));
+
+                                    }catch (ElementoNaoEncontradoException e) {
+
+                                        System.out.println(e.getMessage());
+
+                                    }
                                 }
                                 else if(valor412==2)
                                 {
-                                	try {
-                                	
-                                    System.out.println(usuario.advertirUsuario(valor411));
-                                    
-                                	}catch (ElementoNaoEncontradoException e) {
+                                    try {
 
-                                    	System.out.println(e.getMessage());
-                                    	
-    								}
+                                        System.out.println(usuario.advertirUsuario(valor411));
+
+                                    }catch (ElementoNaoEncontradoException e) {
+
+                                        System.out.println(e.getMessage());
+
+                                    }
                                 }
                                 else if(valor412==3)
                                 {
-                                	try {
-                                	
-                                    System.out.println(usuario.liberarUsuario(valor411));
-                                    
-                                	}catch (ElementoNaoEncontradoException e) {
+                                    try {
 
-                                    	System.out.println(e.getMessage());
-                                    	
-    								}
+                                        System.out.println(usuario.liberarUsuario(valor411));
+
+                                    }catch (ElementoNaoEncontradoException e) {
+
+                                        System.out.println(e.getMessage());
+
+                                    }
                                 }
-                                
+
                                 break;
 
                             case 2:
-                            	
+
                                 System.out.println("(Atualizar Endereço Do Usuário)\n");
                                 sc.nextLine();
 
@@ -472,30 +469,30 @@ public class TesteMain {
 
                                 System.out.printf("Digite seu novo endereço:");
                                 String valor422=sc.nextLine();
-                                
+
                                 try {
-                                
-                                System.out.println(usuario.atualizarEmderecoDoUsuario(valor421, valor422));
-                                
+
+                                    System.out.println(usuario.atualizarEmderecoDoUsuario(valor421, valor422));
+
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
-                                
-                            case 3: 
-                            	
-                            	System.out.println("(Atualizar Login e Senha )\n");
-                                sc.nextLine();                            	                          	
+
+                            case 3:
+
+                                System.out.println("(Atualizar Login e Senha )\n");
+                                sc.nextLine();
 
                                 System.out.printf("Digite seu atual login:");
                                 String valor431=sc.nextLine();
-                                
+
                                 System.out.printf("Digite sua atual senha:");
                                 String valor432=sc.nextLine();
-                                
+
                                 System.out.printf("Digite seu novo login:");
                                 String valor433=sc.nextLine();
 
@@ -503,165 +500,165 @@ public class TesteMain {
                                 String valor434=sc.nextLine();
 
                                 try {
-                                
-                                System.out.println(usuario.atualizarLoginESenhaDoUsuario(valor431, valor432, valor433, valor434)); 
-                               
+
+                                    System.out.println(usuario.atualizarLoginESenhaDoUsuario(valor431, valor432, valor433, valor434));
+
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
-                                
+
                             case 4:
-                            	
-                            	System.out.println("(Atualizar Status de Admin)\n");
-                                sc.nextLine();                                                            
-                                
+
+                                System.out.println("(Atualizar Status de Admin)\n");
+                                sc.nextLine();
+
                                 System.out.printf("Digite seu id:");
                                 String valor441=sc.nextLine();
-                                
+
                                 System.out.printf("É um adiministrador:\n1.sim\n2.não\n");
                                 int valor442=sc.nextInt();
 
                                 boolean resultado= false;
-                                
+
                                 if(valor442==1)
                                 {
-                                  resultado= true;
+                                    resultado= true;
                                 }
                                 else if(valor442==2)
                                 {
-                                  resultado= false;
+                                    resultado= false;
                                 }
-                                
+
                                 try {
-                                
-                                System.out.println(usuario.atualizarStatusAdiminUsuario(valor441, resultado));                     
-                                
+
+                                    System.out.println(usuario.atualizarStatusAdiminUsuario(valor441, resultado));
+
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
-                                
+
                             case 5:
-                            	
-                            	System.out.println("(Atualizar Titulo Da Obra )\n");
-                                sc.nextLine();                            	                          	
+
+                                System.out.println("(Atualizar Titulo Da Obra )\n");
+                                sc.nextLine();
 
                                 System.out.printf("Digite o titulo atual atual:");
                                 String valor451=sc.nextLine();
-                                
+
                                 System.out.printf("Digite o novo titulo:");
                                 String valor452=sc.nextLine();
-                                
-                                try { 
-                                
-                                System.out.println(obra.atualizarTituloDaObra(valor451, valor452));
-                                
+
+                                try {
+
+                                    System.out.println(obra.atualizarTituloDaObra(valor451, valor452));
+
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
-                                
-                             case 6:
-                            	
-                            	System.out.println("(Atualizar Editora Da Obra)\n");
-                                sc.nextLine();                            	                          	
+
+                            case 6:
+
+                                System.out.println("(Atualizar Editora Da Obra)\n");
+                                sc.nextLine();
 
                                 System.out.printf("Digite o titulo da obra:");
                                 String valor461=sc.nextLine();
-                                
+
                                 System.out.printf("Digite a nova editora:");
                                 String valor462=sc.nextLine();
-                                
+
                                 try {
-                                
-                                System.out.println(obra.atualizarEditoraDaObra(valor461, valor462));
-                                
+
+                                    System.out.println(obra.atualizarEditoraDaObra(valor461, valor462));
+
                                 }catch (ElementoNaoEncontradoException e) {
 
-                                	System.out.println(e.getMessage());
-                                	
-								}
-                                
+                                    System.out.println(e.getMessage());
+
+                                }
+
                                 break;
-                                
-                             case 7:
-                             	
-                             	System.out.println("(Atualizar Número De Paginas Da Obra)\n");
-                                 sc.nextLine();                            	                          	
 
-                                 System.out.printf("Digite o titulo da obra:");
-                                 String valor471=sc.nextLine();
-                                 
-                                 System.out.printf("Digite o nova número total de paginas:");
-                                 int valor472=sc.nextInt();
-                                 
-                                 try {
-                                 
-                                 System.out.println(obra.atualizarNumeroDePaginasDaObra(valor471, valor472));
-                                 
-                                 }catch (ElementoNaoEncontradoException e) {
+                            case 7:
 
-                                 	System.out.println(e.getMessage());
-                                 	
- 								}
-                                 
-                                 break;
-                                 
-                             case 8:
-                              	
-                              	System.out.println("(Atualizar Quantidade Disponível Da Obra)\n");
-                                  sc.nextLine();                            	                          	
+                                System.out.println("(Atualizar Número De Paginas Da Obra)\n");
+                                sc.nextLine();
 
-                                  System.out.printf("Digite o titulo da obra:");
-                                  String valor481=sc.nextLine();
-                                  
-                                  System.out.printf("Digite a nova quantidade total disponível:");
-                                  int valor482=sc.nextInt();
-                                  
-                                  try {
-                                  
-                                  System.out.println(obra.atualizarQuantidadeDisponivelDaObra(valor481, valor482));
-                                  
-                                  }catch (ElementoNaoEncontradoException e) {
+                                System.out.printf("Digite o titulo da obra:");
+                                String valor471=sc.nextLine();
 
-                                  	System.out.println(e.getMessage());
-                                  	
-  								}
-                                  
-                                  break;
-                                  
-                             case 9:
-                               	
-                               	System.out.println("(Atualizar Idioma Da Obra)\n");
-                                   sc.nextLine();                            	                          	
+                                System.out.printf("Digite o nova número total de paginas:");
+                                int valor472=sc.nextInt();
 
-                                   System.out.printf("Digite o titulo da obra:");
-                                   String valor491=sc.nextLine();
-                                   
-                                   System.out.printf("Digite o nova idioma da obra:");
-                                   String valor492=sc.nextLine();
-                                   
-                                   try {
-                                   
-                                   System.out.println(obra.atualizarIdiomaDaObra(valor491, valor492));
-                                   
-                                   }catch (ElementoNaoEncontradoException e) {
+                                try {
 
-                                   	System.out.println(e.getMessage());
-                                   	
-   								   }
-                                   
-                                   break;
+                                    System.out.println(obra.atualizarNumeroDePaginasDaObra(valor471, valor472));
+
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                    System.out.println(e.getMessage());
+
+                                }
+
+                                break;
+
+                            case 8:
+
+                                System.out.println("(Atualizar Quantidade Disponível Da Obra)\n");
+                                sc.nextLine();
+
+                                System.out.printf("Digite o titulo da obra:");
+                                String valor481=sc.nextLine();
+
+                                System.out.printf("Digite a nova quantidade total disponível:");
+                                int valor482=sc.nextInt();
+
+                                try {
+
+                                    System.out.println(obra.atualizarQuantidadeDisponivelDaObra(valor481, valor482));
+
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                    System.out.println(e.getMessage());
+
+                                }
+
+                                break;
+
+                            case 9:
+
+                                System.out.println("(Atualizar Idioma Da Obra)\n");
+                                sc.nextLine();
+
+                                System.out.printf("Digite o titulo da obra:");
+                                String valor491=sc.nextLine();
+
+                                System.out.printf("Digite o nova idioma da obra:");
+                                String valor492=sc.nextLine();
+
+                                try {
+
+                                    System.out.println(obra.atualizarIdiomaDaObra(valor491, valor492));
+
+                                }catch (ElementoNaoEncontradoException e) {
+
+                                    System.out.println(e.getMessage());
+
+                                }
+
+                                break;
                         }
                         break;
                 }

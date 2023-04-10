@@ -1,14 +1,14 @@
 package business.repositories;
 
-import java.util.ArrayList;
-import java.util.List;
+import business.entities.Autor;
 import business.entities.Pessoa;
 import business.entities.Usuario;
 import business.enums.Status;
-import business.entities.Autor;
-import business.entities.ObraImpressa;
 
-	public class RepositorioDeUsuarios implements IRepositories<Pessoa> {
+import java.util.ArrayList;
+import java.util.List;
+
+public class RepositorioDeUsuarios implements IRepositories<Pessoa> {
 		
 		private static RepositorioDeUsuarios instance;
 		

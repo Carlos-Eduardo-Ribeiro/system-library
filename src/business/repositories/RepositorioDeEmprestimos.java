@@ -1,15 +1,15 @@
 package business.repositories;
 
+import business.entities.Emprestimo;
+import business.entities.Usuario;
+import business.enums.Status;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-import business.entities.Emprestimo;
-import business.entities.Usuario;
-import business.enums.Status;
 
 public class RepositorioDeEmprestimos implements IRepositories<Emprestimo> {
 	

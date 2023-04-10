@@ -1,10 +1,10 @@
 package business.entities;
 
+import business.enums.Status;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
-import business.enums.Status;
 
     public class Usuario extends Pessoa {
     	

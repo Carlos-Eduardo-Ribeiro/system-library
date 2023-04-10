@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoCrudObra">
+   <children>
+      <DatePicker fx:id="anoDePub" layoutX="154.0" layoutY="212.0" />
+      <Label layoutX="44.0" layoutY="46.0" prefHeight="26.0" prefWidth="39.0" text="Título" />
+      <Label layoutX="44.0" layoutY="80.0" prefHeight="26.0" prefWidth="39.0" text="Autor" />
+      <Label layoutX="44.0" layoutY="113.0" prefHeight="26.0" prefWidth="68.0" text="Quantidade" />
+      <Label layoutX="44.0" layoutY="146.0" prefHeight="26.0" prefWidth="110.0" text="Número De Páginas" />
+      <Label layoutX="44.0" layoutY="179.0" prefHeight="26.0" prefWidth="39.0" text="Idioma" />
+      <Label layoutX="44.0" layoutY="212.0" prefHeight="26.0" prefWidth="102.0" text="Ano De Publicação" />
+      <Label layoutX="44.0" layoutY="245.0" prefHeight="26.0" prefWidth="39.0" text="Editora" />
+      <Label layoutX="44.0" layoutY="278.0" prefHeight="26.0" prefWidth="39.0" text="Gênero" />
+      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <TextField fx:id="titulo" layoutX="154.0" layoutY="46.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="autor" layoutX="154.0" layoutY="80.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="qtd" layoutX="154.0" layoutY="113.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="nDePag" layoutX="154.0" layoutY="146.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="idioma" layoutX="154.0" layoutY="179.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="editora" layoutX="154.0" layoutY="245.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="genero" layoutX="154.0" layoutY="281.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="274.0" layoutY="331.0" mnemonicParsing="false" onAction="#addObra" text="Button" />
+   </children>
+</AnchorPane>
