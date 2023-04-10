@@ -12,9 +12,9 @@ import java.time.LocalDate;
 
 public class ControladorTelaDoCrudObra {
     @FXML
-    private DatePicker anoDePub;
-    @FXML
     private TextField autor;
+    @FXML
+    private DatePicker anoDePub;
     @FXML
     private TextField editora;
     @FXML

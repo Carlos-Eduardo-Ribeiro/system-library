@@ -22,5 +22,6 @@ public class ControladorTelaDoCrudObraAutor {
 
     @FXML
     void CrudArtigo(ActionEvent event) {
+        MainAplication.mudarTela("telaDoCrudArtigo");
     }
 }

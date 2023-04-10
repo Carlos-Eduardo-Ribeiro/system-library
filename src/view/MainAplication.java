@@ -32,6 +32,7 @@ public class MainAplication extends Application {
     private static Scene telaDeProcurarObraAutorUsuario;
     private static Scene telaDoCrudObra;
     private static Scene telaDoCrudAutor;
+    private static Scene telaDoCrudArtigo;
 
     public void start(Stage stagePrimary) throws IOException {
         stage = stagePrimary;
@@ -84,6 +85,9 @@ public class MainAplication extends Application {
         Parent fxmlTelaDoCrudAutor = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDoCrudAutor.fxml")));
         telaDoCrudAutor = new Scene(fxmlTelaDoCrudAutor, 600.0, 400.0);
 
+        Parent fxmlTelaDoCrudArtigo = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDoCrudArtigo.fxml")));
+        telaDoCrudArtigo = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+
         stage.setScene(telaDeLogin);
         stage.show();
     }
@@ -106,6 +110,7 @@ public class MainAplication extends Application {
             case "telaDeProcurarObraAutorUsuario" -> stage.setScene(telaDeProcurarObraAutorUsuario);
             case "telaDoCrudObra" -> stage.setScene(telaDoCrudObra);
             case "telaDoCrudAutor" -> stage.setScene(telaDoCrudAutor);
+            case "telaDoCrudArtigo" -> stage.setScene(telaDoCrudArtigo);
         }
     }
 
