@@ -32,7 +32,7 @@ public class ControladorTelaDoCrudAutor {
     @FXML
     void addAutor(ActionEvent event) throws ElementoJaExisteException {
         this.autor.adicionarAutor(nome.getText(), data.getValue(), endereco.getText(), pseudonimo.getText(),
-                pseudonimo.getText());
+                nacionalidade.getText());
         System.out.println("Autor Cadastrado");
         MainAplication.mudarTela("telaDoCrudObraAutor");
     }

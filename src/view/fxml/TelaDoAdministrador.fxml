@@ -12,5 +12,6 @@
         <Button layoutX="57.0" layoutY="229.0" mnemonicParsing="false" onAction="#telaDeProcurarObraAutor" prefHeight="26.0" prefWidth="152.0" text="Procurar Obra/Autor" />
         <Button layoutX="56.0" layoutY="274.0" mnemonicParsing="false" onAction="#telaDaListaDeUsuarios" prefHeight="26.0" prefWidth="152.0" text="Lista de usuários" />
         <Button layoutX="412.0" layoutY="99.0" mnemonicParsing="false" onAction="#telaDoCrudObraAutor" prefHeight="26.0" prefWidth="152.0" text="CRUD obra/autor" />
+      <Button layoutX="412.0" layoutY="142.0" mnemonicParsing="false" onAction="#admUsuario" prefHeight="26.0" prefWidth="152.0" text="Administrar Usuário" />
     </children>
 </AnchorPane>

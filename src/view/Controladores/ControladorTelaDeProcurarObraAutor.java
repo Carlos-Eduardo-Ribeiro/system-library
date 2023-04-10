@@ -11,7 +11,7 @@ public class ControladorTelaDeProcurarObraAutor {
 
     @FXML
     void pesquisar(ActionEvent event) {
-
+        String a = nomeObraAutor.getText();
     }
 
     @FXML

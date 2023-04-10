@@ -85,4 +85,9 @@ public class ControladorTelaDoAdministrador {
     void telaDeLogin(ActionEvent event) {
         MainAplication.mudarTela("telaDeLogin");
     }
+
+    @FXML
+    void admUsuario(ActionEvent event) {
+        MainAplication.mudarTela("telaAdministrarUsuario");
+    }
 }
