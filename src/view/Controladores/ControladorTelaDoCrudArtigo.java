@@ -46,12 +46,12 @@ public class ControladorTelaDoCrudArtigo {
         this.artigo.cadastrarArtigoCientifico(autor.getText(), titulo.getText(), qtdInt, nDePagInt, idioma.getText(),
         dataDePub.getValue(), editora.getText(), referencia.getText(), resumo.getText());
         System.out.println("Artigo cadastrado");
-        MainAplication.mudarTela("telaDoAdministrador");
+        MainAplication.mudarTela("telaDoCrudObraAutor");
     }
 
     @FXML
     void voltar(ActionEvent event) {
-        MainAplication.mudarTela("telaDoAdministrador");
+        MainAplication.mudarTela("telaDoCrudObraAutor");
     }
 
 }
