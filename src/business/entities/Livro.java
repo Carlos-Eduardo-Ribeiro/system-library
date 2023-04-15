@@ -21,8 +21,6 @@ public class Livro extends ObraImpressa {
         this.generoLiterario = generoLiterario;
     }
 
-    
-    
     @Override
     public String toString() {
     return "\n(Livro)\n\n" +

@@ -8,7 +8,7 @@ public class ControladorTelaDeAdmObras {
 
     @FXML
     void atuaObra(ActionEvent event) {
-
+        MainAplication.mudarTela("telaDeAtualizarObra");
     }
 
     @FXML

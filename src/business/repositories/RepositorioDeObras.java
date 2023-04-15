@@ -57,6 +57,7 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
         }
         return null;
     }
+
     public List<ObraImpressa> buscarObrasDoAutor(String id) {
 	    List<ObraImpressa> obrasDoAutor = new ArrayList<>();
 	    for (ObraImpressa obra : obras) {

@@ -39,12 +39,12 @@ public class MainAplication extends Application {
     private static Scene telaDeRemoverObra;
     private static Scene telaDeRemoverAutor;
     private static Scene telaDeRemoverArtigoCientifico;
-//    private static Scene;
-//    private static Scene;
-//    private static Scene;
-//    private static Scene;
-//    private static Scene;
-//    private static Scene;
+    private static Scene telaDeAtualizarObra;
+    private static Scene telaDeAtualizarObraPaginas;
+    private static Scene telaDeAtualizarObraTitulo;
+    private static Scene telaDeAtualizarObraIdioma;
+    private static Scene telaDeAtualizarObraQuantidade;
+    private static Scene telaDeAtualizarObraEditora;
 //    private static Scene;
 //    private static Scene;
 //    private static Scene;
@@ -126,18 +126,24 @@ public class MainAplication extends Application {
         Parent fxmlTelaDeRemoverArtigoCientifico = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeRemoverArtigoCientifico.fxml")));
         telaDeRemoverArtigoCientifico = new Scene(fxmlTelaDeRemoverArtigoCientifico, 600.0, 400.0);
 
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+        Parent fxmlTelaDeAtualizarObra = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarObra.fxml")));
+        telaDeAtualizarObra = new Scene(fxmlTelaDeAtualizarObra , 600.0, 400.0);
+
+//        Parent fxmlTelaDeAtualizarObraEditora = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarObraEditora.fxml")));
+//        telaDeAtualizarObraEditora = new Scene(fxmlTelaDeAtualizarObraEditora, 600.0, 400.0);
+//
+//        Parent fxmlTelaDeAtualizarObraTitulo = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarObraTitulo.fxml")));
+//        telaDeAtualizarObraTitulo = new Scene(fxmlTelaDeAtualizarObraTitulo, 600.0, 400.0);
+//
+//        Parent fxmlTelaDeAtualizarObraQuantidade = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarObraQuantidade.fxml")));
+//        telaDeAtualizarObraQuantidade = new Scene(fxmlTelaDeAtualizarObraQuantidade, 600.0, 400.0);
+//
+//        Parent fxmlTelaDeAtualizarObraIdioma = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarObraIdioma.fxml")));
+//        telaDeAtualizarObraIdioma = new Scene(fxmlTelaDeAtualizarObraIdioma, 600.0, 400.0);
+//
+//        Parent fxmlTelaDeAtualizarObraPaginas = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarObraPaginas.fxml")));
+//        telaDeAtualizarObraPaginas = new Scene(fxmlTelaDeAtualizarObraPaginas, 600.0, 400.0);
+//
 //        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
 //         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
 //        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
@@ -184,12 +190,12 @@ public class MainAplication extends Application {
             case "telaDeRemoverAutor" -> stage.setScene(telaDeRemoverAutor);
             case "telaDeRemoverObra" -> stage.setScene(telaDeRemoverObra);
             case "telaDeRemoverArtigoCientifico" -> stage.setScene(telaDeRemoverArtigoCientifico);
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
+            case "telaDeAtualizarObra" -> stage.setScene(telaDeAtualizarObra);
+//            case "telaDeAtualizarObraTitulo" -> stage.setScene(telaDeAtualizarObraTitulo);
+//            case "telaDeAtualizarObraPaginas" -> stage.setScene(telaDeAtualizarObraPaginas);
+//            case "telaDeAtualizarObraEditora" -> stage.setScene(telaDeAtualizarObraEditora);
+//            case "telaDeAtualizarObraIdioma" -> stage.setScene(telaDeAtualizarObraIdioma);
+//            case "telaDeAtualizarObraQuantidade" -> stage.setScene(telaDeAtualizarObraQuantidade);
 //            case "" -> stage.setScene();
 //            case "" -> stage.setScene();
 //            case "" -> stage.setScene();
@@ -210,6 +216,7 @@ public class MainAplication extends Application {
     public static void main(String[] args) throws ElementoJaExisteException {
         UsuarioService a = PessoaService.getInstance().getuService();
         a.adicionarUsuario("Administrador", "", LocalDate.parse("2000-01-01"), "", "admin", "admin", true);
+
         launch();
     }
 }
