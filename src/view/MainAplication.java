@@ -33,6 +33,26 @@ public class MainAplication extends Application {
     private static Scene telaDoCrudObra;
     private static Scene telaDoCrudAutor;
     private static Scene telaDoCrudArtigo;
+    private static Scene telaDeAdmArtigoCientifico;
+    private static Scene telaDeAdmAutor;
+    private static Scene telaDeAdmObras;
+    private static Scene telaDeRemoverObra;
+    private static Scene telaDeRemoverAutor;
+    private static Scene telaDeRemoverArtigoCientifico;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
+//    private static Scene;
 
     public void start(Stage stagePrimary) throws IOException {
         stage = stagePrimary;
@@ -88,6 +108,53 @@ public class MainAplication extends Application {
         Parent fxmlTelaDoCrudArtigo = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDoCrudArtigo.fxml")));
         telaDoCrudArtigo = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
 
+        Parent fxmlTelaDeAdmObras = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAdmObras.fxml")));
+        telaDeAdmObras = new Scene(fxmlTelaDeAdmObras, 600.0, 400.0);
+
+        Parent fxmlTelaDeAdmAutor = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAdmAutor.fxml")));
+        telaDeAdmAutor = new Scene(fxmlTelaDeAdmAutor, 600.0, 400.0);
+
+        Parent fxmlTelaDeAdmArtigoCientifico = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAdmArtigoCientifico.fxml")));
+        telaDeAdmArtigoCientifico = new Scene(fxmlTelaDeAdmArtigoCientifico, 600.0, 400.0);
+
+        Parent  fxmlTelaDeRemoverAutor= FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeRemoverAutor.fxml")));
+        telaDeRemoverAutor= new Scene(fxmlTelaDeRemoverAutor, 600.0, 400.0);
+
+        Parent fxmlTelaDeRemoverObra = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeRemoverObra.fxml")));
+        telaDeRemoverObra = new Scene(fxmlTelaDeRemoverObra, 600.0, 400.0);
+
+        Parent fxmlTelaDeRemoverArtigoCientifico = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeRemoverArtigoCientifico.fxml")));
+        telaDeRemoverArtigoCientifico = new Scene(fxmlTelaDeRemoverArtigoCientifico, 600.0, 400.0);
+
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
+//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
+
         stage.setScene(telaDeLogin);
         stage.show();
     }
@@ -111,6 +178,28 @@ public class MainAplication extends Application {
             case "telaDoCrudObra" -> stage.setScene(telaDoCrudObra);
             case "telaDoCrudAutor" -> stage.setScene(telaDoCrudAutor);
             case "telaDoCrudArtigo" -> stage.setScene(telaDoCrudArtigo);
+            case "telaDeAdmAutor" -> stage.setScene(telaDeAdmAutor);
+            case "telaDeAdmObras" -> stage.setScene(telaDeAdmObras);
+            case "telaDeAdmArtCien" -> stage.setScene(telaDeAdmArtigoCientifico);
+            case "telaDeRemoverAutor" -> stage.setScene(telaDeRemoverAutor);
+            case "telaDeRemoverObra" -> stage.setScene(telaDeRemoverObra);
+            case "telaDeRemoverArtigoCientifico" -> stage.setScene(telaDeRemoverArtigoCientifico);
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
+//            case "" -> stage.setScene();
         }
     }
 

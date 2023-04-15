@@ -49,6 +49,7 @@ public class ObraService {
 
         return sucesso;
     }
+
     public ObraImpressa buscarObra(String obra) throws ElementoNaoEncontradoException {
         
         ObraImpressa sucesso = bService.buscarO(obra);

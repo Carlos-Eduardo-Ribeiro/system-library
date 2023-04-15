@@ -34,12 +34,12 @@ public class ControladorTelaDoCrudAutor {
         this.autor.adicionarAutor(nome.getText(), data.getValue(), endereco.getText(), pseudonimo.getText(),
                 nacionalidade.getText());
         System.out.println("Autor Cadastrado");
-        MainAplication.mudarTela("telaDoCrudObraAutor");
+        MainAplication.mudarTela("telaDeAdmAutor");
     }
 
     @FXML
     void voltar(ActionEvent event) {
-        MainAplication.mudarTela("telaDoCrudObraAutor");
+        MainAplication.mudarTela("telaDeAdmAutor");
     }
 
 }

@@ -14,9 +14,6 @@ public class ControladorTelaDeDevolverLivro {
     private TextField nDeCadastro;
     private PessoaService devolverObra = PessoaService.getInstance();
 
-    public ControladorTelaDeDevolverLivro() {
-    }
-
     @FXML
     void devolverLivro(ActionEvent event) {
         try {
@@ -26,7 +23,6 @@ public class ControladorTelaDeDevolverLivro {
         } catch (ElementoNaoEncontradoException e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     @FXML

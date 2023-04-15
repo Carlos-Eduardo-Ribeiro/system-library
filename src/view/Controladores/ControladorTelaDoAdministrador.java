@@ -3,6 +3,7 @@ package view.Controladores;
 import business.entities.Emprestimo;
 import business.entities.Pessoa;
 import business.service.PessoaService;
+import com.sun.tools.javac.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -89,5 +90,20 @@ public class ControladorTelaDoAdministrador {
     @FXML
     void admUsuario(ActionEvent event) {
         MainAplication.mudarTela("telaAdministrarUsuario");
+    }
+
+    @FXML
+    void admArtCien(ActionEvent event) {
+        MainAplication.mudarTela("telaDeAdmArtCien");
+    }
+
+    @FXML
+    void admAutor(ActionEvent event) {
+        MainAplication.mudarTela("telaDeAdmAutor");
+    }
+
+    @FXML
+    void admObra(ActionEvent event) {
+        MainAplication.mudarTela("telaDeAdmObras");
     }
 }

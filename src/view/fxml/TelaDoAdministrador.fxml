@@ -6,12 +6,15 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoAdministrador">
     <children>
         <Button layoutX="536.0" layoutY="355.0" mnemonicParsing="false" onAction="#telaDeLogin" text="Sair" />
-        <Button layoutX="56.0" layoutY="99.0" mnemonicParsing="false" onAction="#telaDeDevolverLivro" prefHeight="26.0" prefWidth="152.0" text="Devolver Livro" />
-        <Button layoutX="56.0" layoutY="142.0" mnemonicParsing="false" onAction="#telaDeEmprestimo" prefHeight="26.0" prefWidth="152.0" text="Realizar Empréstimo" />
-        <Button layoutX="57.0" layoutY="186.0" mnemonicParsing="false" onAction="#telaDoHistoricoDeEmprestimos" text="Histórico de empréstimos" />
-        <Button layoutX="57.0" layoutY="229.0" mnemonicParsing="false" onAction="#telaDeProcurarObraAutor" prefHeight="26.0" prefWidth="152.0" text="Procurar Obra/Autor" />
-        <Button layoutX="56.0" layoutY="274.0" mnemonicParsing="false" onAction="#telaDaListaDeUsuarios" prefHeight="26.0" prefWidth="152.0" text="Lista de usuários" />
-        <Button layoutX="412.0" layoutY="99.0" mnemonicParsing="false" onAction="#telaDoCrudObraAutor" prefHeight="26.0" prefWidth="152.0" text="CRUD obra/autor" />
-      <Button layoutX="412.0" layoutY="142.0" mnemonicParsing="false" onAction="#admUsuario" prefHeight="26.0" prefWidth="152.0" text="Administrar Usuário" />
+        <Button layoutX="56.0" layoutY="99.0" mnemonicParsing="false" onAction="#telaDeDevolverLivro" prefHeight="26.0" prefWidth="178.0" text="Devolver Livro" />
+        <Button layoutX="56.0" layoutY="142.0" mnemonicParsing="false" onAction="#telaDeEmprestimo" prefHeight="26.0" prefWidth="178.0" text="Realizar Empréstimo" />
+        <Button layoutX="57.0" layoutY="186.0" mnemonicParsing="false" onAction="#telaDoHistoricoDeEmprestimos" prefHeight="26.0" prefWidth="178.0" text="Histórico de empréstimos" />
+        <Button layoutX="57.0" layoutY="229.0" mnemonicParsing="false" onAction="#telaDeProcurarObraAutor" prefHeight="26.0" prefWidth="178.0" text="Procurar Obra/Autor" />
+        <Button layoutX="56.0" layoutY="274.0" mnemonicParsing="false" onAction="#telaDaListaDeUsuarios" prefHeight="26.0" prefWidth="178.0" text="Lista de usuários" />
+        <Button layoutX="211.0" layoutY="25.0" mnemonicParsing="false" onAction="#telaDoCrudObraAutor" prefHeight="26.0" prefWidth="178.0" text="CRUD obra/autor" />
+      <Button layoutX="389.0" layoutY="231.0" mnemonicParsing="false" onAction="#admUsuario" prefHeight="26.0" prefWidth="178.0" text="Administrar Usuário" />
+      <Button layoutX="389.0" layoutY="99.0" mnemonicParsing="false" onAction="#admObra" prefHeight="26.0" prefWidth="178.0" text="Administrar Obras" />
+      <Button layoutX="389.0" layoutY="143.0" mnemonicParsing="false" onAction="#admAutor" prefHeight="26.0" prefWidth="178.0" text="Administrar Autor" />
+      <Button layoutX="389.0" layoutY="187.0" mnemonicParsing="false" onAction="#admArtCien" prefHeight="26.0" prefWidth="178.0" text="Administrar Artigos Cientifícos" />
     </children>
 </AnchorPane>
