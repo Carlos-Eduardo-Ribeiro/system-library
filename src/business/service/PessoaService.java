@@ -57,8 +57,8 @@ public class PessoaService {
 		return sucesso;
 	}
 
-	public boolean atualizarLoginESenhaDoUsuario(String login, String password, String novoLogin, String novoPassword) throws ElementoNaoEncontradoException {
-		boolean sucesso = this.uService.atualizarULoginESenha(login, password, novoLogin, novoPassword);
+	public boolean atualizarSenhaDoUsuario(String login, String password, String novoPassword) throws ElementoNaoEncontradoException {
+		boolean sucesso = this.uService.atualizarUSenha(login, password, novoPassword);
 		return sucesso;
 	}
 
@@ -119,6 +119,14 @@ public class PessoaService {
 	public UsuarioService getuService() {
 		return this.uService;
 	}
+
+	public Usuario buscarUsuario(String obra) throws ElementoNaoEncontradoException {
+
+		Usuario sucesso = uService.buscarU(obra);
+
+		return sucesso;
+	}
+
 }
 
 		

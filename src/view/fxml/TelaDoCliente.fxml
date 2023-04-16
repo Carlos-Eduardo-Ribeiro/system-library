@@ -6,7 +6,8 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoCliente">
    <children>
       <Button layoutX="531.0" layoutY="354.0" mnemonicParsing="false" onAction="#Sair" prefHeight="28.0" prefWidth="54.0" text="Sair" />
-      <Button layoutX="86.0" layoutY="134.0" mnemonicParsing="false" onAction="#TelaDoHistoricoDeEmprestimo" text="Histórico de empréstimos" />
+      <Button layoutX="86.0" layoutY="123.0" mnemonicParsing="false" onAction="#TelaDoHistoricoDeEmprestimo" prefHeight="30.0" prefWidth="235.0" text="Histórico de empréstimos" />
       <Button layoutX="86.0" layoutY="185.0" mnemonicParsing="false" onAction="#TelaDePesquisaDoCliente" text="Pesquisa sobre autor, obra ou genêro" />
+      <Button layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#telaDeConfigurarUsuario" prefHeight="30.0" prefWidth="159.0" text="Configurar informações" />
    </children>
 </AnchorPane>

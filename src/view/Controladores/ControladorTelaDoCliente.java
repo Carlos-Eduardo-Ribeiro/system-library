@@ -1,10 +1,8 @@
 package view.Controladores;
 
 import business.entities.Emprestimo;
-import business.entities.Pessoa;
 import business.exceptions.ElementoNaoEncontradoException;
 import business.service.PessoaService;
-import business.service.UsuarioService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,8 +25,8 @@ public class ControladorTelaDoCliente {
     @FXML
     void TelaDoHistoricoDeEmprestimo(ActionEvent event) throws ElementoNaoEncontradoException {
 
-        List<Emprestimo> listaDeEmprestimo = PessoaService.getInstance().buscarEmprestimosDoUsuario(PessoaService.getInstance().getuService().getUsuarioAtivo().getNumeroDeCadastro());
-
+        List<Emprestimo> listaDeEmprestimo = PessoaService.getInstance().buscarEmprestimosDoUsuario(PessoaService.getInstance().
+                getuService().getUsuarioAtivo().getNumeroDeCadastro());
         ObservableList<Emprestimo> items = FXCollections.observableArrayList(listaDeEmprestimo);
 
         // Cria o ListView e configura com a lista de itens
@@ -45,6 +43,11 @@ public class ControladorTelaDoCliente {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    void telaDeConfigurarUsuario(ActionEvent event) {
+        MainAplication.mudarTela("telaDeConfigurarUsuario");
     }
 
     @FXML

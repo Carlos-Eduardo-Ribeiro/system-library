@@ -19,9 +19,6 @@ public class UsuarioService {
 	private Usuario usuarioAtivo;
 	private Status status;
 
-	public UsuarioService() {
-	}
-
 	public boolean adicionarUsuario(String nome, String cpf, LocalDate idade, String endereco, String login, String password, boolean isAdmin) throws ElementoJaExisteException {
 		if (this.repositorio.buscarPorNomes(cpf) != null) {
 			throw new ElementoJaExisteException(nome);
@@ -33,10 +30,10 @@ public class UsuarioService {
 			String numeroDeCadastro;
 			do {
 				Random gerador = new Random();
-				long valor = (long)(gerador.nextInt(10001) + 10000);
+				long valor = (long) (gerador.nextInt(10001) + 10000);
 				numeroDeCadastro = String.valueOf(valor);
-				aqui = (Usuario)this.repositorio.buscarPorNomes(numeroDeCadastro);
-			} while(aqui != null && numeroDeCadastro.equals(aqui.getNumeroDeCadastro()));
+				aqui = (Usuario) this.repositorio.buscarPorNomes(numeroDeCadastro);
+			} while (aqui != null && numeroDeCadastro.equals(aqui.getNumeroDeCadastro()));
 
 			Usuario usuario = new Usuario(nome, cpf, idade, endereco, login, password, atribuirStatusDeCadastro, numeroDeCadastro, isAdmin);
 			usuario.setNome(nome);
@@ -53,7 +50,7 @@ public class UsuarioService {
 	}
 
 	public boolean bUsuario(String idUsuario) throws ElementoNaoEncontradoException {
-		Usuario user = (Usuario)this.repositorio.buscarPorNomes(idUsuario);
+		Usuario user = (Usuario) this.repositorio.buscarPorNomes(idUsuario);
 		if (user != null) {
 			Status var10002 = this.status;
 			boolean sucesso = this.repositorio.updateStatus(idUsuario, Status.BLOCKED);
@@ -64,7 +61,7 @@ public class UsuarioService {
 	}
 
 	public boolean libUsuario(String idUsuario) throws ElementoNaoEncontradoException {
-		Usuario user = (Usuario)this.repositorio.buscarPorNomes(idUsuario);
+		Usuario user = (Usuario) this.repositorio.buscarPorNomes(idUsuario);
 		if (user != null) {
 			Status var10002 = this.status;
 			boolean sucesso = this.repositorio.updateStatus(idUsuario, Status.RELEASED);
@@ -75,7 +72,7 @@ public class UsuarioService {
 	}
 
 	public boolean advirUsuario(String idUsuario) throws ElementoNaoEncontradoException {
-		Usuario user = (Usuario)this.repositorio.buscarPorNomes(idUsuario);
+		Usuario user = (Usuario) this.repositorio.buscarPorNomes(idUsuario);
 		if (user != null) {
 			Status var10002 = this.status;
 			boolean sucesso = this.repositorio.updateStatus(idUsuario, Status.WARNED);
@@ -104,24 +101,22 @@ public class UsuarioService {
 		if (this.repositorio.buscarPorNomes(id) == null) {
 			throw new ElementoNaoEncontradoException(id);
 		} else {
-			Usuario usuario = (Usuario)this.repositorio.buscarPorNomes(id);
+			Usuario usuario = (Usuario) this.repositorio.buscarPorNomes(id);
 			usuario.setEndereco(novoEmdereco);
 			this.repositorio.update(usuario);
 			return true;
 		}
 	}
 
-	public boolean atualizarULoginESenha(String login, String password, String novoLogin, String novoPassword) throws ElementoNaoEncontradoException {
+	public boolean atualizarUSenha(String login, String password, String novoPassword) throws ElementoNaoEncontradoException {
 		Pessoa pessoa = this.repositorio.buscarPorNomes(login);
 		if (pessoa instanceof Usuario usuario) {
 			if (usuario.getPassword().equals(password)) {
-				usuario.setLogin(novoLogin);
 				usuario.setPassword(novoPassword);
 				this.repositorio.update(usuario);
 				return true;
 			}
 		}
-
 		throw new ElementoNaoEncontradoException(login);
 	}
 
@@ -129,7 +124,7 @@ public class UsuarioService {
 		if (this.repositorio.buscarPorNomes(id) == null) {
 			throw new ElementoNaoEncontradoException(id);
 		} else {
-			Usuario usuario = (Usuario)this.repositorio.buscarPorNomes(id);
+			Usuario usuario = (Usuario) this.repositorio.buscarPorNomes(id);
 			usuario.setAdmin(isAdmin);
 			this.repositorio.update(usuario);
 			return true;
@@ -166,10 +161,11 @@ public class UsuarioService {
 	}
 
 	public String emprestarL(String numeroDeCadastro, String itemEmprestado) throws ElementoNaoEncontradoException {
-		Usuario checarU = (Usuario)this.repositorio.buscarPorNomes(numeroDeCadastro);
+		Usuario checarU = (Usuario) this.repositorio.buscarPorNomes(numeroDeCadastro);
 		ObraImpressa checarO = this.obrasUser.buscarPorNomes(itemEmprestado);
 		if (checarU != null && checarO != null) {
-			label16: {
+			label16:
+			{
 				Status var10000;
 				Status var10001;
 				if (checarO.getQuantidade() >= 1) {
@@ -204,7 +200,7 @@ public class UsuarioService {
 	}
 
 	public String devolverL(String id, String Obra) throws ElementoNaoEncontradoException {
-		Usuario checarU = (Usuario)this.repositorio.buscarPorNomes(id);
+		Usuario checarU = (Usuario) this.repositorio.buscarPorNomes(id);
 		ObraImpressa checarO = this.obrasUser.buscarPorNomes(Obra);
 		if (checarU != null && checarO != null) {
 			LocalDate agora = LocalDate.now();
@@ -269,7 +265,6 @@ public class UsuarioService {
 				return usuario;
 			}
 		}
-
 		throw new ElementoNaoEncontradoException(login);
 	}
 
@@ -279,5 +274,14 @@ public class UsuarioService {
 
 	public void setUsuarioAtivo(Usuario usuarioAtivo) {
 		this.usuarioAtivo = usuarioAtivo;
+	}
+
+	public Usuario buscarU(String usuario) throws ElementoNaoEncontradoException {
+		if (repositorio.buscarPorNomes(usuario) == null) {
+			throw new ElementoNaoEncontradoException(usuario);
+		} else {
+			Usuario sucesso = (Usuario) repositorio.buscarPorNomes(usuario);
+			return sucesso;
+		}
 	}
 }

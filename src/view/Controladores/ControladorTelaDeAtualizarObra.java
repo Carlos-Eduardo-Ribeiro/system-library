@@ -33,7 +33,6 @@ public class ControladorTelaDeAtualizarObra {
 
     @FXML
     void procurarObra() {
-        System.out.println(nomeDaObra.getText());
         obra = RepositorioDeObras.getInstance().buscarPorNomes(nomeDaObra.getText());
         if(obra==null){
             editora.setText("");

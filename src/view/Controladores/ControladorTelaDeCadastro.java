@@ -1,6 +1,7 @@
 package view.Controladores;
 
 import business.exceptions.ElementoJaExisteException;
+import business.exceptions.ElementoNaoEncontradoException;
 import business.service.PessoaService;
 import business.service.UsuarioService;
 import javafx.event.ActionEvent;
@@ -27,12 +28,12 @@ public class ControladorTelaDeCadastro {
     private UsuarioService a = PessoaService.getInstance().getuService();
 
     @FXML
-    void CadastrarUsuario(ActionEvent event) throws ElementoJaExisteException {
+    void CadastrarUsuario(ActionEvent event) throws ElementoJaExisteException, ElementoNaoEncontradoException {
         try {
             this.a.adicionarUsuario(this.nomeDoUsuario.getText(), this.cpfDoUsuario.getText(),
                     dataDeNascimentoDoUsuario.getValue(), this.enderecoDoUsuario.getText(),
                     this.loginDoUsuario.getText(), this.senhaDoUsuario.getText(), false);
-            System.out.println("conta criada");
+            PessoaService.getInstance().getuService().loginUsuario(loginDoUsuario.getText(), senhaDoUsuario.getText());
             limparCampos();
             MainAplication.mudarTela("telaDoCliente");
         } catch (Exception e) {

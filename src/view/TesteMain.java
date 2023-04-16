@@ -493,15 +493,12 @@ public class TesteMain {
                                 System.out.printf("Digite sua atual senha:");
                                 String valor432=sc.nextLine();
 
-                                System.out.printf("Digite seu novo login:");
-                                String valor433=sc.nextLine();
-
                                 System.out.printf("Digite sua nova senha:");
                                 String valor434=sc.nextLine();
 
                                 try {
 
-                                    System.out.println(usuario.atualizarLoginESenhaDoUsuario(valor431, valor432, valor433, valor434));
+                                    System.out.println(usuario.atualizarSenhaDoUsuario(valor431, valor432, valor434));
 
                                 }catch (ElementoNaoEncontradoException e) {
 

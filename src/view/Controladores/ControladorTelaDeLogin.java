@@ -25,7 +25,7 @@ public class ControladorTelaDeLogin {
     @FXML
     void TesteDeLogin(ActionEvent event) {
         try {
-            Usuario a = PessoaService.getInstance().getuService().loginUsuario(this.login.getText(), this.password.getText());
+            Usuario a = PessoaService.getInstance().getuService().loginUsuario(login.getText(), password.getText());
             if (a.isAdmin()) {
                 limparCampos();
                 MainAplication.mudarTela("telaDoAdministrador");

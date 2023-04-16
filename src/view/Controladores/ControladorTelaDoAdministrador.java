@@ -58,7 +58,7 @@ public class ControladorTelaDoAdministrador {
 
     @FXML
     void telaDoCrudObraAutor(ActionEvent event) {
-        MainAplication.mudarTela("telaDoCrudObraAutor");
+        MainAplication.mudarTela("telaDeAtualizarUsuario");
     }
 
     @FXML

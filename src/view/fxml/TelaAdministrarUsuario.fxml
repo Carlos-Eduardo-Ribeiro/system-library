@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaAdministrarUsuario">
    <children>
       <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-      <Button layoutX="54.0" layoutY="129.0" mnemonicParsing="false" onAction="#atualizarUsuario" prefHeight="26.0" prefWidth="178.0" text="Atualizar Usuário" />
+      <Label layoutX="208.0" layoutY="86.0" prefHeight="26.0" prefWidth="172.0" text="Número de cadastro do usuário" />
+      <TextField fx:id="idDoUsuario" layoutX="143.0" layoutY="132.0" onKeyTyped="#procurarUsuario" prefHeight="26.0" prefWidth="286.0" />
+      <CheckBox fx:id="myCheckBox" layoutX="317.0" layoutY="225.0" mnemonicParsing="false" onAction="#administrador" prefHeight="18.0" prefWidth="7.0" />
+      <Label layoutX="239.0" layoutY="226.0" prefHeight="18.0" prefWidth="78.0" text="Administrador" />
+      <ChoiceBox fx:id="statusDoUsuario" layoutX="211.0" layoutY="174.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeConfigurarUsuario">
+   <children>
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" prefHeight="21.0" prefWidth="48.0" text="Voltar" />
+      <Label layoutX="87.0" layoutY="131.0" />
+      <TextField fx:id="senha" layoutX="88.0" layoutY="149.0" prefHeight="26.0" prefWidth="215.0" />
+      <TextField fx:id="endereco" layoutX="88.0" layoutY="201.0" prefHeight="26.0" prefWidth="215.0" />
+      <Button layoutX="395.0" layoutY="149.0" mnemonicParsing="false" onAction="#atuaSenha" prefHeight="26.0" prefWidth="150.0" text="Atualizar senha" />
+      <Button layoutX="395.0" layoutY="201.0" mnemonicParsing="false" onAction="#atuaEndereco" prefHeight="26.0" prefWidth="150.0" text="Atualizar endereço" />
+   </children>
+</AnchorPane>
