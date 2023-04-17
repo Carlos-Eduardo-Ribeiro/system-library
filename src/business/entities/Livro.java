@@ -23,15 +23,18 @@ public class Livro extends ObraImpressa {
 
     @Override
     public String toString() {
-    return "\n(Livro)\n\n" +
-    "-Autor:" + getAutor() + "\n" +
-    "-Título:" + getTitulo() + "\n" +
-    "-Gêneroliterário:" + generoLiterario + "\n" +
-    "-Quantidade:" + getQuantidade() + "\n" +
-    "-Número de páginas:" + getNumeroDePaginas() + "\n" +
-    "-Idioma:" + getIdioma() + "\n" +
-    "-Ano de publicação:" + getAnoDePublicacao() + "\n" +
-    "-Editora:" + getEditora() + "\n" ;
+    return
+//            "\n(Livro)\n\n" +
+//    "-Autor:" +
+                    getAutor() ;
+//                    + "\n" +
+//    "-Título:" + getTitulo() + "\n" +
+//    "-Gêneroliterário:" + generoLiterario + "\n" +
+//    "-Quantidade:" + getQuantidade() + "\n" +
+//    "-Número de páginas:" + getNumeroDePaginas() + "\n" +
+//    "-Idioma:" + getIdioma() + "\n" +
+//    "-Ano de publicação:" + getAnoDePublicacao() + "\n" +
+//    "-Editora:" + getEditora() + "\n" ;
     
     } 
 }

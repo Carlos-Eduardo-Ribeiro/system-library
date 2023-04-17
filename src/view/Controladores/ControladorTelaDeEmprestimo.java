@@ -20,6 +20,8 @@ public class ControladorTelaDeEmprestimo {
         try {
             this.usuario.emprestrarObra(this.nDeCadastro.getText(), this.itemEmprestado.getText());
             MainAplication.mudarTela("telaDoAdministrador");
+            itemEmprestado.setText("");
+            nDeCadastro.setText("");
             System.out.println("Livro Emprestado");
         } catch (ElementoNaoEncontradoException e) {
             System.out.println(e.getMessage());
@@ -29,6 +31,8 @@ public class ControladorTelaDeEmprestimo {
 
     @FXML
     void voltar(ActionEvent event) {
+        itemEmprestado.setText("");
+        nDeCadastro.setText("");
         MainAplication.mudarTela("telaDoAdministrador");
     }
 }

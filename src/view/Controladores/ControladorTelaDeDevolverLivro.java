@@ -8,11 +8,11 @@ import javafx.scene.control.TextField;
 import view.MainAplication;
 
 public class ControladorTelaDeDevolverLivro {
+
     @FXML
     private TextField itemEmprestado;
     @FXML
     private TextField nDeCadastro;
-
     private PessoaService devolverObra = PessoaService.getInstance();
 
     @FXML
@@ -20,6 +20,8 @@ public class ControladorTelaDeDevolverLivro {
         try {
             this.devolverObra.devolverLivro(this.nDeCadastro.getText(), this.itemEmprestado.getText());
             MainAplication.mudarTela("telaDoAdministrador");
+            itemEmprestado.setText("");
+            nDeCadastro.setText("");
             System.out.println("Livro Devolvido");
         } catch (ElementoNaoEncontradoException e) {
             System.out.println(e.getMessage());
@@ -28,6 +30,8 @@ public class ControladorTelaDeDevolverLivro {
 
     @FXML
     void voltar(ActionEvent event) {
+        itemEmprestado.setText("");
+        nDeCadastro.setText("");
         MainAplication.mudarTela("telaDoAdministrador");
     }
 }

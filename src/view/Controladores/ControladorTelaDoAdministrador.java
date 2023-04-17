@@ -62,25 +62,35 @@ public class ControladorTelaDoAdministrador {
     }
 
     @FXML
-    void telaDoHistoricoDeEmprestimos(ActionEvent event) {
-
-        ObservableList<Emprestimo> items = FXCollections.observableArrayList(emprestimos);
-
-        // Cria o ListView e configura com a lista de itens
-        ListView<Emprestimo> listView = new ListView<Emprestimo>(items);
-
-        // Cria o layout e adiciona o ListView
-        VBox root = new VBox();
-        root.getChildren().add(listView);
-
-        // Cria a cena e adiciona o layout
-        Scene scene = new Scene(root, 200, 200);
-
-        // Cria a janela e define a cena
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+    void telaDaListDeUsuarios(ActionEvent event) {
+        MainAplication.mudarTela("telaDaListaDeUsuarios");
     }
+
+    @FXML
+    void telaHistDeEmprestimo(ActionEvent event) {
+        MainAplication.mudarTela("telaDoHistoricoDeEmprestimo");
+    }
+
+//    @FXML
+//    void telaDoHistoricoDeEmprestimos(ActionEvent event) {
+//
+//        ObservableList<Emprestimo> items = FXCollections.observableArrayList(emprestimos);
+//
+//        // Cria o ListView e configura com a lista de itens
+//        ListView<Emprestimo> listView = new ListView<Emprestimo>(items);
+//
+//        // Cria o layout e adiciona o ListView
+//        VBox root = new VBox();
+//        root.getChildren().add(listView);
+//
+//        // Cria a cena e adiciona o layout
+//        Scene scene = new Scene(root, 200, 200);
+//
+//        // Cria a janela e define a cena
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 
     @FXML
     void telaDeLogin(ActionEvent event) {

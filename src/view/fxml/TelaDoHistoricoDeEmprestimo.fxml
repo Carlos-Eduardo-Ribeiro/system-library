@@ -7,16 +7,19 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoHistoricoDeEmprestimo">
    <children>
-      <TableView layoutX="14.0" layoutY="30.0" onSort="#tabela" prefHeight="308.0" prefWidth="503.0">
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="267.0" layoutY="347.0" mnemonicParsing="false" onAction="#vizualisarLista" prefHeight="26.0" prefWidth="66.0" text="Vizualizar" />
+      <TableView fx:id="tableView" prefHeight="298.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="nome" prefWidth="75.0" text="Nome" />
-          <TableColumn fx:id="nDeCad" prefWidth="75.0" text="N° de Cadastro" />
-          <TableColumn fx:id="obraEmprestada" prefWidth="75.0" text="Obra" />
-          <TableColumn fx:id="dataDeEmp" prefWidth="75.0" text="D. de Emp." />
-          <TableColumn fx:id="dataDeDev" prefWidth="75.0" text="D. de Dev." />
-          <TableColumn fx:id="dataDeDevEfetiva" prefWidth="125.0" text="D. de D. Efetiva" />
+          <TableColumn fx:id="nDeCadastro" prefWidth="75.0" text="Cadastro" />
+            <TableColumn fx:id="nomeDaObra" prefWidth="75.0" text="Obra" />
+            <TableColumn fx:id="autor" prefWidth="75.0" text="Autor" />
+            <TableColumn fx:id="quantidade" prefWidth="75.0" text="Quantidade" />
+            <TableColumn fx:id="dataDeEmprestimo" prefWidth="75.0" text="Empréstimo" />
+            <TableColumn fx:id="detaDeDevolucao" prefWidth="75.0" text="Devolução" />
+            <TableColumn fx:id="dataDeEntrega" prefWidth="75.0" text="Entrega" />
         </columns>
       </TableView>
-      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" text="Button" />
    </children>
 </AnchorPane>

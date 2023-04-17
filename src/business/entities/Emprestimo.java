@@ -11,6 +11,7 @@ public class Emprestimo {
 	    private String numeroDeCadastro;
 	    private String itemEmprestadoo;
 
+
 	    public Emprestimo(String numeroDeCadastro,LocalDate dataDeEmprestimo, String itemEmprestadoo) {
 	        this.dataDeEmprestimo = dataDeEmprestimo;
 	        this.itemEmprestadoo = itemEmprestadoo;
@@ -59,7 +60,7 @@ public class Emprestimo {
 	    }		
 		
 		public String getNumeroDeCadastro() {
-			return numeroDeCadastro;
+			return numeroDeCadastro+"argel";
 		}
 
 		public void setNumeroDeCadastro(String numeroDeCadastro) {
@@ -75,15 +76,24 @@ public class Emprestimo {
 			this.itemEmprestadoo = itemEmprestadoo;
 		}
 
+		public int getQuantidade1(){
+			return itemEmprestado.getQuantidade();
+		}
+
+		public String getNome123(){
+			return usuarioQueRealizou.getNome();
+		}
+
 		@Override
 		public String toString() {
-		    return "(Emprestimo)\n\n" + 
+		    return
+					"(Emprestimo)\n\n" +
 		           "-dataDeEmprestimo=" + dataDeEmprestimo +"\n"+
 		           "-dataDeEntrega=" + dataDeEntrega +"\n"+
 		           "-dataDeDevolucaoEfetiva=" + dataDeDevolucaoEfetiva +"\n\n"+
 		           "(caracteristicas do item)"+"\n\n"+
 		           "-titulo da obra: "+itemEmprestado.getTitulo() +"\n"+
-		           "-autor: "+itemEmprestado.getAutor() +"\n"+
+		           "-autor: "+ itemEmprestado.getAutor() +"\n"+
 		           "-quntidade disponivel: "+itemEmprestado.getQuantidade() +"\n\n"+
 		           "(usuarioQueRealizou)\n\n"+
 		           "-nome do usuario: "+usuarioQueRealizou.getNome() +"\n"+

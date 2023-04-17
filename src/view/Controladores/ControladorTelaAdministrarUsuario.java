@@ -18,9 +18,6 @@ public class ControladorTelaAdministrarUsuario {
     ObservableList<String> status = FXCollections.observableArrayList("Released", "Warned", "Blocked");
 
     @FXML
-    private TextField endereco;
-
-    @FXML
     private TextField idDoUsuario;
 
     @FXML
@@ -46,7 +43,6 @@ public class ControladorTelaAdministrarUsuario {
             usuario = PessoaService.getInstance().buscarUsuario(idDoUsuario.getText());
             statusDoUsuario.setItems(status);
             if(usuario==null){
-                endereco.setText("");
                 idDoUsuario.setText("");
                 statusDoUsuario.setItems(status);
                 statusDoUsuario.setValue("Released");
@@ -88,10 +84,8 @@ public class ControladorTelaAdministrarUsuario {
 
     @FXML
     void voltar(ActionEvent event) {
-        statusDoUsuario.setValue("Release");
-        myCheckBox.setSelected(false);
-        statusDoUsuario.setItems(status);
         idDoUsuario.setText("");
+        myCheckBox.setSelected(false);
         MainAplication.mudarTela("telaDoAdministrador");
     }
 

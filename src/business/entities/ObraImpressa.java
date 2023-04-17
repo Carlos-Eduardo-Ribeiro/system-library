@@ -97,7 +97,8 @@ public class ObraImpressa {
 
 	@Override
 	public String toString() {
-	    return "(Obra Impressa)\n\n" + 
+	    return
+                "(Obra Impressa)\n\n" +
 	           "-titulo='" + titulo + '\'' +
 	           "-quantidade=" + quantidade +
 	           "-numeroDePaginas=" + numeroDePaginas +

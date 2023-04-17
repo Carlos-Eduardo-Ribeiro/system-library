@@ -3,6 +3,7 @@ package view.Controladores;
 import business.entities.Emprestimo;
 import business.exceptions.ElementoNaoEncontradoException;
 import business.service.PessoaService;
+import com.sun.tools.javac.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,27 +23,32 @@ public class ControladorTelaDoCliente {
         MainAplication.mudarTela("telaDeLogin");
     }
 
+//    @FXML
+//    void TelaDoHistoricoDeEmprestimo(ActionEvent event) throws ElementoNaoEncontradoException {
+//
+//        List<Emprestimo> listaDeEmprestimo = PessoaService.getInstance().buscarEmprestimosDoUsuario(PessoaService.getInstance().
+//                getuService().getUsuarioAtivo().getNumeroDeCadastro());
+//        ObservableList<Emprestimo> items = FXCollections.observableArrayList(listaDeEmprestimo);
+//
+//        // Cria o ListView e configura com a lista de itens
+//        ListView<Emprestimo> listView = new ListView<Emprestimo>(items);
+//
+//        // Cria o layout e adiciona o ListView
+//        VBox root = new VBox();
+//        root.getChildren().add(listView);
+//
+//        // Cria a cena e adiciona o layout
+//        Scene scene = new Scene(root, 200, 200);
+//
+//        // Cria a janela e define a cena
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
+//    }
+
     @FXML
-    void TelaDoHistoricoDeEmprestimo(ActionEvent event) throws ElementoNaoEncontradoException {
-
-        List<Emprestimo> listaDeEmprestimo = PessoaService.getInstance().buscarEmprestimosDoUsuario(PessoaService.getInstance().
-                getuService().getUsuarioAtivo().getNumeroDeCadastro());
-        ObservableList<Emprestimo> items = FXCollections.observableArrayList(listaDeEmprestimo);
-
-        // Cria o ListView e configura com a lista de itens
-        ListView<Emprestimo> listView = new ListView<Emprestimo>(items);
-
-        // Cria o layout e adiciona o ListView
-        VBox root = new VBox();
-        root.getChildren().add(listView);
-
-        // Cria a cena e adiciona o layout
-        Scene scene = new Scene(root, 200, 200);
-
-        // Cria a janela e define a cena
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+    void magicButton(ActionEvent event) {
+        MainAplication.mudarTela("telaDoHistoricoDeEmprestimoUsuario");
     }
 
     @FXML

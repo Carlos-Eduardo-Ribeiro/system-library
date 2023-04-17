@@ -27,7 +27,7 @@ import java.util.List;
      this.status = status;
      this.numeroDeCadastro = numeroDeCadastro;           
      this.isAdmin=isAdminn();
- }
+   }
 
 		public String getLogin() {
 			return login;
@@ -86,6 +86,14 @@ import java.util.List;
 			 
 			 return  true;
 		    }
+
+//			public int getQuantidade(){
+//				int a = 0;
+//				for(Emprestimo objeto : emprestimo){
+//					a++;
+//				}
+//				return a;
+//			}
 
 		@Override
 		public String toString() {

@@ -37,6 +37,14 @@ public class ControladorTelaDoCrudObra {
             int nDePagInt = Integer.parseInt(this.nDePag.getText());
             this.obra.cadastrarLivro(this.titulo.getText(), this.autor.getText(), qtdInt, nDePagInt, this.idioma.getText(), (LocalDate)this.anoDePub.getValue(), this.editora.getText(), this.genero.getText());
             System.out.println("Livro cadastrado");
+            autor.setText("");
+            anoDePub.setValue(null);
+            editora.setText("");
+            genero.setText("");
+            idioma.setText("");
+            nDePag.setText("");
+            qtd.setText("");
+            titulo.setText("");
             MainAplication.mudarTela("telaDeAdmObras");
         } catch (ElementoJaExisteException var4) {
             System.out.println(var4.getMessage());
@@ -46,6 +54,14 @@ public class ControladorTelaDoCrudObra {
 
     @FXML
     void voltar(ActionEvent event) {
+        autor.setText("");
+        anoDePub.setValue(null);
+        editora.setText("");
+        genero.setText("");
+        idioma.setText("");
+        nDePag.setText("");
+        qtd.setText("");
+        titulo.setText("");
         MainAplication.mudarTela("telaDeAdmObras");
     }
 }

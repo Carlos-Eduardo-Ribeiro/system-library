@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.Controladores.ControladorTelaDaListaDeUsuarios"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDaListaDeUsuarios">
+   <children>
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <TableView fx:id="tableView" layoutY="61.0" prefHeight="278.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="nome" prefWidth="70.0" text="Nome" />
+          <TableColumn fx:id="cpf" prefWidth="70.0" text="CPF" />
+            <TableColumn fx:id="nDeCadastro" prefWidth="70.0" text="Cadastro" />
+            <TableColumn fx:id="endereco" prefWidth="75.0" text="Endereço" />
+            <TableColumn fx:id="status" prefWidth="55.0" text="Status" />
+            <TableColumn fx:id="idade" prefWidth="50.0" text="Idade" />
+            <TableColumn fx:id="login" prefWidth="70.0" text="Login" />
+            <TableColumn fx:id="senha" prefWidth="70.0" text="Senha" />
+            <TableColumn fx:id="administrador" prefWidth="70.0" text="Adm" />
+        </columns>
+      </TableView>
+      <Button layoutX="253.0" layoutY="347.0" mnemonicParsing="false" onAction="#visualizarLista" text="Visualizar Lista" />
+   </children>
 </AnchorPane>
