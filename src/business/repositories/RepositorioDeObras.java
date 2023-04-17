@@ -49,6 +49,10 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
     	
     }
 
+    public List<ObraImpressa> read() {
+        return this.obras;
+    }
+
     public ObraImpressa buscarPorNomes(String titulo) {
         for (ObraImpressa obra : obras) {
             if (obra.getTitulo().equals(titulo)||obra.getAutor().equals(titulo)) {
@@ -57,7 +61,7 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
         }
         return null;
     }
-
+    //obras do autor
     public List<ObraImpressa> buscarObrasDoAutor(String id) {
 	    List<ObraImpressa> obrasDoAutor = new ArrayList<>();
 	    for (ObraImpressa obra : obras) {
@@ -68,11 +72,6 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
 	    return obrasDoAutor;
 	}
 
-
-    public List<ObraImpressa> read() {
-        return this.obras;
-    }
-    
     public ObraImpressa buscObraPorAutor(String obrasAutor) {
         for (ObraImpressa obra : obras) {
             if (obra.getAutor().equals(obrasAutor)||obra.getTitulo().equals(obrasAutor)) {
@@ -81,6 +80,5 @@ public class RepositorioDeObras implements IRepositories<ObraImpressa> {
         }
         return null;
     }
- 
 }
 

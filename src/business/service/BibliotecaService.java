@@ -68,6 +68,7 @@ public boolean adicionarLivro(String titulo, String autor,int quantidade, int nu
      	List<ObraImpressa> todasAsObras = repositorio.read();
      	return todasAsObras;
 	}
+
 	public ObraImpressa buscarO(String obra) throws ElementoNaoEncontradoException {
 		 if(repositorio.buscarPorNomes(obra)==null) {
 			 throw new ElementoNaoEncontradoException(obra);

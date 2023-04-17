@@ -14,6 +14,7 @@
       <TextField fx:id="idDoUsuario" layoutX="143.0" layoutY="132.0" onKeyTyped="#procurarUsuario" prefHeight="26.0" prefWidth="286.0" />
       <CheckBox fx:id="myCheckBox" layoutX="317.0" layoutY="225.0" mnemonicParsing="false" onAction="#administrador" prefHeight="18.0" prefWidth="7.0" />
       <Label layoutX="239.0" layoutY="226.0" prefHeight="18.0" prefWidth="78.0" text="Administrador" />
-      <ChoiceBox fx:id="statusDoUsuario" layoutX="211.0" layoutY="174.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="statusDoUsuario" layoutX="237.0" layoutY="174.0" prefWidth="150.0" />
+      <Label layoutX="169.0" layoutY="173.0" prefHeight="26.0" prefWidth="48.0" text="Status:" />
    </children>
 </AnchorPane>

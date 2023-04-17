@@ -21,25 +21,25 @@ public class ControladorTelaDoAdministrador {
     private List<Emprestimo> emprestimos = PessoaService.getInstance().historicoDeEmprestimos();
     private List<Pessoa> listaDeUsuarios = PessoaService.getInstance().listaDeUsuarios();
 
-    @FXML
-    void telaDaListaDeUsuarios(ActionEvent event) {
-        ObservableList<Pessoa> items = FXCollections.observableArrayList(listaDeUsuarios);
-
-        // Cria o ListView e configura com a lista de itens
-        ListView<Pessoa> listView = new ListView<Pessoa>(items);
-
-        // Cria o layout e adiciona o ListView
-        VBox root = new VBox();
-        root.getChildren().add(listView);
-
-        // Cria a cena e adiciona o layout
-        Scene scene = new Scene(root, 200, 200);
-
-        // Cria a janela e define a cena
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
+//    @FXML
+//    void telaDaListaDeUsuarios(ActionEvent event) {
+//        ObservableList<Pessoa> items = FXCollections.observableArrayList(listaDeUsuarios);
+//
+//        // Cria o ListView e configura com a lista de itens
+//        ListView<Pessoa> listView = new ListView<Pessoa>(items);
+//
+//        // Cria o layout e adiciona o ListView
+//        VBox root = new VBox();
+//        root.getChildren().add(listView);
+//
+//        // Cria a cena e adiciona o layout
+//        Scene scene = new Scene(root, 200, 200);
+//
+//        // Cria a janela e define a cena
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 
     @FXML
     void telaDeDevolverLivro(ActionEvent event) {
@@ -56,10 +56,10 @@ public class ControladorTelaDoAdministrador {
         MainAplication.mudarTela("telaDeEmprestimo");
     }
 
-    @FXML
-    void telaDoCrudObraAutor(ActionEvent event) {
-        MainAplication.mudarTela("telaDeAtualizarUsuario");
-    }
+//    @FXML
+//    void telaDoCrudObraAutor(ActionEvent event) {
+//        MainAplication.mudarTela("telaDeAtualizarUsuario");
+//    }
 
     @FXML
     void telaDaListDeUsuarios(ActionEvent event) {

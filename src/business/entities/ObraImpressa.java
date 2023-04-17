@@ -81,8 +81,7 @@ public class ObraImpressa {
 	}
     public void setdebiatarObra() {
     	
-    	if(quantidade>=1)
-    	{
+    	if(quantidade>=1) {
 		this.quantidade=quantidade-1;
     	}
     	

@@ -55,7 +55,7 @@ public class ControladorTelaDoCrudArtigo {
         dataDePub.setValue(null);
         editora.setText("");
         quantidade.setText("");
-        MainAplication.mudarTela("telaDeAdmArtigoCientifico");
+        MainAplication.mudarTela("telaDeAdmArtCien");
     }
 
     @FXML
@@ -69,7 +69,7 @@ public class ControladorTelaDoCrudArtigo {
         dataDePub.setValue(null);
         editora.setText("");
         quantidade.setText("");
-        MainAplication.mudarTela("telaDeAdmArtigoCientifico");
+        MainAplication.mudarTela("telaDeAdmArtCien");
     }
 
 }
