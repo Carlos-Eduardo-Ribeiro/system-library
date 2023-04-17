@@ -9,6 +9,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeProcurarObraAutorUsuario">
    <children>
+      <AnchorPane prefHeight="400.0" prefWidth="779.0" styleClass="background" stylesheets="@background1.css" />
       <Button layoutX="717.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-text-fill: white; -fx-background-color: #c0392b;" text="Voltar" />
       <Label layoutX="147.0" layoutY="35.0" prefHeight="26.0" prefWidth="194.0" text="Digite o nome da obra ou do autor:" />
       <TextField fx:id="nomeObraAutor" layoutX="341.0" layoutY="35.0" prefHeight="26.0" prefWidth="362.0" style="-fx-background-color: white; -fx-border-color: black;" />

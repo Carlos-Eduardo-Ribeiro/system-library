@@ -2,9 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoAdministrador">
     <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css" />
         <Button layoutX="495.0" layoutY="359.0" mnemonicParsing="false" onAction="#telaDeLogin" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Sair" />
         <Button layoutX="56.0" layoutY="99.0" mnemonicParsing="false" onAction="#telaDeDevolverLivro" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Devolver livro" />
         <Button layoutX="56.0" layoutY="142.0" mnemonicParsing="false" onAction="#telaDeEmprestimo" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Realizar empréstimo" />

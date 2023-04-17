@@ -7,8 +7,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDaListaDeUsuarios">
    <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css" />
       <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-text-fill: white; -fx-background-color: #c0392b;" text="Voltar" />
-      <TableView fx:id="tableView" layoutY="61.0" prefHeight="278.0" prefWidth="600.0">
+      <TableView fx:id="tableView" layoutY="61.0" prefHeight="278.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: black;">
         <columns>
           <TableColumn fx:id="nome" prefWidth="70.0" text="Nome" />
           <TableColumn fx:id="cpf" prefWidth="70.0" text="CPF" />

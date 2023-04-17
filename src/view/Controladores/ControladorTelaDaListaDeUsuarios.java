@@ -1,7 +1,5 @@
 package view.Controladores;
 
-import business.entities.Emprestimo;
-import business.entities.ObraImpressa;
 import business.entities.Pessoa;
 import business.enums.Status;
 import business.service.PessoaService;
@@ -10,7 +8,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;

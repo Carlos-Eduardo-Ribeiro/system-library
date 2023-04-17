@@ -1,6 +1,5 @@
 package view.Controladores;
 
-import business.exceptions.ElementoNaoEncontradoException;
 import business.service.PessoaService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

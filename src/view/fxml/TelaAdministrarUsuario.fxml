@@ -6,15 +6,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaAdministrarUsuario">
    <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css" />
       <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
-      <Label layoutX="222.0" layoutY="121.0" prefHeight="26.0" prefWidth="172.0" text="Número de cadastro do usuário" />
-      <TextField fx:id="idDoUsuario" layoutX="157.0" layoutY="167.0" onKeyTyped="#procurarUsuario" prefHeight="26.0" prefWidth="286.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <CheckBox fx:id="myCheckBox" layoutX="330.0" layoutY="259.0" mnemonicParsing="false" onAction="#administrador" prefHeight="18.0" prefWidth="7.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <Label layoutX="252.0" layoutY="260.0" prefHeight="18.0" prefWidth="78.0" text="Administrador" />
-      <ChoiceBox fx:id="statusDoUsuario" layoutX="250.0" layoutY="208.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <Label layoutX="197.0" layoutY="208.0" prefHeight="26.0" prefWidth="48.0" text="Status:" />
+      <Label layoutX="214.0" layoutY="122.0" prefHeight="26.0" prefWidth="172.0" text="Número de cadastro do usuário" />
+      <TextField fx:id="idDoUsuario" layoutX="157.0" layoutY="162.0" onKeyTyped="#procurarUsuario" prefHeight="26.0" prefWidth="286.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <CheckBox fx:id="myCheckBox" layoutX="291.0" layoutY="259.0" mnemonicParsing="false" onAction="#administrador" prefHeight="18.0" prefWidth="7.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label layoutX="206.0" layoutY="260.0" prefHeight="18.0" prefWidth="78.0" text="Administrador" />
+      <ChoiceBox fx:id="statusDoUsuario" layoutX="253.0" layoutY="204.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label layoutX="190.0" layoutY="204.0" prefHeight="26.0" prefWidth="48.0" text="Status:" />
    </children>
 </AnchorPane>

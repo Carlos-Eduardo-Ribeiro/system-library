@@ -6,9 +6,11 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeLogin">
    <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css" />
       <Label layoutX="111.0" layoutY="73.0" prefHeight="66.0" prefWidth="377.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 40pt; -fx-font-weight: bold; -fx-text-fill: #000000;" text="Library System" />
       <Label layoutX="146.0" layoutY="160.0" prefHeight="23.0" prefWidth="54.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 14pt; -fx-text-fill: #000000;" text="Login:" />
       <Button layoutX="259.0" layoutY="246.0" mnemonicParsing="false" onAction="#TesteDeLogin" style="-fx-background-color: #0096c9; -fx-font-size: 14pt; -fx-text-fill: #FFFFFF;" text="Entrar" />
