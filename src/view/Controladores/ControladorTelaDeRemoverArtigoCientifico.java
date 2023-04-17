@@ -21,7 +21,7 @@ public class ControladorTelaDeRemoverArtigoCientifico {
 
     @FXML
     void voltar(ActionEvent event) {
-        MainAplication.mudarTela("telaDeAdmArtigoCientifico");
+        MainAplication.mudarTela("telaDeAdmObras");
     }
 
 }

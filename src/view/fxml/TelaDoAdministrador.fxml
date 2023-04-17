@@ -9,10 +9,9 @@
         <Button layoutX="56.0" layoutY="99.0" mnemonicParsing="false" onAction="#telaDeDevolverLivro" prefHeight="26.0" prefWidth="178.0" text="Devolver livro" />
         <Button layoutX="56.0" layoutY="142.0" mnemonicParsing="false" onAction="#telaDeEmprestimo" prefHeight="26.0" prefWidth="178.0" text="Realizar empréstimo" />
         <Button layoutX="57.0" layoutY="229.0" mnemonicParsing="false" onAction="#telaDeProcurarObraAutor" prefHeight="26.0" prefWidth="178.0" text="Procurar obra/autor" />
-      <Button layoutX="389.0" layoutY="231.0" mnemonicParsing="false" onAction="#admUsuario" prefHeight="26.0" prefWidth="178.0" text="Administrar usuário" />
+      <Button layoutX="389.0" layoutY="187.0" mnemonicParsing="false" onAction="#admUsuario" prefHeight="26.0" prefWidth="178.0" text="Administrar usuário" />
       <Button layoutX="389.0" layoutY="99.0" mnemonicParsing="false" onAction="#admObra" prefHeight="26.0" prefWidth="178.0" text="Administrar obras" />
       <Button layoutX="389.0" layoutY="143.0" mnemonicParsing="false" onAction="#admAutor" prefHeight="26.0" prefWidth="178.0" text="Administrar autor" />
-      <Button layoutX="389.0" layoutY="187.0" mnemonicParsing="false" onAction="#admArtCien" prefHeight="26.0" prefWidth="178.0" text="Administrar artigos cientifícos" />
       <Button layoutX="57.0" layoutY="187.0" mnemonicParsing="false" onAction="#telaHistDeEmprestimo" prefHeight="26.0" prefWidth="178.0" text="Histórico de empréstimo" />
       <Button layoutX="56.0" layoutY="274.0" mnemonicParsing="false" onAction="#telaDaListDeUsuarios" prefHeight="26.0" prefWidth="178.0" text="Lista de usuários" />
     </children>

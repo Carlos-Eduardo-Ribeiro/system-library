@@ -22,7 +22,7 @@ public class ControladorTelaDeRemoverObra {
 
     @FXML
     void voltar(ActionEvent event) {
-        MainAplication.mudarTela("telaDoAdministrador");
+        MainAplication.mudarTela("telaDeAdmObras");
     }
 
 }

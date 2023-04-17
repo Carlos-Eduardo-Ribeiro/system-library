@@ -22,6 +22,16 @@ public class ControladorTelaDeAdmObras {
     }
 
     @FXML
+    void removerArtigo(ActionEvent event) {
+        MainAplication.mudarTela("telaDeRemoverArtigoCientifico");
+    }
+
+    @FXML
+    void cadastrarArtigo(ActionEvent event) {
+        MainAplication.mudarTela("telaDoCrudArtigo");
+    }
+
+    @FXML
     void voltar(ActionEvent event) {
         MainAplication.mudarTela("telaDoAdministrador");
     }

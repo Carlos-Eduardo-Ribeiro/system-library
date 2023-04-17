@@ -102,10 +102,10 @@ public class ControladorTelaDoAdministrador {
         MainAplication.mudarTela("telaAdministrarUsuario");
     }
 
-    @FXML
-    void admArtCien(ActionEvent event) {
-        MainAplication.mudarTela("telaDeAdmArtCien");
-    }
+//    @FXML
+//    void admArtCien(ActionEvent event) {
+//        MainAplication.mudarTela("telaDeAdmArtCien");
+//    }
 
     @FXML
     void admAutor(ActionEvent event) {
