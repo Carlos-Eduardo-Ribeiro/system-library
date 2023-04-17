@@ -7,8 +7,8 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoHistoricoDeEmprestimoUsuario">
    <children>
-      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-      <TableView fx:id="tableView" layoutX="111.0" layoutY="57.0" prefHeight="285.0" prefWidth="402.0">
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #c0392b; -fx-text-fill: #FFFFFF;" text="Voltar" />
+      <TableView fx:id="tableView" layoutX="114.0" layoutY="38.0" prefHeight="286.0" prefWidth="401.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn fx:id="titulo" prefWidth="100.0" text="Título" />
           <TableColumn fx:id="autor" prefWidth="100.0" text="Autor" />
@@ -16,6 +16,6 @@
             <TableColumn fx:id="entrega" prefWidth="100.0" text="Devolução" />
         </columns>
       </TableView>
-      <Button layoutX="265.0" layoutY="347.0" mnemonicParsing="false" onAction="#lista" text="Visualizar Lista" />
+      <Button layoutX="265.0" layoutY="347.0" mnemonicParsing="false" onAction="#lista" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Visualizar Lista" />
    </children>
 </AnchorPane>

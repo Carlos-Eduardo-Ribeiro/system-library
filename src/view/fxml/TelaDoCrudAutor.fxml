@@ -8,17 +8,17 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoCrudAutor">
    <children>
-      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-      <TextField fx:id="nome" layoutX="176.0" layoutY="102.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="pseudonimo" layoutX="176.0" layoutY="180.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="endereco" layoutX="176.0" layoutY="218.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField fx:id="nacionalidade" layoutX="177.0" layoutY="257.0" prefHeight="26.0" prefWidth="175.0" />
-      <DatePicker fx:id="data" layoutX="177.0" layoutY="142.0" />
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
+      <TextField fx:id="nome" layoutX="176.0" layoutY="102.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="pseudonimo" layoutX="176.0" layoutY="180.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="endereco" layoutX="176.0" layoutY="218.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="nacionalidade" layoutX="177.0" layoutY="257.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <DatePicker fx:id="data" layoutX="177.0" layoutY="142.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <Label layoutX="45.0" layoutY="102.0" prefHeight="26.0" prefWidth="42.0" text="Nome" />
       <Label layoutX="45.0" layoutY="141.0" prefHeight="26.0" prefWidth="112.0" text="Data de Nascimento" />
       <Label layoutX="45.0" layoutY="180.0" prefHeight="26.0" prefWidth="69.0" text="Pseudônimo" />
       <Label layoutX="45.0" layoutY="218.0" prefHeight="26.0" prefWidth="54.0" text="Endereço" />
       <Label layoutX="45.0" layoutY="257.0" prefHeight="26.0" prefWidth="85.0" text="Nacionalidade" />
-      <Button layoutX="267.0" layoutY="334.0" mnemonicParsing="false" onAction="#addAutor" text="Adicionar" />
+      <Button layoutX="267.0" layoutY="334.0" mnemonicParsing="false" onAction="#addAutor" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Adicionar" />
    </children>
 </AnchorPane>

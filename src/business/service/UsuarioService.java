@@ -262,6 +262,7 @@ public class UsuarioService {
 			System.out.println(usuario.getNumeroDeCadastro());
 			if (usuario.getPassword().equals(Senha)) {
 				this.usuarioAtivo = usuario;
+				Ativo.getInstance().setUsuarioAtivo(usuario);
 				return usuario;
 			}
 		}

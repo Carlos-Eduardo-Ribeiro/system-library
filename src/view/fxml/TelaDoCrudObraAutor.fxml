@@ -5,9 +5,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoCrudObraAutor">
    <children>
-      <Button layoutX="82.0" layoutY="187.0" mnemonicParsing="false" onAction="#CrudObra" prefHeight="26.0" prefWidth="137.0" text="CRUD Obra" />
-      <Button layoutX="82.0" layoutY="247.0" mnemonicParsing="false" onAction="#CrudAutor" prefHeight="26.0" prefWidth="138.0" text="CRUD Autor" />
-      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltarTelaAdm" text="Voltar" />
-      <Button layoutX="82.0" layoutY="126.0" mnemonicParsing="false" onAction="#CrudArtigo" text="CRUD Artigo Ciêntifico" />
+      <Button layoutX="82.0" layoutY="187.0" mnemonicParsing="false" onAction="#CrudObra" prefHeight="26.0" prefWidth="137.0" style="-fx-text-fill: white; -fx-background-color: #0096c9;" text="CRUD Obra" />
+      <Button layoutX="82.0" layoutY="247.0" mnemonicParsing="false" onAction="#CrudAutor" prefHeight="26.0" prefWidth="138.0" style="-fx-text-fill: white; -fx-background-color: #0096c9;" text="CRUD Autor" />
+      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltarTelaAdm" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
+      <Button layoutX="82.0" layoutY="126.0" mnemonicParsing="false" onAction="#CrudArtigo" style="-fx-text-fill: white; -fx-background-color: #0096c9;" text="CRUD Artigo Ciêntifico" />
    </children>
 </AnchorPane>

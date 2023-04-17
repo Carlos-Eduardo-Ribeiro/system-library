@@ -1,5 +1,6 @@
 package view.Controladores;
 
+import business.entities.Ativo;
 import business.entities.Emprestimo;
 import business.exceptions.ElementoNaoEncontradoException;
 import business.service.PessoaService;
@@ -8,20 +9,39 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import view.MainAplication;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class ControladorTelaDoCliente {
+public class ControladorTelaDoCliente{
 
     @FXML
     void Sair(ActionEvent event){
         MainAplication.mudarTela("telaDeLogin");
     }
+
+    @FXML
+    private Label nDeCadastro;
+
+    @FXML
+    private Label nomeDoUsuario;
+
+    @FXML
+    void iniciar(MouseEvent event) {
+        nomeDoUsuario.setText(Ativo.getInstance().getUsuarioAtivo().getNome());
+        nDeCadastro.setText(Ativo.getInstance().getUsuarioAtivo().getNumeroDeCadastro());
+    }
+
+
 
 //    @FXML
 //    void TelaDoHistoricoDeEmprestimo(ActionEvent event) throws ElementoNaoEncontradoException {

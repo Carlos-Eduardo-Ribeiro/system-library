@@ -7,11 +7,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeEmprestimo">
    <children>
-      <TextField fx:id="nDeCadastro" layoutX="272.0" layoutY="167.0" />
-      <TextField fx:id="itemEmprestado" layoutX="272.0" layoutY="207.0" />
-      <Button layoutX="260.0" layoutY="300.0" mnemonicParsing="false" onAction="#addEmprestimo" text="Button" />
-      <Label layoutX="151.0" layoutY="171.0" text="Número de Cadastro:" />
-      <Label layoutX="151.0" layoutY="211.0" text="Item Emprestado:" />
-      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <TextField fx:id="nDeCadastro" layoutX="285.0" layoutY="132.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="itemEmprestado" layoutX="285.0" layoutY="172.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Button layoutX="251.0" layoutY="243.0" mnemonicParsing="false" onAction="#addEmprestimo" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Realizar Empréstimo" />
+      <Label layoutX="164.0" layoutY="136.0" text="Número de Cadastro:" />
+      <Label layoutX="164.0" layoutY="176.0" text="Item Emprestado:" />
+      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
    </children>
 </AnchorPane>

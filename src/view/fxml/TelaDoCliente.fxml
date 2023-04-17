@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoCliente">
+<AnchorPane prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDoCliente">
    <children>
-      <Button layoutX="531.0" layoutY="354.0" mnemonicParsing="false" onAction="#Sair" prefHeight="28.0" prefWidth="54.0" text="Sair" />
-      <Button layoutX="66.0" layoutY="185.0" mnemonicParsing="false" onAction="#telaDePesquisaDoCliente" prefHeight="30.0" prefWidth="250.0" text="Pesquisa sobre autor, obra ou genêro" />
-      <Button layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#telaDeConfigurarUsuario" prefHeight="30.0" prefWidth="159.0" text="Configurar informações" />
-      <Button layoutX="66.0" layoutY="136.0" mnemonicParsing="false" onAction="#magicButton" prefHeight="30.0" prefWidth="250.0" text="Histórico de empréstimos" />
+      <AnchorPane onMouseEntered="#iniciar" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button layoutX="481.0" layoutY="354.0" mnemonicParsing="false" onAction="#Sair" prefHeight="28.0" prefWidth="104.0" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Sair" />
+            <Button layoutX="38.0" layoutY="116.0" mnemonicParsing="false" onAction="#magicButton" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #0096c9; -fx-text-fill: white; -fx-font-size: 14;" text="Histórico de empréstimos" textAlignment="JUSTIFY" />
+            <Button layoutX="38.0" layoutY="186.0" mnemonicParsing="false" onAction="#telaDePesquisaDoCliente" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #0096c9; -fx-text-fill: white; -fx-background-size: 14;" text="Pesquisar obra, autor ou gênero" />
+            <Button layoutX="38.0" layoutY="256.0" mnemonicParsing="false" onAction="#telaDeConfigurarUsuario" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #0096c9; -fx-text-fill: white; -fx-font-size: 14;" text="Configurar informações do usuário" />
+            <Label fx:id="nomeDoUsuario" layoutX="156.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Nome do usuário" />
+            <Label fx:id="nDeCadastro" layoutX="156.0" layoutY="45.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 16;" text="N° de cadastro" />
+            <Label layoutX="14.0" layoutY="43.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 16;" text="N° de cadastro:" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Nome do usuário:" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

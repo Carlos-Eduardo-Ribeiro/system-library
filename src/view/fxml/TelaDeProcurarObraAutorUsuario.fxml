@@ -7,14 +7,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeProcurarObraAutorUsuario">
+<AnchorPane prefHeight="400.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeProcurarObraAutorUsuario">
    <children>
-      <Button layoutX="789.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-      <Label layoutX="147.0" layoutY="37.0" prefHeight="26.0" prefWidth="194.0" text="Digite o nome da obra ou do autor:" />
-      <TextField fx:id="nomeObraAutor" layoutX="341.0" layoutY="37.0" prefHeight="26.0" prefWidth="362.0" />
-      <Button layoutX="392.0" layoutY="347.0" mnemonicParsing="false" onAction="#pesquisar" text="Pesquisar" />
-      <TableView fx:id="tableView" layoutY="92.0" prefHeight="246.0" prefWidth="851.0">
+      <Button layoutX="717.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-text-fill: white; -fx-background-color: #c0392b;" text="Voltar" />
+      <Label layoutX="147.0" layoutY="35.0" prefHeight="26.0" prefWidth="194.0" text="Digite o nome da obra ou do autor:" />
+      <TextField fx:id="nomeObraAutor" layoutX="341.0" layoutY="35.0" prefHeight="26.0" prefWidth="362.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Button layoutX="356.0" layoutY="347.0" mnemonicParsing="false" onAction="#pesquisar" style="-fx-text-fill: white; -fx-background-color: #0096c9;" text="Pesquisar" />
+      <TableView fx:id="tableView" layoutX="3.0" layoutY="77.0" prefHeight="246.0" prefWidth="773.0" style="-fx-background-color: white; -fx-border-color: black;">
          <columns>
             <TableColumn fx:id="titulo" prefWidth="75.0" text="Título" />
             <TableColumn fx:id="autor" prefWidth="75.0" text="Autor" />
@@ -22,7 +21,6 @@
             <TableColumn fx:id="editora" prefWidth="75.0" text="Editora" />
             <TableColumn fx:id="idioma" prefWidth="75.0" text="Idioma" />
             <TableColumn fx:id="nDePag" prefWidth="75.0" text="N° páginas" />
-            <TableColumn fx:id="resumo" prefWidth="75.0" text="Resumo" />
             <TableColumn fx:id="refBibliografica" prefWidth="95.0" text="R. Bibliográfica" />
             <TableColumn fx:id="genero" prefWidth="75.0" text="Gênero" />
             <TableColumn fx:id="resumo" prefWidth="75.0" text="Resumo" />

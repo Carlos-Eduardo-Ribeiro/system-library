@@ -5,12 +5,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeRemoverObra">
    <children>
-      <TextField fx:id="nomeObra" layoutX="209.0" layoutY="152.0" prefHeight="26.0" prefWidth="323.0" />
+      <TextField fx:id="nomeObra" layoutX="209.0" layoutY="152.0" prefHeight="26.0" prefWidth="323.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <Label layoutX="83.0" layoutY="152.0" prefHeight="26.0" prefWidth="126.0" text="Digite o nome da obra:" />
-      <Button layoutX="262.0" layoutY="255.0" mnemonicParsing="false" onAction="#remObra" text="Remover Obra" />
-      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="262.0" layoutY="255.0" mnemonicParsing="false" onAction="#remObra" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Remover Obra" />
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
    </children>
 </AnchorPane>

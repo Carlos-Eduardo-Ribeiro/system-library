@@ -7,11 +7,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeConfigurarUsuario">
    <children>
-      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" prefHeight="21.0" prefWidth="48.0" text="Voltar" />
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" prefHeight="21.0" prefWidth="48.0" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
       <Label layoutX="87.0" layoutY="131.0" />
-      <TextField fx:id="senha" layoutX="88.0" layoutY="149.0" prefHeight="26.0" prefWidth="215.0" />
-      <TextField fx:id="endereco" layoutX="88.0" layoutY="201.0" prefHeight="26.0" prefWidth="215.0" />
-      <Button layoutX="395.0" layoutY="149.0" mnemonicParsing="false" onAction="#atuaSenha" prefHeight="26.0" prefWidth="150.0" text="Atualizar senha" />
-      <Button layoutX="395.0" layoutY="201.0" mnemonicParsing="false" onAction="#atuaEndereco" prefHeight="26.0" prefWidth="150.0" text="Atualizar endereço" />
+      <TextField fx:id="senha" layoutX="88.0" layoutY="149.0" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="endereco" layoutX="88.0" layoutY="201.0" prefHeight="26.0" prefWidth="215.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Button layoutX="395.0" layoutY="149.0" mnemonicParsing="false" onAction="#atuaSenha" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Atualizar senha" />
+      <Button layoutX="395.0" layoutY="201.0" mnemonicParsing="false" onAction="#atuaEndereco" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Atualizar endereço" />
    </children>
 </AnchorPane>

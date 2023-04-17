@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class MainAplication extends Application {
-    private static Stage stage;
+    public static Stage stage;
     private static Scene mainScene;
     private static Scene telaDeLogin;
     private static Scene telaDoCliente;
@@ -83,9 +83,6 @@ public class MainAplication extends Application {
 
         Parent fxmlTelaAdministrarUsuario = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaAdministrarUsuario.fxml")));
         telaAdministrarUsuario = new Scene(fxmlTelaAdministrarUsuario, 600.0, 400.0);
-
-        Parent fxmlTelaDeAtualizarUsuario = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarUsuario.fxml")));
-        telaDeAtualizarUsuario = new Scene(fxmlTelaDeAtualizarUsuario, 600.0, 400.0);
 
         Parent fxmlTelaDoHistoricoDeEmprestimoUsuario = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDoHistoricoDeEmprestimoUsuario.fxml")));
         telaDoHistoricoDeEmprestimoUsuario = new Scene(fxmlTelaDoHistoricoDeEmprestimoUsuario, 600.0, 400.0);

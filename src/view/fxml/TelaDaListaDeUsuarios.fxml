@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDaListaDeUsuarios">
    <children>
-      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-text-fill: white; -fx-background-color: #c0392b;" text="Voltar" />
       <TableView fx:id="tableView" layoutY="61.0" prefHeight="278.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="nome" prefWidth="70.0" text="Nome" />
@@ -21,6 +21,6 @@
             <TableColumn fx:id="administrador" prefWidth="70.0" text="Adm" />
         </columns>
       </TableView>
-      <Button layoutX="253.0" layoutY="347.0" mnemonicParsing="false" onAction="#visualizarLista" text="Visualizar Lista" />
+      <Button layoutX="259.0" layoutY="347.0" mnemonicParsing="false" onAction="#visualizarLista" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Visualizar Lista" />
    </children>
 </AnchorPane>
