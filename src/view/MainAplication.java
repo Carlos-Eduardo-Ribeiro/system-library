@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -51,6 +52,10 @@ public class MainAplication extends Application {
     public void start(Stage stagePrimary) throws IOException {
         stage = stagePrimary;
 
+        stagePrimary.setTitle("Library System");
+        Image img = new Image(getClass().getResource("/imagens/icons8-livro-aberto-50.png").openStream());
+        stage.getIcons().add(img);
+
         Parent fxmlPrincipal = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//Main.fxml")));
         telaDeLogin = new Scene(fxmlPrincipal, 600.0, 400.0);
 
@@ -73,7 +78,7 @@ public class MainAplication extends Application {
         telaDoHistoricoDeEmprestimo = new Scene(fxmlTelaDoHistoricoDeEmprestimo, 600.0, 400.0);
 
         Parent fxmlTelaDeProcurarObraAutor = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeProcurarObraAutor.fxml")));
-        telaDeProcurarObraAutor = new Scene(fxmlTelaDeProcurarObraAutor, 850.0, 416.0);
+        telaDeProcurarObraAutor = new Scene(fxmlTelaDeProcurarObraAutor, 775.0, 416.0);
 
         Parent fxmlTelaDaListaDeUsuarios = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDaListaDeUsuarios.fxml")));
         telaDaListaDeUsuarios = new Scene(fxmlTelaDaListaDeUsuarios, 600.0, 400.0);
@@ -88,7 +93,7 @@ public class MainAplication extends Application {
         telaDoHistoricoDeEmprestimoUsuario = new Scene(fxmlTelaDoHistoricoDeEmprestimoUsuario, 600.0, 400.0);
 
         Parent fxmlTelaDeProcurarObraAutorUsuario = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeProcurarObraAutorUsuario.fxml")));
-        telaDeProcurarObraAutorUsuario = new Scene(fxmlTelaDeProcurarObraAutorUsuario, 850.0, 416.0);
+        telaDeProcurarObraAutorUsuario = new Scene(fxmlTelaDeProcurarObraAutorUsuario, 775.0, 416.0);
 
         Parent fxmlTelaDoCrudObra = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDoCrudObra.fxml")));
         telaDoCrudObra = new Scene(fxmlTelaDoCrudObra, 600.0, 400.0);
