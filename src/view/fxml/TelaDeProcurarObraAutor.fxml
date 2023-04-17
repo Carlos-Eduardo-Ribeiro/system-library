@@ -9,11 +9,11 @@
 
 <AnchorPane prefHeight="416.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeProcurarObraAutor">
    <children>
-      <Button layoutX="712.0" layoutY="376.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-      <Label layoutX="144.0" layoutY="29.0" prefHeight="26.0" prefWidth="194.0" text="Digite o nome da obra ou do autor:" />
-      <TextField fx:id="nomeObraAutor" layoutX="338.0" layoutY="29.0" prefHeight="26.0" prefWidth="362.0" />
+      <Button layoutX="789.0" layoutY="376.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Label layoutX="147.0" layoutY="39.0" prefHeight="26.0" prefWidth="194.0" text="Digite o nome da obra ou do autor:" />
+      <TextField fx:id="nomeObraAutor" layoutX="341.0" layoutY="39.0" prefHeight="26.0" prefWidth="362.0" />
       <Button layoutX="392.0" layoutY="350.0" mnemonicParsing="false" onAction="#pesquisar" text="Pesquisar" />
-      <TableView fx:id="tableView" layoutY="85.0" prefHeight="246.0" prefWidth="851.0">
+      <TableView fx:id="tableView" layoutX="-1.0" layoutY="85.0" prefHeight="246.0" prefWidth="851.0">
         <columns>
           <TableColumn fx:id="titulo" prefWidth="75.0" text="Título" />
           <TableColumn fx:id="autor" prefWidth="75.0" text="Autor" />

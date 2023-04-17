@@ -57,7 +57,7 @@ public class ControladorTelaDoCliente {
     }
 
     @FXML
-    void TelaDePesquisaDoCliente(ActionEvent event) {
-        MainAplication.mudarTela("telaDePesquisaDoCliente");
+    void telaDePesquisaDoCliente(ActionEvent event) {
+        MainAplication.mudarTela("telaDeProcurarObraAutorUsuario");
     }
 }
