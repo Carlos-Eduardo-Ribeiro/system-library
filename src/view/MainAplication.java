@@ -73,7 +73,7 @@ public class MainAplication extends Application {
         telaDoHistoricoDeEmprestimo = new Scene(fxmlTelaDoHistoricoDeEmprestimo, 600.0, 400.0);
 
         Parent fxmlTelaDeProcurarObraAutor = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeProcurarObraAutor.fxml")));
-        telaDeProcurarObraAutor = new Scene(fxmlTelaDeProcurarObraAutor, 600.0, 400.0);
+        telaDeProcurarObraAutor = new Scene(fxmlTelaDeProcurarObraAutor, 850.0, 416.0);
 
         Parent fxmlTelaDaListaDeUsuarios = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDaListaDeUsuarios.fxml")));
         telaDaListaDeUsuarios = new Scene(fxmlTelaDaListaDeUsuarios, 600.0, 400.0);
@@ -91,7 +91,7 @@ public class MainAplication extends Application {
         telaDoHistoricoDeEmprestimoUsuario = new Scene(fxmlTelaDoHistoricoDeEmprestimoUsuario, 600.0, 400.0);
 
         Parent fxmlTelaDeProcurarObraAutorUsuario = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeProcurarObraAutorUsuario.fxml")));
-        telaDeProcurarObraAutorUsuario = new Scene(fxmlTelaDeProcurarObraAutorUsuario, 600.0, 400.0);
+        telaDeProcurarObraAutorUsuario = new Scene(fxmlTelaDeProcurarObraAutorUsuario, 850.0, 416.0);
 
         Parent fxmlTelaDoCrudObra = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDoCrudObra.fxml")));
         telaDoCrudObra = new Scene(fxmlTelaDoCrudObra, 600.0, 400.0);
