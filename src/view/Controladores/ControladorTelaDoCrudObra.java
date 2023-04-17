@@ -38,6 +38,16 @@ public class ControladorTelaDoCrudObra {
         // Mostra o alerta e espera pelo fechamento
         alerta.showAndWait();
     }
+    @FXML
+    private void mostrarAlertaElemento1() {
+        // Cria o alerta
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("ALERTA");
+        alerta.setHeaderText("CADASTRO REALIZADO");
+
+        // Mostra o alerta e espera pelo fechamento
+        alerta.showAndWait();
+    }
 
     private ObraService obra = ObraService.getInstance();
 
@@ -49,7 +59,7 @@ public class ControladorTelaDoCrudObra {
                 int qtdInt = Integer.parseInt(this.qtd.getText());
                 int nDePagInt = Integer.parseInt(this.nDePag.getText());
                 this.obra.cadastrarLivro(this.titulo.getText(), this.autor.getText(), qtdInt, nDePagInt, this.idioma.getText(), (LocalDate)this.anoDePub.getValue(), this.editora.getText(), this.genero.getText());
-                System.out.println("Livro cadastrado");
+                mostrarAlertaElemento1();
                 autor.setText("");
                 anoDePub.setValue(null);
                 editora.setText("");

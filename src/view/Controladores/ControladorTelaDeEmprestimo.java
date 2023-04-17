@@ -22,6 +22,16 @@ public class ControladorTelaDeEmprestimo {
         // Mostra o alerta e espera pelo fechamento
         alerta.showAndWait();
     }
+    @FXML
+    private void mostrarAlertaElemento1() {
+        // Cria o alerta
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("ALERTA");
+        alerta.setHeaderText("LIVRO EMPRESTADO");
+
+        // Mostra o alerta e espera pelo fechamento
+        alerta.showAndWait();
+    }
 
     private PessoaService usuario = PessoaService.getInstance();
 
@@ -30,10 +40,10 @@ public class ControladorTelaDeEmprestimo {
         if(!itemEmprestado.getText().isEmpty()&&!nDeCadastro.getText().isEmpty()){
             try {
                 this.usuario.emprestrarObra(this.nDeCadastro.getText(), this.itemEmprestado.getText());
-                MainAplication.mudarTela("telaDoAdministrador");
+                mostrarAlertaElemento1();
                 itemEmprestado.setText("");
                 nDeCadastro.setText("");
-                System.out.println("Livro Emprestado");
+                MainAplication.mudarTela("telaDoAdministrador");
             } catch (Exception e) {
                 mostrarAlertaElemento();
                 itemEmprestado.setText("");

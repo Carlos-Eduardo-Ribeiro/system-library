@@ -50,6 +50,16 @@ public class ControladorTelaDoCrudArtigo {
         // Mostra o alerta e espera pelo fechamento
         alerta.showAndWait();
     }
+    @FXML
+    private void mostrarAlertaElemento1() {
+        // Cria o alerta
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("ALERTA");
+        alerta.setHeaderText("CADASTRO REALIZADO");
+
+        // Mostra o alerta e espera pelo fechamento
+        alerta.showAndWait();
+    }
 
     @FXML
     void addArtigo(ActionEvent event) throws ElementoJaExisteException {
@@ -61,7 +71,7 @@ public class ControladorTelaDoCrudArtigo {
                 int nDePagInt = Integer.parseInt(this.nDePag.getText());
                 this.artigo.cadastrarArtigoCientifico(autor.getText(), titulo.getText(), qtdInt, nDePagInt, idioma.getText(),
                         dataDePub.getValue(), editora.getText(), referencia.getText(), resumo.getText());
-                System.out.println("Artigo cadastrado");
+                mostrarAlertaElemento1();
                 autor.setText("");
                 titulo.setText("");
                 resumo.setText("");

@@ -40,6 +40,17 @@ public class ControladorTelaDoCrudAutor {
         // Mostra o alerta e espera pelo fechamento
         alerta.showAndWait();
     }
+    @FXML
+    private void mostrarAlertaElemento1() {
+        // Cria o alerta
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("ALERTA");
+        alerta.setHeaderText("CADASTRO REALIZADO");
+
+        // Mostra o alerta e espera pelo fechamento
+        alerta.showAndWait();
+    }
+
 
     private UsuarioService autor = PessoaService.getInstance().getuService();
 
@@ -50,7 +61,7 @@ public class ControladorTelaDoCrudAutor {
             try{
                 this.autor.adicionarAutor(nome.getText(), data.getValue(), endereco.getText(), pseudonimo.getText(),
                         nacionalidade.getText());
-                System.out.println("Autor Cadastrado");
+                mostrarAlertaElemento1();
                 data.setValue(null);
                 endereco.setText("");
                 nacionalidade.setText("");

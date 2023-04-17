@@ -7,11 +7,6 @@ import view.MainAplication;
 public class ControladorTelaDeAdmAutor {
 
     @FXML
-    void atuaAutor(ActionEvent event) {
-
-    }
-
-    @FXML
     void cadAutor(ActionEvent event) {
         MainAplication.mudarTela("telaDoCrudAutor");
     }

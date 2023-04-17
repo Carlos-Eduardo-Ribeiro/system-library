@@ -24,7 +24,16 @@ public class ControladorTelaDeDevolverLivro {
         // Mostra o alerta e espera pelo fechamento
         alerta.showAndWait();
     }
+    @FXML
+    private void mostrarAlertaElemento1() {
+        // Cria o alerta
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("ALERTA");
+        alerta.setHeaderText("LIVRO DEVOLVIDO");
 
+        // Mostra o alerta e espera pelo fechamento
+        alerta.showAndWait();
+    }
     private PessoaService devolverObra = PessoaService.getInstance();
 
     @FXML
@@ -32,10 +41,11 @@ public class ControladorTelaDeDevolverLivro {
         if(!itemEmprestado.getText().isEmpty()&&!nDeCadastro.getText().isEmpty()){
             try {
                 this.devolverObra.devolverLivro(this.nDeCadastro.getText(), this.itemEmprestado.getText());
-                MainAplication.mudarTela("telaDoAdministrador");
+                mostrarAlertaElemento1();
                 itemEmprestado.setText("");
                 nDeCadastro.setText("");
-                System.out.println("Livro Devolvido");
+                MainAplication.mudarTela("telaDoAdministrador");
+
             } catch (Exception e) {
                 mostrarAlertaElemento();
                 itemEmprestado.setText("");

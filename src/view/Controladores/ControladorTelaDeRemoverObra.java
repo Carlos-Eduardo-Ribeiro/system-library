@@ -23,6 +23,16 @@ public class ControladorTelaDeRemoverObra {
         // Mostra o alerta e espera pelo fechamento
         alerta.showAndWait();
     }
+    @FXML
+    private void mostrarAlertaElemento1() {
+        // Cria o alerta
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("ALERTA");
+        alerta.setHeaderText("REMOÇÃO REALIZADA");
+
+        // Mostra o alerta e espera pelo fechamento
+        alerta.showAndWait();
+    }
 
     private ObraService obra = ObraService.getInstance();
 
@@ -31,6 +41,7 @@ public class ControladorTelaDeRemoverObra {
         if(!nomeObra.getText().isEmpty()){
             try{
                 obra.excluirObra(nomeObra.getText());
+                mostrarAlertaElemento1();
             } catch (Exception e) {
                 mostrarAlertaElemento();
                 throw new RuntimeException(e);

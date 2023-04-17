@@ -123,9 +123,6 @@ public class MainAplication extends Application {
         Parent fxmlTelaDeAtualizarObra = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarObra.fxml")));
         telaDeAtualizarObra = new Scene(fxmlTelaDeAtualizarObra , 600.0, 400.0);
 
-        Parent fxmlTelaDeAtualizarAutor = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAtualizarAutor.fxml")));
-        telaDeAtualizarAutor = new Scene(fxmlTelaDeAtualizarAutor, 600.0, 400.0);
-
         Parent fxmlTelaDeConfigurarUsuario = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeConfigurarUsuario.fxml")));
         telaDeConfigurarUsuario = new Scene(fxmlTelaDeConfigurarUsuario, 600.0, 400.0);
 
