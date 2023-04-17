@@ -28,26 +28,19 @@ public class MainAplication extends Application {
     private static Scene telaDaListaDeUsuarios;
     private static Scene telaDoCrudObraAutor;
     private static Scene telaAdministrarUsuario;
-    private static Scene telaDeAtualizarUsuario;
     private static Scene telaDoHistoricoDeEmprestimoUsuario;
     private static Scene telaDeProcurarObraAutorUsuario;
     private static Scene telaDoCrudObra;
     private static Scene telaDoCrudAutor;
     private static Scene telaDoCrudArtigo;
-//    private static Scene telaDeAdmArtigoCientifico;
     private static Scene telaDeAdmAutor;
     private static Scene telaDeAdmObras;
     private static Scene telaDeRemoverObra;
     private static Scene telaDeRemoverAutor;
     private static Scene telaDeRemoverArtigoCientifico;
     private static Scene telaDeAtualizarObra;
-    private static Scene telaDeAtualizarAutor;
     private static Scene telaDeConfigurarUsuario;
-//    private static Scene;
-//    private static Scene;
-//    private static Scene;
-//    private static Scene;
-//    private static Scene;
+
 
     public void start(Stage stagePrimary) throws IOException {
         stage = stagePrimary;
@@ -110,9 +103,6 @@ public class MainAplication extends Application {
         Parent fxmlTelaDeAdmAutor = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAdmAutor.fxml")));
         telaDeAdmAutor = new Scene(fxmlTelaDeAdmAutor, 600.0, 400.0);
 
-//        Parent fxmlTelaDeAdmArtigoCientifico = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeAdmArtigoCientifico.fxml")));
-//        telaDeAdmArtigoCientifico = new Scene(fxmlTelaDeAdmArtigoCientifico, 600.0, 400.0);
-
         Parent  fxmlTelaDeRemoverAutor= FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeRemoverAutor.fxml")));
         telaDeRemoverAutor= new Scene(fxmlTelaDeRemoverAutor, 600.0, 400.0);
 
@@ -127,17 +117,6 @@ public class MainAplication extends Application {
 
         Parent fxmlTelaDeConfigurarUsuario = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//TelaDeConfigurarUsuario.fxml")));
         telaDeConfigurarUsuario = new Scene(fxmlTelaDeConfigurarUsuario, 600.0, 400.0);
-
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
-//        Parent  = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("fxml//.fxml")));
-//         = new Scene(fxmlTelaDoCrudArtigo, 600.0, 400.0);
 
         stage.setScene(telaDeLogin);
         stage.show();
@@ -156,7 +135,6 @@ public class MainAplication extends Application {
             case "telaDaListaDeUsuarios" -> stage.setScene(telaDaListaDeUsuarios);
             case "telaDoCrudObraAutor" -> stage.setScene(telaDoCrudObraAutor);
             case "telaAdministrarUsuario" -> stage.setScene(telaAdministrarUsuario);
-            case "telaDeAtualizarUsuario" -> stage.setScene(telaDeAtualizarUsuario);
             case "telaDoHistoricoDeEmprestimoUsuario" -> stage.setScene(telaDoHistoricoDeEmprestimoUsuario);
             case "telaDeProcurarObraAutorUsuario" -> stage.setScene(telaDeProcurarObraAutorUsuario);
             case "telaDoCrudObra" -> stage.setScene(telaDoCrudObra);
@@ -164,20 +142,11 @@ public class MainAplication extends Application {
             case "telaDoCrudArtigo" -> stage.setScene(telaDoCrudArtigo);
             case "telaDeAdmAutor" -> stage.setScene(telaDeAdmAutor);
             case "telaDeAdmObras" -> stage.setScene(telaDeAdmObras);
-//            case "telaDeAdmArtCien" -> stage.setScene(telaDeAdmArtigoCientifico);
             case "telaDeRemoverAutor" -> stage.setScene(telaDeRemoverAutor);
             case "telaDeRemoverObra" -> stage.setScene(telaDeRemoverObra);
             case "telaDeRemoverArtigoCientifico" -> stage.setScene(telaDeRemoverArtigoCientifico);
             case "telaDeAtualizarObra" -> stage.setScene(telaDeAtualizarObra);
-            case "telaDeAtualizarAutor" -> stage.setScene(telaDeAtualizarAutor);
             case "telaDeConfigurarUsuario" -> stage.setScene(telaDeConfigurarUsuario);
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
-//            case "" -> stage.setScene();
         }
     }
 
@@ -188,8 +157,6 @@ public class MainAplication extends Application {
     public static void main(String[] args) throws ElementoJaExisteException {
         UsuarioService a = PessoaService.getInstance().getuService();
         a.adicionarUsuario("Administrador", "", LocalDate.parse("2000-01-01"), "", "admin", "admin", true);
-//        a.adicionarAutor("George", LocalDate.parse("2000-01-01"), "Rua do Autor", "G", "Brasileira");
-//        a.adicionarUsuario("Usuario", "123", LocalDate.parse("2000-10-01"), "Rua 10", "Usuario10", "Usuario123", false);
         launch();
     }
 }

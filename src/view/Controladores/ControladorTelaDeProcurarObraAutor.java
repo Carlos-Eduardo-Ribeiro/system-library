@@ -1,10 +1,8 @@
 package view.Controladores;
 
-import business.entities.Emprestimo;
 import business.entities.ObraImpressa;
 import business.repositories.RepositorioDeObras;
 import business.service.ObraService;
-import com.sun.tools.javac.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

@@ -1,17 +1,13 @@
 package view.Controladores;
 
-import business.exceptions.ElementoJaExisteException;
 import business.service.PessoaService;
 import business.service.UsuarioService;
-import com.sun.tools.javac.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import view.MainAplication;
-
-import java.util.concurrent.ExecutionException;
 
 public class ControladorTelaDoCrudAutor {
 

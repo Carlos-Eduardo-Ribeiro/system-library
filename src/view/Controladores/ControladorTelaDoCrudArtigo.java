@@ -1,7 +1,6 @@
 package view.Controladores;
 
 import business.exceptions.ElementoJaExisteException;
-import business.exceptions.ElementoNaoEncontradoException;
 import business.service.ObraService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

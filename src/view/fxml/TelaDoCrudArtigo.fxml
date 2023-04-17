@@ -11,15 +11,7 @@
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css" />
       <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
-      <TextField fx:id="titulo" layoutX="169.0" layoutY="62.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <TextField fx:id="quantidade" layoutX="170.0" layoutY="99.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <TextField fx:id="autor" layoutX="170.0" layoutY="27.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <TextField fx:id="nDePag" layoutX="171.0" layoutY="136.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <TextField fx:id="idioma" layoutX="172.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <DatePicker fx:id="dataDePub" layoutX="172.0" layoutY="213.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <TextField fx:id="editora" layoutX="172.0" layoutY="252.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <TextField fx:id="referencia" layoutX="172.0" layoutY="291.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <TextField fx:id="resumo" layoutX="172.0" layoutY="328.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <Label layoutX="14.0" layoutY="32.0" prefHeight="26.0" prefWidth="34.0" text="Autor" />
       <Label layoutX="14.0" layoutY="67.0" prefHeight="26.0" prefWidth="34.0" text="Título" />
       <Label layoutX="14.0" layoutY="103.0" prefHeight="26.0" prefWidth="66.0" text="Quantidade" />
@@ -30,5 +22,13 @@
       <Label layoutX="14.0" layoutY="295.0" prefHeight="26.0" prefWidth="126.0" text="Referência Bibliográfica" />
       <Label layoutX="14.0" layoutY="332.0" prefHeight="26.0" prefWidth="48.0" text="Resumo" />
       <Button layoutX="437.0" layoutY="179.0" mnemonicParsing="false" onAction="#addArtigo" style="-fx-text-fill: white; -fx-background-color: #0096c9;" text="Adicionar" />
+      <TextField fx:id="autor" layoutX="170.0" layoutY="27.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="titulo" layoutX="169.0" layoutY="62.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="quantidade" layoutX="170.0" layoutY="99.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="nDePag" layoutX="171.0" layoutY="136.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="idioma" layoutX="172.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="editora" layoutX="172.0" layoutY="252.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="referencia" layoutX="172.0" layoutY="291.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <TextField fx:id="resumo" layoutX="172.0" layoutY="328.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: white; -fx-border-color: black;" />
    </children>
 </AnchorPane>

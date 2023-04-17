@@ -2,7 +2,6 @@ package view.Controladores;
 
 import business.entities.Usuario;
 import business.enums.Status;
-import business.exceptions.ElementoNaoEncontradoException;
 import business.service.PessoaService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,7 +28,7 @@ public class ControladorTelaAdministrarUsuario {
     private ChoiceBox statusDoUsuario;
 
     @FXML
-    void administrador(ActionEvent event) throws ElementoNaoEncontradoException {
+    void administrador(ActionEvent event) {
         if(myCheckBox.isSelected()){
             usuario.setAdmin(true);
         } else{

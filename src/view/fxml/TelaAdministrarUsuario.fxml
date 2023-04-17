@@ -10,10 +10,13 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaAdministrarUsuario">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css" />
+      <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css">
+         <top>
+            <Label alignment="CENTER" prefHeight="57.0" prefWidth="378.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 15pt; -fx-text-fill: #000000;" text="Administrar Usuários" BorderPane.alignment="CENTER" />
+         </top></BorderPane>
       <Button layoutX="538.0" layoutY="360.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Voltar" />
-      <Label layoutX="214.0" layoutY="122.0" prefHeight="26.0" prefWidth="172.0" text="Número de cadastro do usuário" />
-      <TextField fx:id="idDoUsuario" layoutX="157.0" layoutY="162.0" onKeyTyped="#procurarUsuario" prefHeight="26.0" prefWidth="286.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label alignment="CENTER" layoutX="214.0" layoutY="122.0" prefHeight="26.0" prefWidth="172.0" text="Número de cadastro do usuário" />
+      <TextField fx:id="idDoUsuario" alignment="CENTER" layoutX="157.0" layoutY="162.0" onKeyTyped="#procurarUsuario" prefHeight="26.0" prefWidth="286.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <CheckBox fx:id="myCheckBox" layoutX="291.0" layoutY="259.0" mnemonicParsing="false" onAction="#administrador" prefHeight="18.0" prefWidth="7.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <Label layoutX="206.0" layoutY="260.0" prefHeight="18.0" prefWidth="78.0" text="Administrador" />
       <ChoiceBox fx:id="statusDoUsuario" layoutX="253.0" layoutY="204.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" />

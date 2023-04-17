@@ -8,7 +8,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controladores.ControladorTelaDeRemoverObra">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css" />
+      <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@background1.css">
+         <top>
+            <Label alignment="CENTER" prefHeight="66.0" prefWidth="377.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 15pt; -fx-text-fill: #000000;" text="Remover Livro" BorderPane.alignment="CENTER" />
+         </top></BorderPane>
       <TextField fx:id="nomeObra" layoutX="209.0" layoutY="152.0" prefHeight="26.0" prefWidth="323.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <Label layoutX="83.0" layoutY="152.0" prefHeight="26.0" prefWidth="126.0" text="Digite o nome da obra:" />
       <Button layoutX="262.0" layoutY="255.0" mnemonicParsing="false" onAction="#remObra" style="-fx-background-color: #0096c9; -fx-text-fill: white;" text="Remover Obra" />

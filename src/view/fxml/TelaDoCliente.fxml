@@ -14,12 +14,13 @@
             <Button layoutX="38.0" layoutY="116.0" mnemonicParsing="false" onAction="#magicButton" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #0096c9; -fx-text-fill: white; -fx-font-size: 14;" text="Histórico de empréstimos" textAlignment="JUSTIFY" />
             <Button layoutX="38.0" layoutY="186.0" mnemonicParsing="false" onAction="#telaDePesquisaDoCliente" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #0096c9; -fx-text-fill: white; -fx-background-size: 14;" text="Pesquisar obra, autor ou gênero" />
             <Button layoutX="38.0" layoutY="256.0" mnemonicParsing="false" onAction="#telaDeConfigurarUsuario" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #0096c9; -fx-text-fill: white; -fx-font-size: 14;" text="Configurar informações do usuário" />
-            <Label fx:id="nomeDoUsuario" layoutX="165.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 14;" text="Nome do usuário" />
-            <Label fx:id="nDeCadastro" layoutX="165.0" layoutY="45.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 14;" text="N° de cadastro" />
-            <Label layoutX="23.0" layoutY="43.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 14;" text="N° de cadastro:" />
-            <Label layoutX="23.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 15;" text="Nome do usuário:" />
-            <Label layoutX="23.0" layoutY="76.0" prefHeight="18.0" prefWidth="45.0" style="-fx-font-size: 14;" text="Status:" />
-            <Label fx:id="status" layoutX="165.0" layoutY="70.0" prefHeight="30.0" prefWidth="98.0" style="-fx-font-size: 14;" text="Status" />
+            <Label fx:id="nomeDoUsuario" layoutX="221.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 14;" text="Nome do usuário" />
+            <Label fx:id="nDeCadastro" layoutX="221.0" layoutY="43.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 14;" text="N° de cadastro" />
+            <Label layoutX="79.0" layoutY="43.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 14;" text="N° de cadastro:" />
+            <Label layoutX="79.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" style="-fx-font-size: 15;" text="Nome do usuário:" />
+            <Label layoutX="79.0" layoutY="76.0" prefHeight="18.0" prefWidth="45.0" style="-fx-font-size: 14;" text="Status:" />
+            <Label fx:id="status" layoutX="221.0" layoutY="70.0" prefHeight="30.0" prefWidth="98.0" style="-fx-font-size: 14;" text="Status" />
+            <BorderPane layoutX="20.0" layoutY="25.0" prefHeight="35.0" prefWidth="35.0" styleClass="background" stylesheets="@background2.css" />
          </children>
       </AnchorPane>
    </children>
