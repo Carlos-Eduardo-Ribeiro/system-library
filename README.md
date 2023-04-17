@@ -32,7 +32,7 @@ A principal funcionalidade do sistema é atribuir um livro a um estudante, e um 
  
 ### Diagrama Navegacional:
 <p align="left"> 
- <img width="950" src="https://user-images.githubusercontent.com/118121309/227180702-8a010ea5-4f3c-498a-a6d1-d886e8b2679f.png"
+ <img width="950" src="https://user-images.githubusercontent.com/118121309/232547331-3f2107ac-0676-49ce-81a6-c95d358db87c.jpg"
 </p>
 
 
