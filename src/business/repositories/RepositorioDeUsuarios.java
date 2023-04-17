@@ -115,7 +115,7 @@ public class RepositorioDeUsuarios implements IRepositories<Pessoa> {
 	            for (Pessoa pessoa2 : autores) {
 	                if (pessoa2 instanceof Autor) {
 	            	    Autor autor = (Autor) pessoa2;
-	                    if(autor.getNome().equals(nome) || autor.getCpf().equals(nome)) {
+	                    if(autor.getNome().equals(nome)||autor.getPseudonimo().equals(nome)) {
 	                       return autor ;	             
 	            }
 	          }

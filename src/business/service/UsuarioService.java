@@ -132,7 +132,7 @@ public class UsuarioService {
 	}
 
 	public boolean adicionarAutor(String nome, LocalDate idade, String endereco, String pseudonimo, String nacionalidade) throws ElementoJaExisteException {
-		if (this.repositorio.buscarPorNomes(nome) != null) {
+		if (this.repositorio.buscarPorNomes(nome) != null&&this.repositorio.buscarPorNomes(pseudonimo)!=null) {
 			throw new ElementoJaExisteException(nome);
 		} else {
 			Autor autor = new Autor(nome, idade, endereco, pseudonimo, nacionalidade);

@@ -4,6 +4,7 @@ import business.exceptions.ElementoNaoEncontradoException;
 import business.service.PessoaService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import view.MainAplication;
 
@@ -13,19 +14,36 @@ public class ControladorTelaDeDevolverLivro {
     private TextField itemEmprestado;
     @FXML
     private TextField nDeCadastro;
+    @FXML
+    private void mostrarAlertaElemento() {
+        // Cria o alerta
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("ERROR");
+        alerta.setHeaderText("ERRO AO DEVOLVER LIVRO");
+
+        // Mostra o alerta e espera pelo fechamento
+        alerta.showAndWait();
+    }
+
     private PessoaService devolverObra = PessoaService.getInstance();
 
     @FXML
     void devolverLivro(ActionEvent event) {
-        try {
-            this.devolverObra.devolverLivro(this.nDeCadastro.getText(), this.itemEmprestado.getText());
-            MainAplication.mudarTela("telaDoAdministrador");
-            itemEmprestado.setText("");
-            nDeCadastro.setText("");
-            System.out.println("Livro Devolvido");
-        } catch (ElementoNaoEncontradoException e) {
-            System.out.println(e.getMessage());
+        if(!itemEmprestado.getText().isEmpty()&&!nDeCadastro.getText().isEmpty()){
+            try {
+                this.devolverObra.devolverLivro(this.nDeCadastro.getText(), this.itemEmprestado.getText());
+                MainAplication.mudarTela("telaDoAdministrador");
+                itemEmprestado.setText("");
+                nDeCadastro.setText("");
+                System.out.println("Livro Devolvido");
+            } catch (Exception e) {
+                mostrarAlertaElemento();
+                itemEmprestado.setText("");
+                nDeCadastro.setText("");
+                System.out.println(e.getMessage());
+            }
         }
+
     }
 
     @FXML
