@@ -3,7 +3,6 @@
 ### Integrantes do grupo:
 
 * Gabriel Ramos de Souza - Gabriel_ramos-souza@hotmail.com
-* Daniel Feitosa Botelho de Andrade - danielfbdeandrade2@gmail.com
 * Carlos Eduardo Ribeiro - carlos.eduardo.rb18@gmail.com
 
 ### Descrição geral do projeto:
