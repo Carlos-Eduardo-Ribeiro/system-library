@@ -60,7 +60,7 @@ public class Emprestimo {
 	    }		
 		
 		public String getNumeroDeCadastro() {
-			return numeroDeCadastro+"argel";
+			return numeroDeCadastro;
 		}
 
 		public void setNumeroDeCadastro(String numeroDeCadastro) {
